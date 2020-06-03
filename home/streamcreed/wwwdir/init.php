@@ -1,2 +1,0 @@
-<?php
- goto A97fff9a91b0c0dc44525e611c8beb41; Cd94f4d5e9096c2f180c27046e2ab096: require_once IPTV_INCLUDES_PATH . "\x41\160\x70\x2e\160\x68\x70"; goto B980e452f4e110047bd6dc5cc8e2d561; A97fff9a91b0c0dc44525e611c8beb41: require_once "\143\157\156\163\164\x61\156\x74\x73\x2e\160\150\160"; goto Cd94f4d5e9096c2f180c27046e2ab096; B980e452f4e110047bd6dc5cc8e2d561: App::init();
