@@ -1,0 +1,44 @@
+############# config ##################
+#
+# indiquer le répertoire qui héberge le miroir local
+set base_path    /var/www/html/
+#
+# des sous-répertoires seront créés lors de la 1ère utilisation de apt-mirror
+set mirror_path  $base_path/mirror
+set skel_path    $base_path/skel
+set var_path     $base_path/var
+# la commande clean.sh de nettoyage du miroir local pourra être intégrée au script postmirror.sh (à commenter dans ce cas)
+set cleanscript $var_path/clean.sh
+# l'architecture par défaut
+set defaultarch  i386
+# script lancé une fois la commande apt-mirror terminée si nécessaire
+set postmirror_script $var_path/postmirror.sh
+# 1 → lancement du script postmirror.sh ; 0 → pas de lancement
+set run_postmirror 0
+set nthreads     20
+set _tilde 0
+#
+############# end config ##############
+
+# dépots Squeeze deb → i386 32 bits
+deb http://archive.canonical.com/ubuntu bionic partner
+deb-amd64 http://archive.canonical.com/ubuntu bionic partner
+deb-src http://archive.canonical.com/ubuntu bionic partner
+deb http://repo.mysql.com/apt/ubuntu/ bionic mysql-5.7
+deb-amd64 http://repo.mysql.com/apt/ubuntu/ bionic mysql-5.7
+deb-src http://repo.mysql.com/apt/ubuntu/ bionic mysql-5.7
+deb http://ppa.launchpad.net/ondrej/apache2/ubuntu bionic main
+deb-amd64 http://ppa.launchpad.net/ondrej/apache2/ubuntu bionic main
+deb-src http://ppa.launchpad.net/ondrej/apache2/ubuntu bionic main
+deb http://ppa.launchpad.net/ondrej/php/ubuntu bionic main
+deb-amd64 http://ppa.launchpad.net/ondrej/php/ubuntu bionic main
+deb-src http://ppa.launchpad.net/ondrej/php/ubuntu bionic main
+deb http://ppa.launchpad.net/xapienz/curl34/ubuntu bionic main
+deb-amd64 http://ppa.launchpad.net/xapienz/curl34/ubuntu bionic main
+deb-src http://ppa.launchpad.net/xapienz/curl34/ubuntu bionic main
+# dépots à nettoyer → suppression des paquets obsolètes
+clean http://archive.canonical.com/ubuntu bionic
+clean http://repo.mysql.com/apt/ubuntu/ bionic
+clean http://ppa.launchpad.net/ondrej/apache2/ubuntu bionic
+clean http://ppa.launchpad.net/ondrej/php/ubuntu bionic
+clean http://ppa.launchpad.net/xapienz/curl34/ubuntu bionic
