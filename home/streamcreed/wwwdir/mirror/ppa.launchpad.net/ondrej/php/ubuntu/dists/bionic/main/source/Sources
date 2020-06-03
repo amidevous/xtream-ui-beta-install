@@ -1,0 +1,2395 @@
+Package: dh-php
+Binary: dh-php
+Version: 0.35+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Build-Depends: debhelper (>= 9)
+Architecture: all
+Standards-Version: 3.9.8
+Format: 3.0 (native)
+Directory: pool/main/d/dh-php
+Files:
+ 7bb1cce16bef945aa1d327809401497e 8980 dh-php_0.35+ubuntu18.04.1+deb.sury.org+1.tar.xz
+ 3accb14e1eaf12942f20dfd5b867d977 1795 dh-php_0.35+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ e4b7da06c40fcb01958d70032da5e531f8b93fe8 8980 dh-php_0.35+ubuntu18.04.1+deb.sury.org+1.tar.xz
+ 1bb1a1b858d52ff01adb210cb17d2c46be0543ed 1795 dh-php_0.35+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ f56314265f55083f2fbf8a2b78fb1df38253d88916aab685503511decb0ac06e 8980 dh-php_0.35+ubuntu18.04.1+deb.sury.org+1.tar.xz
+ 05d91c7452aa4ae3d82fef2a82303187becf9765447193654186ce1b0fa8e603 1795 dh-php_0.35+ubuntu18.04.1+deb.sury.org+1.dsc
+Uploaders: Ondřej Surý <ondrej@debian.org>,
+Package-List: dh-php deb php optional arch=all
+Vcs-Git: https://salsa.debian.org/php-team/dh-php.git
+Vcs-Browser: https://salsa.debian.org/php-team/dh-php
+
+Package: graphicsmagick
+Binary: graphicsmagick, libgraphicsmagick-q16-3, libgraphicsmagick1-dev, libgraphicsmagick++-q16-12, libgraphicsmagick++1-dev, libgraphics-magick-perl, graphicsmagick-imagemagick-compat, graphicsmagick-libmagick-dev-compat, graphicsmagick-dbg
+Version: 1.3.30+hg15796-1+ubuntu18.04.1+deb.sury.org+2
+Section: graphics
+Maintainer: Laszlo Boszormenyi (GCS) <gcs@debian.org>
+Build-Depends: debhelper (>= 0), dh-autoreconf, autotools-dev, libjpeg-dev, liblcms2-dev, libwmf-dev (>= 0.2.8.4), libx11-dev, libsm-dev, libice-dev, libxext-dev, x11proto-core-dev, libxml2-dev, libfreetype6-dev, libexif-dev, libbz2-dev, libtiff-dev, libjbig-dev, zlib1g-dev | libz-dev, libpng-dev, libwebp-dev, perl (>= 5.20), ghostscript, gsfonts, transfig, sharutils, libltdl-dev
+Architecture: any all
+Standards-Version: 4.1.4
+ build-depends
+Format: 3.0 (quilt)
+Directory: pool/main/g/graphicsmagick
+Files:
+ a03ab1fdd46b33ad7d45a56289ec7ba2 27390756 graphicsmagick_1.3.30+hg15796.orig.tar.xz
+ 41ddd4c495151f81add591ed55d7e7c0 142416 graphicsmagick_1.3.30+hg15796-1+ubuntu18.04.1+deb.sury.org+2.debian.tar.xz
+ 3aede5360a93a87376fe52c761bc9887 3132 graphicsmagick_1.3.30+hg15796-1+ubuntu18.04.1+deb.sury.org+2.dsc
+Checksums-Sha1:
+ e2a3a50bb3c609f4625b6a2a38de46357b881fe6 27390756 graphicsmagick_1.3.30+hg15796.orig.tar.xz
+ 1527aea814ec21082df90a5b50791d54c536806c 142416 graphicsmagick_1.3.30+hg15796-1+ubuntu18.04.1+deb.sury.org+2.debian.tar.xz
+ 6635725696445c9f3f481e15f082504f645255f8 3132 graphicsmagick_1.3.30+hg15796-1+ubuntu18.04.1+deb.sury.org+2.dsc
+Checksums-Sha256:
+ b6748d7368f686c346c90b9077699568d1b60a25e820b7fe2d68168bad4c80b7 27390756 graphicsmagick_1.3.30+hg15796.orig.tar.xz
+ df1e40c155b5e2c8c8656392a1d26436ee54d12ac884ea5a77414c1cc80dcd8d 142416 graphicsmagick_1.3.30+hg15796-1+ubuntu18.04.1+deb.sury.org+2.debian.tar.xz
+ 36dc492152c10fcc6a954e544ff41124abcec3f3f13feaee6d8cd9a809458c58 3132 graphicsmagick_1.3.30+hg15796-1+ubuntu18.04.1+deb.sury.org+2.dsc
+Homepage: http://www.graphicsmagick.org/
+Package-List: graphicsmagick deb graphics optional arch=any
+ graphicsmagick-dbg deb debug optional arch=any
+ graphicsmagick-imagemagick-compat deb graphics optional arch=all
+ graphicsmagick-libmagick-dev-compat deb graphics optional arch=all
+ libgraphics-magick-perl deb perl optional arch=any
+ libgraphicsmagick++-q16-12 deb libs optional arch=any
+ libgraphicsmagick++1-dev deb libdevel optional arch=any
+ libgraphicsmagick-q16-3 deb libs optional arch=any
+ libgraphicsmagick1-dev deb libdevel optional arch=any
+
+Package: icu
+Binary: libicu65, libicu-dev, icu-devtools, icu-doc
+Version: 65.1-1+ubuntu18.04.1+deb.sury.org+1
+Section: libs
+Maintainer: Laszlo Boszormenyi (GCS) <gcs@debian.org>
+Build-Depends: debhelper (>= 9.20150101), pkg-config, dh-autoreconf, python3-distutils | python3 (<< 3.6~)
+Build-Depends-Indep: doxygen (>= 1.7.1)
+Build-Conflicts: clang
+Architecture: any all
+Standards-Version: 4.3.0
+Format: 3.0 (quilt)
+Directory: pool/main/i/icu
+Files:
+ d1ff436e26cabcb28e6cb383d32d1339 24267934 icu_65.1.orig.tar.gz
+ 155a785f483e1c93900c7f4b467fd461 24012 icu_65.1-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ c40a0a7ddfe382b3950a83bc481636d6 2273 icu_65.1-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ d1e6b58aea606894cfb2495b6eb1ad533ccd2a25 24267934 icu_65.1.orig.tar.gz
+ f270cf0f32f0e3507bba152c57b6a26c2cb54894 24012 icu_65.1-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 85f972ff37af9ab1efd176600d5e416e59ba183e 2273 icu_65.1-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ 53e37466b3d6d6d01ead029e3567d873a43a5d1c668ed2278e253b683136d948 24267934 icu_65.1.orig.tar.gz
+ 620e733fc520db222706fbbf975b2175fce8f28da3b863b3e1c021e2592f1342 24012 icu_65.1-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ d39f25aff3c2ac0d6f18487b4b9f26f608e88c2adf9d311efedd068ed02a89ed 2273 icu_65.1-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: http://www.icu-project.org
+Testsuite: autopkgtest
+Testsuite-Triggers: pkg-config
+Package-List: icu-devtools deb libdevel optional arch=any
+ icu-doc deb doc optional arch=all
+ libicu-dev deb libdevel optional arch=any
+ libicu65 deb libs optional arch=any
+
+Package: libgd2
+Binary: libgd-tools, libgd-dev, libgd3
+Version: 2.2.5-5.2+ubuntu18.04.1+deb.sury.org+1
+Section: graphics
+Maintainer: GD Team <team+gd@tracker.debian.org>
+Build-Depends: autotools-dev, debhelper (>= 9), libpng-dev, libz-dev, libjpeg-dev, libfreetype6-dev, libxpm-dev, libx11-dev, libxt-dev, libfontconfig-dev, libwebp-dev, libtiff-dev, dh-autoreconf, html2text
+Architecture: any
+Standards-Version: 3.9.3
+Format: 3.0 (quilt)
+Directory: pool/main/libg/libgd2
+Files:
+ d851cf184ccb9272b728ccb938c25b25 3326856 libgd2_2.2.5.orig.tar.gz
+ ed964fe277a1f9404a5416e6a3e3222f 35768 libgd2_2.2.5-5.2+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 75c352f6d1f1c0ce05d68f4001c451a5 2455 libgd2_2.2.5-5.2+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 281af8e7e9c798d368caf8758b983c4d8c24d9ec 3326856 libgd2_2.2.5.orig.tar.gz
+ 72ebf1622f14c15df9291cca90228ae3c59a974c 35768 libgd2_2.2.5-5.2+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 1920e6d0841e4daac0e17601353ba8d2e63bd05d 2455 libgd2_2.2.5-5.2+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ 150e6952af874bbccb33cf0f87288b41a8fd54f0ce4cff914ef90a80ef9d0162 3326856 libgd2_2.2.5.orig.tar.gz
+ 4198aef872e155b9c26e738a7b249ac916f7c1e32b25237fc9911322484caec5 35768 libgd2_2.2.5-5.2+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 30d367bd1879ac88267b5f8612ee4f831eb47034888e7722c5b89fa913869e56 2455 libgd2_2.2.5-5.2+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: http://www.libgd.org/
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Testsuite: autopkgtest
+Testsuite-Triggers: @builddeps@, file, libtool-bin, valgrind
+Package-List: libgd-dev deb libdevel optional arch=any
+ libgd-tools deb graphics optional arch=any
+ libgd3 deb libs optional arch=any
+Vcs-Git: https://salsa.debian.org/debian/libgd2.git
+Vcs-Browser: https://salsa.debian.org/debian/libgd2
+
+Package: libidn2
+Binary: libidn2-0, libidn2-dev, libidn2-0-dev, idn2, libidn2-doc
+Version: 2.3.0-1+ubuntu18.04.1+deb.sury.org+1
+Section: libs
+Maintainer: Debian Libidn team <help-libidn@gnu.org>
+Build-Depends: debhelper (>= 12), gengetopt, libunistring-dev, pkg-config, ronn | ruby-ronn (<< 0.7.3-5.1~), texinfo
+Build-Depends-Indep: dblatex, gtk-doc-tools, libglib2.0-dev, texlive
+Architecture: any all
+Standards-Version: 4.4.0
+Format: 3.0 (quilt)
+Directory: pool/main/libi/libidn2
+Files:
+ 01c5084995295e519f95978ae9785ee0 2164993 libidn2_2.3.0.orig.tar.gz
+ fecafa0b99cde1ea9375bd431a648f0a 10648 libidn2_2.3.0-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 771878db8c6b9e130d5c57849921c0b9 2527 libidn2_2.3.0-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 53f54fd3c305d871ed5716406c0695fad5c34c45 2164993 libidn2_2.3.0.orig.tar.gz
+ 389b3ecc5ca64cd4492dc331ffb8dd4cbebc7702 10648 libidn2_2.3.0-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 7a27344187b8d292810484752ac2357d921c7664 2527 libidn2_2.3.0-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ e1cb1db3d2e249a6a3eb6f0946777c2e892d5c5dc7bd91c74394fc3a01cab8b5 2164993 libidn2_2.3.0.orig.tar.gz
+ fb572787222be6238ebf2d0dc897ad750cb5f2353b46663804963dca8e5803a9 10648 libidn2_2.3.0-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ dbea123bad743e94d8bae91666cd1321de77c16a85c9d97307b48dfac1171a6e 2527 libidn2_2.3.0-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: https://www.gnu.org/software/libidn/#libidn2
+Uploaders: Simon Josefsson <simon@josefsson.org>, Ondřej Surý <ondrej@debian.org>
+Package-List: idn2 deb devel optional arch=any
+ libidn2-0 deb libs optional arch=any
+ libidn2-0-dev deb oldlibs optional arch=any
+ libidn2-dev deb libdevel optional arch=any
+ libidn2-doc deb doc optional arch=all
+Vcs-Git: https://salsa.debian.org/debian/libidn2.git
+Vcs-Browser: https://salsa.debian.org/debian/libidn2
+
+Package: libsodium
+Binary: libsodium23, libsodium-dev
+Version: 1.0.18-1+ubuntu18.04.1+deb.sury.org+1
+Section: libs
+Maintainer: Laszlo Boszormenyi (GCS) <gcs@debian.org>
+Build-Depends: debhelper (>= 9), dh-autoreconf, autotools-dev, pkg-config
+Architecture: any
+Standards-Version: 4.4.0
+Format: 3.0 (quilt)
+Directory: pool/main/libs/libsodium
+Files:
+ 94a783f33ff8a97a09708bc61370d280 1619527 libsodium_1.0.18.orig.tar.gz
+ e0a997dc5831d2354d84549f34fa8e29 7756 libsodium_1.0.18-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ e25fa62ed93cc85251943c938711025c 2188 libsodium_1.0.18-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ cd8a76b79aeb077e8d3eea478ea6241972593dfd 1619527 libsodium_1.0.18.orig.tar.gz
+ e3f7ece6a15791d32060a4df5f41425fb6473668 7756 libsodium_1.0.18-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 8a553a0ec960f48251f8c7fb13b2d5d3ac474a65 2188 libsodium_1.0.18-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ d59323c6b712a1519a5daf710b68f5e7fde57040845ffec53850911f10a5d4f4 1619527 libsodium_1.0.18.orig.tar.gz
+ 96527f9ab921e69f72e04af0f057f844bce23954ff5a29b928c827f8532e8a27 7756 libsodium_1.0.18-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 621200dd9c890b0a54fe190bee21c8e7025d52b3f40df27cf62c8de2cecd8e9d 2188 libsodium_1.0.18-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: https://www.libsodium.org/
+Package-List: libsodium-dev deb libdevel optional arch=any
+ libsodium23 deb libs optional arch=any
+Vcs-Git: https://salsa.debian.org/ondrej/libsodium.git
+Vcs-Browser: https://salsa.debian.org/ondrej/libsodium
+
+Package: libvirt-php
+Binary: php-libvirt-php
+Version: 0.5.5-1+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: autotools-dev, debhelper (>= 9), dh-autoreconf, dh-php, libvirt-dev (>= 1.3.0), libxml2-dev, libxml2-utils, php-all-dev, php-imagick, pkg-config, xsltproc
+Architecture: any
+Standards-Version: 3.9.7
+Format: 3.0 (quilt)
+Directory: pool/main/libv/libvirt-php
+Files:
+ 7f68159a4ecd072bbdce27e996ad315f 766638 libvirt-php_0.5.5.orig.tar.gz
+ 48d14261b8da0cbf15b9ec9bc098a45b 4220 libvirt-php_0.5.5-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 07ad0d809da8361b0c6562adb80fbc7a 2329 libvirt-php_0.5.5-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ c71225f96e186ebbc594a09ebea171d934120bc6 766638 libvirt-php_0.5.5.orig.tar.gz
+ e3edd66a9144e86b9bf44b7e57ed11e021a0fcf6 4220 libvirt-php_0.5.5-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 6fbf3482629fbf1fedb457deb4bd61ff0ef9b380 2329 libvirt-php_0.5.5-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ c868ca4df0eae4955afdab38fb0e11bc3a3448182999066b1f2157de88e9131a 766638 libvirt-php_0.5.5.orig.tar.gz
+ 09b3917dc2f4c3a610ca3f9cfb2aa04c4364bddff9277b83629961fe48c5077b 4220 libvirt-php_0.5.5-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 8f247c58bdc6768dba8671e44f510484bd87316d1b89b2bf4ee70903a87b2ba6 2329 libvirt-php_0.5.5-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: http://libvirt.org/php/downloads.html
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Package-List: php-libvirt-php deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/libvirt-php.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/libvirt-php
+
+Package: libxml2
+Binary: libxml2, libxml2-utils, libxml2-dev, libxml2-doc, python-libxml2, python-libxml2-dbg, python3-libxml2, python3-libxml2-dbg
+Version: 2.9.10+dfsg-2+ubuntu18.04.1+deb.sury.org+1
+Section: libs
+Maintainer: Debian XML/SGML Group <debian-xml-sgml-pkgs@lists.alioth.debian.org>
+Build-Depends: debhelper (>= 10), dh-python <!nopython>, libicu-dev, liblzma-dev, libpython-all-dbg, libpython-all-dev, libpython3-all-dbg, libpython3-all-dev, pkg-config, python-all-dbg:any, python-all-dev:any (>= 2.7.5-5~), python3-all-dbg:any, python3-all-dev:any, rename, zlib1g-dev | libz-dev
+Architecture: any all
+Standards-Version: 4.5.0
+Format: 3.0 (quilt)
+Directory: pool/main/libx/libxml2
+Files:
+ e7fca125cdc234f0292c2762f7481f69 4093153 libxml2_2.9.10+dfsg.orig.tar.gz
+ 7a548ff142f4bc79f3581d2a64f0c343 25236 libxml2_2.9.10+dfsg-2+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 89d818f21473ea74aa44c53fb9b7491d 2971 libxml2_2.9.10+dfsg-2+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 8e3811b93d71808dcc9b6ed264cb6a1dd686962f 4093153 libxml2_2.9.10+dfsg.orig.tar.gz
+ f2858086090207368a4b9ae39061ba7efc6ff862 25236 libxml2_2.9.10+dfsg-2+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 3f50250018df9fdf68c5550f30983459b137d885 2971 libxml2_2.9.10+dfsg-2+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ bd71f6085a7f78d95e7cbbd8f7475a6c76a194b8681d85c067effeb2411453b7 4093153 libxml2_2.9.10+dfsg.orig.tar.gz
+ 3ef8bcfd4aea837888f71d69baa9f4bc4d55765fd9ebad207d7b065ab4755f55 25236 libxml2_2.9.10+dfsg-2+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 0b134e650a008ad80b178379669073e1f393938eba90600d7d85e8991ec22dff 2971 libxml2_2.9.10+dfsg-2+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: http://xmlsoft.org
+Uploaders: Aron Xu <aron@debian.org>, YunQiang Su <wzssyqa@gmail.com>,
+Testsuite: autopkgtest
+Testsuite-Triggers: build-essential, pkg-config
+Package-List: libxml2 deb libs optional arch=any
+ libxml2-dev deb libdevel optional arch=any
+ libxml2-doc deb doc optional arch=all
+ libxml2-utils deb text optional arch=any
+ python-libxml2 deb python optional arch=any
+ python-libxml2-dbg deb debug optional arch=any
+ python3-libxml2 deb python optional arch=any
+ python3-libxml2-dbg deb debug optional arch=any
+Vcs-Git: https://salsa.debian.org/xml-sgml-team/libxml2.git
+Vcs-Browser: https://salsa.debian.org/xml-sgml-team/libxml2
+
+Package: libzip
+Binary: libzip-dev, libzip4, zipcmp, zipmerge, ziptool
+Version: 1.5.1-4+ubuntu18.04.1+deb.sury.org+2
+Section: libs
+Maintainer: Stefan Schörghofer <amd1212@4md.gr>
+Build-Depends: cmake, debhelper (>= 9), libbz2-dev, libssl-dev, mandoc, unzip, zlib1g-dev
+Architecture: any
+Standards-Version: 4.3.0.1
+Format: 3.0 (quilt)
+Directory: pool/main/libz/libzip
+Files:
+ 6fe665aa6d6bf3a99eb6fa9c553283fd 717908 libzip_1.5.1.orig.tar.xz
+ cfd6fd3f55e611a878f4c5872d090071 8068 libzip_1.5.1-4+ubuntu18.04.1+deb.sury.org+2.debian.tar.xz
+ 2a190a6cc49d5249337c614120e8b48a 2325 libzip_1.5.1-4+ubuntu18.04.1+deb.sury.org+2.dsc
+Checksums-Sha1:
+ 4033cccb7544a3eab6d0ee28be94cf45bea60b0b 717908 libzip_1.5.1.orig.tar.xz
+ 8bc68d3e4d76b644c125af47820005766b8ddc35 8068 libzip_1.5.1-4+ubuntu18.04.1+deb.sury.org+2.debian.tar.xz
+ 706c4c7064360772da1bdd45ce88e8d79b6003ad 2325 libzip_1.5.1-4+ubuntu18.04.1+deb.sury.org+2.dsc
+Checksums-Sha256:
+ 04ea35b6956c7b3453f1ed3f3fe40e3ddae1f43931089124579e8384e79ed372 717908 libzip_1.5.1.orig.tar.xz
+ 7b863c41a2580fc983afa557012a1ce81bb6d0a336786c1dfc946d40a1c707f7 8068 libzip_1.5.1-4+ubuntu18.04.1+deb.sury.org+2.debian.tar.xz
+ 3c589528ffb827f4f8bfd49f060a145443a43039af09ac9bc9fbf75bdb253904 2325 libzip_1.5.1-4+ubuntu18.04.1+deb.sury.org+2.dsc
+Homepage: https://libzip.org
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Package-List: libzip-dev deb libdevel optional arch=any
+ libzip4 deb libs optional arch=any
+ zipcmp deb utils optional arch=any
+ zipmerge deb utils optional arch=any
+ ziptool deb utils optional arch=any
+Vcs-Git: https://salsa.debian.org/debian/libzip.git
+Vcs-Browser: https://salsa.debian.org/debian/libzip
+
+Package: norm
+Binary: libnorm1, libnorm-dev, libnorm-doc
+Version: 1.5r6+dfsg1-6+ubuntu18.04.1+deb.sury.org+1
+Section: libs
+Maintainer: Luca Boccassi <bluca@debian.org>
+Build-Depends: debhelper (>= 9), python
+Architecture: any all
+Standards-Version: 4.1.3
+Format: 3.0 (quilt)
+Directory: pool/main/n/norm
+Files:
+ 51786bcd69a8961e86a7ba3626d344b4 2132249 norm_1.5r6+dfsg1.orig.tar.gz
+ 80b7635ee9dd97903e59ce42fd327d82 6800 norm_1.5r6+dfsg1-6+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 2200e7f03cb0d356ed342245a404f65f 2101 norm_1.5r6+dfsg1-6+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 1fbfeff1f168c343b663f9cdc89a3f26a6ac60b9 2132249 norm_1.5r6+dfsg1.orig.tar.gz
+ d5f72dcb238cc80afe72b7daf15028af1005dca3 6800 norm_1.5r6+dfsg1-6+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 833b18205889e2ad7adda37f84e326fd9b7f1a9e 2101 norm_1.5r6+dfsg1-6+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ bb63051fb03cde826be4548f157bfbd18525829f8f97870bf94a00be8cae6bed 2132249 norm_1.5r6+dfsg1.orig.tar.gz
+ 08454788ba02fc761fafb8e351980a7bb9d99b9e2c7f9b8341cfa01f32dc71d8 6800 norm_1.5r6+dfsg1-6+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 2f0192e50ca79776d6a91f0dee6b492c6f3b247e6256fd7df26862973a188552 2101 norm_1.5r6+dfsg1-6+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: https://www.nrl.navy.mil/itd/ncs/products/norm
+Package-List: libnorm-dev deb libdevel optional arch=any
+ libnorm-doc deb doc optional arch=all
+ libnorm1 deb libs optional arch=any
+
+Package: openssl
+Binary: openssl, libssl1.1, libcrypto1.1-udeb, libssl1.1-udeb, libssl-dev, libssl-doc
+Version: 1.1.1d-1+ubuntu18.04.1+deb.sury.org+2
+Section: utils
+Maintainer: Debian OpenSSL Team <pkg-openssl-devel@lists.alioth.debian.org>
+Build-Depends: debhelper (>= 9), m4, bc, dpkg-dev (>= 1.15.7)
+Architecture: any all
+Standards-Version: 4.2.1
+Format: 3.0 (quilt)
+Directory: pool/main/o/openssl
+Files:
+ 905985dcf3a16e63c777b69cf868898f 9012933 openssl_1.1.1d.orig.tar.gz
+ 8b93fbd9f9d9b0a086bbc2d4b235564e 84192 openssl_1.1.1d-1+ubuntu18.04.1+deb.sury.org+2.debian.tar.xz
+ 8c59df43b02747de10c3b5c10b657799 2612 openssl_1.1.1d-1+ubuntu18.04.1+deb.sury.org+2.dsc
+Checksums-Sha1:
+ 7e6aecd3f150d608b72c765aa3f8c0eb975c1648 9012933 openssl_1.1.1d.orig.tar.gz
+ d37884bae6c75e76890640ca3109d0337e781fa6 84192 openssl_1.1.1d-1+ubuntu18.04.1+deb.sury.org+2.debian.tar.xz
+ 85e3b42db9670c3b3db96e6949a2fda13b970145 2612 openssl_1.1.1d-1+ubuntu18.04.1+deb.sury.org+2.dsc
+Checksums-Sha256:
+ db227f74232c57e8c7d6490e89f9e81dee543b4959c19676348062ce2f81cbe4 9012933 openssl_1.1.1d.orig.tar.gz
+ 63be45c00464482e0bc6634354c4e1e869a2a9a1e4d48c81970fd164b298d7ce 84192 openssl_1.1.1d-1+ubuntu18.04.1+deb.sury.org+2.debian.tar.xz
+ fee8960a92ad3341365054be373d05bc199ae3a2b35b236e18520537d6920918 2612 openssl_1.1.1d-1+ubuntu18.04.1+deb.sury.org+2.dsc
+Homepage: https://www.openssl.org/
+Uploaders: Christoph Martin <christoph.martin@uni-mainz.de>, Kurt Roeckx <kurt@roeckx.be>, Sebastian Andrzej Siewior <sebastian@breakpoint.cc>
+Testsuite: autopkgtest
+Testsuite-Triggers: perl
+Package-List: libcrypto1.1-udeb udeb debian-installer optional arch=any
+ libssl-dev deb libdevel optional arch=any
+ libssl-doc deb doc optional arch=all
+ libssl1.1 deb libs optional arch=any
+ libssl1.1-udeb udeb debian-installer optional arch=any
+ openssl deb utils optional arch=any
+Vcs-Git: https://salsa.debian.org/debian/openssl.git
+Vcs-Browser: https://salsa.debian.org/debian/openssl
+
+Package: pcre2
+Binary: libpcre2-8-0, libpcre2-8-0-udeb, libpcre2-16-0, libpcre2-32-0, libpcre2-posix2, libpcre2-dev, pcre2-utils
+Version: 10.34-7+ubuntu18.04.1+deb.sury.org+1
+Section: libs
+Maintainer: Matthew Vernon <matthew@debian.org>
+Build-Depends: debhelper (>= 9), dpkg-dev (>= 1.16.1~)
+Architecture: any
+Standards-Version: 4.1.3
+Format: 1.0
+Directory: pool/main/p/pcre2
+Files:
+ e3e15cca49557a9c07a21dde2da05ea5 2271533 pcre2_10.34.orig.tar.gz
+ 4c013d68a6bf5356100828451f447402 7150 pcre2_10.34-7+ubuntu18.04.1+deb.sury.org+1.diff.gz
+ 2d5bf9a4432f9fe2622395e492a00c0f 2392 pcre2_10.34-7+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 4393b5c912395c300ad921b76a4eb2bb109ddc0e 2271533 pcre2_10.34.orig.tar.gz
+ fd2661be95c49b5e55a2cebf98848131379f1e12 7150 pcre2_10.34-7+ubuntu18.04.1+deb.sury.org+1.diff.gz
+ 3318306828fc3960e4714147a36cd956bd54d3a6 2392 pcre2_10.34-7+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ da6aba7ba2509e918e41f4f744a59fa41a2425c59a298a232e7fe85691e00379 2271533 pcre2_10.34.orig.tar.gz
+ 2a2816eb4bc7f425c7f1447871740eb14186c985c64b58a3dfe905305db3586c 7150 pcre2_10.34-7+ubuntu18.04.1+deb.sury.org+1.diff.gz
+ 752b4d8e1db1e05aca3976af100ea233e829deb72237e7966fcb6c3c33f1c0fe 2392 pcre2_10.34-7+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: https://pcre.org/
+Package-List: libpcre2-16-0 deb libs optional arch=any
+ libpcre2-32-0 deb libs optional arch=any
+ libpcre2-8-0 deb libs optional arch=any
+ libpcre2-8-0-udeb udeb debian-installer optional arch=any
+ libpcre2-dev deb libdevel optional arch=any
+ libpcre2-posix2 deb libs optional arch=any
+ pcre2-utils deb utils optional arch=any
+Vcs-Git: https://salsa.debian.org/debian/pcre2.git
+Vcs-Browser: https://salsa.debian.org/debian/pcre2
+
+Package: pcre3
+Binary: libpcre3, libpcre3-udeb, libpcrecpp0v5, libpcre3-dev, pcregrep, libpcre16-3, libpcre32-3
+Version: 2:8.43-1+ubuntu18.04.1+deb.sury.org+1
+Section: libs
+Maintainer: Perl 5 Compatible Regular Expression Library <pcre3@packages.debian.org>
+Build-Depends: debhelper (>= 9), dh-autoreconf, dh-exec, autotools-dev
+Architecture: any
+Standards-Version: 4.1.3
+Format: 3.0 (quilt)
+Directory: pool/main/p/pcre3
+Files:
+ 040470ab2e25f1545b0207aeb5827bba 2040298 pcre3_8.43.orig.tar.gz
+ 4c6e4e833bdf84008d308685cfc14f59 22006 pcre3_8.43-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.gz
+ 6e44be41b433919364fcfaf4db0a627c 2389 pcre3_8.43-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 695f7a3e19d5022ee261cbe8c747757e681d6d69 2040298 pcre3_8.43.orig.tar.gz
+ bbf4320e9479a2a49850372fa5ccadab52d5f54a 22006 pcre3_8.43-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.gz
+ 0eb353c489f1a2992e763b1544fac199848fe3af 2389 pcre3_8.43-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ f78ea3e0c719fe703f18c668944df9d928a3dea144cc8d19ed8b7868f0b7f8c0 2040298 pcre3_8.43.orig.tar.gz
+ bdaf1fd6626088f4d7e7115c2940fd494e8b842ec40b8ca2be2ac775b9f9afce 22006 pcre3_8.43-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.gz
+ accbd8beb1eeba4ff1f2c484730033d9a9431f638cb32125f7ef775bddece8f1 2389 pcre3_8.43-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Uploaders: Matthew Vernon <matthew@debian.org>, Ondřej Surý <ondrej@debian.org>
+Package-List: libpcre16-3 deb libs optional arch=any
+ libpcre3 deb libs important arch=any
+ libpcre3-dev deb libdevel optional arch=any
+ libpcre3-udeb udeb debian-installer important arch=any
+ libpcre32-3 deb libs optional arch=any
+ libpcrecpp0v5 deb libs optional arch=any
+ pcregrep deb utils optional arch=any
+
+Package: php-amqp
+Binary: php-amqp
+Version: 1.9.4-2+ubuntu18.04.1+deb.sury.org+20191129
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.33~), librabbitmq-dev (>= 0.7.0), php-all-dev
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-amqp
+Files:
+ d45a7137edd361998494a8894fe50888 102604 php-amqp_1.9.4.orig.tar.gz
+ a40b1df27f4483fa50dc04fb2918da12 4000 php-amqp_1.9.4-2+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 258b038bf52b894b06d37d2db9a66516 2270 php-amqp_1.9.4-2+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha1:
+ 01f9d85d5c7ca09d8976a9c65cb2cc6908336b09 102604 php-amqp_1.9.4.orig.tar.gz
+ 219d3c3b2b5b20c58ff050a61c27b31e23325bf4 4000 php-amqp_1.9.4-2+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 4af6221dc0c26410018c7ecbae33de1c9347cf16 2270 php-amqp_1.9.4-2+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha256:
+ b66b8b8264749cb7a69ae4d09665dad1559b6c4f01430206c8e4187bcd8c782d 102604 php-amqp_1.9.4.orig.tar.gz
+ 25f111be38564dd002f2028ca58c25489e349f05d5102588628aea4ce6927b74 4000 php-amqp_1.9.4-2+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 465a09a50090d46be16c3d7cfdf417c5115ea03d4589521cc27a22a1edf145e0 2270 php-amqp_1.9.4-2+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Homepage: http://pecl.php.net/package/amqp
+Uploaders: Ondřej Surý <ondrej@debian.org>, Prach Pongpanich <prach@debian.org>
+Package-List: php-amqp deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-amqp.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-amqp
+
+Package: php-apcu
+Binary: php-apcu
+Version: 5.1.18+4.0.11-1+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.33~), libpcre3-dev, php-all-dev
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-apcu
+Files:
+ bab5eb9087faf3b20a4d15afbce521c0 128212 php-apcu_5.1.18+4.0.11.orig.tar.xz
+ 5330ab8ec7a25a369ac33b5a1c157347 5568 php-apcu_5.1.18+4.0.11-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ e891d8ee87d6ef966539b4da36fe7989 2281 php-apcu_5.1.18+4.0.11-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ da45dc7e5ff4dcd34d9095b7b3c6e2b390df0235 128212 php-apcu_5.1.18+4.0.11.orig.tar.xz
+ fd8ab78404b8372f0a1506fac958b7942cf6f6e1 5568 php-apcu_5.1.18+4.0.11-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ bec7908e6eda91115096cb5ecfac65987d863954 2281 php-apcu_5.1.18+4.0.11-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ a5a2422f0088a30b2b5dc61229b39d9867270f09e7b101d831dcfca66b2cfdea 128212 php-apcu_5.1.18+4.0.11.orig.tar.xz
+ 8aabc4adf2c593aa47376eaf48ca70634615432c26f85fda59a2735beb07f31d 5568 php-apcu_5.1.18+4.0.11-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ e3ce214fac698aebe300402b2095309f4062e0e361b561a8248205d6fa2d763b 2281 php-apcu_5.1.18+4.0.11-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: https://pecl.php.net/package/APCu
+Uploaders: Lior Kaplan <kaplan@debian.org>, Ondřej Surý <ondrej@debian.org>
+Package-List: php-apcu deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-apcu.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-apcu
+
+Package: php-apcu-bc
+Binary: php-apcu-bc
+Version: 1.0.5-1+ubuntu18.04.1+deb.sury.org+20191129
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.34~), php-all-dev, php-apcu
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-apcu-bc
+Files:
+ 8aa7b1c8aa613c6bc720fe785b21037b 7415 php-apcu-bc_1.0.5.orig.tar.gz
+ 58578b21016bc07dd5d0c440a9467f78 3712 php-apcu-bc_1.0.5-1+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 3a6f67da81b74d64e913691ed6c6055f 2278 php-apcu-bc_1.0.5-1+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha1:
+ f486de1122d860c5a4004d69eef4968f6d2a3bd3 7415 php-apcu-bc_1.0.5.orig.tar.gz
+ 769d8e0e8e2d00ba9a8275561af71ad3db811fd5 3712 php-apcu-bc_1.0.5-1+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ edc534714b98c8f67846c148e7d4aa8411636e9d 2278 php-apcu-bc_1.0.5-1+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha256:
+ 40d8e44dbbb6fc3fc019824683d215717413633e5f0a70d34cfa8a09bd064055 7415 php-apcu-bc_1.0.5.orig.tar.gz
+ 5e6b8b5efb8af42ef69794d9260b8fdbccbde711a68a0f1e6079dbf44fc0d500 3712 php-apcu-bc_1.0.5-1+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 7373ea180daaa87297dbf1c558397443d1147a52c0762d80c708361f398046e6 2278 php-apcu-bc_1.0.5-1+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Homepage: http://pecl.php.net/package/apcu_bc
+Uploaders: Lior Kaplan <kaplan@debian.org>, Ondřej Surý <ondrej@debian.org>
+Package-List: php-apcu-bc deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-apcu-bc.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-apcu-bc
+
+Package: php-ast
+Binary: php-ast
+Version: 1.0.6-1+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.33~), php-all-dev
+Architecture: any
+Standards-Version: 3.9.6
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-ast
+Files:
+ de58a3920744d0b5ae7baadb6709701f 41041 php-ast_1.0.6.orig.tar.gz
+ 20b25535ff5e4d94fb53d676cf2d040a 2932 php-ast_1.0.6-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 12a684bd3919dfc5ec5a3a662f71bace 2162 php-ast_1.0.6-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ f50cfe5cd10f54a61c617c2c6b8bbdf5862a48bf 41041 php-ast_1.0.6.orig.tar.gz
+ fc7a9c350705ffb762353f39e04cc7110484a5b1 2932 php-ast_1.0.6-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 5ac6faaa063b44971ba709b15b1226d3ff881db4 2162 php-ast_1.0.6-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ 70347b04d5ab6223106bb098483a74ac0aa23e3e7fd41549ae95d56ccb15631e 41041 php-ast_1.0.6.orig.tar.gz
+ 6459fa66e93fd814e33e07f0ec9794aeb05b815301fc9ceed68edb21186609f0 2932 php-ast_1.0.6-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 51bccda84ba8691b0ef3b4dee5f9ac0fc63ec1ed3c297731b9326842fc47c8cd 2162 php-ast_1.0.6-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: http://pecl.php.net/package/Ast
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Package-List: php-ast deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-ast.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-ast
+
+Package: php-cassandra
+Binary: php-cassandra
+Version: 1.3.0-2+ubuntu18.04.1+deb.sury.org+10
+Section: php
+Maintainer: Debian PHP PECL Maintainers <pkg-php-pecl@lists.alioth.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.25~), libgmp-dev, libuv1-dev, php-all-dev
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-cassandra
+Files:
+ fb1e24048e47e48947debbe7ba2f2d6f 162241 php-cassandra_1.3.0.orig.tar.gz
+ b5f7ee2c357a5fd90cbbacd1f7c3b778 2928 php-cassandra_1.3.0-2+ubuntu18.04.1+deb.sury.org+10.debian.tar.xz
+ 29909ab36319afb31feb159fc0e55ef1 2269 php-cassandra_1.3.0-2+ubuntu18.04.1+deb.sury.org+10.dsc
+Checksums-Sha1:
+ 03f8ca3bcfa7bae46a8c7d1b2bd4fb09d2c98499 162241 php-cassandra_1.3.0.orig.tar.gz
+ 5bc90900e4078aad941c216cb54ed801b161d3c3 2928 php-cassandra_1.3.0-2+ubuntu18.04.1+deb.sury.org+10.debian.tar.xz
+ ba12595c07f50a4b1fb7e26ed65cc11cc43352a9 2269 php-cassandra_1.3.0-2+ubuntu18.04.1+deb.sury.org+10.dsc
+Checksums-Sha256:
+ d87cab8a1d28b5e5028f23849974ef845c3e4b971fd7c64518447a7f2d38fb6d 162241 php-cassandra_1.3.0.orig.tar.gz
+ 1aa88c337ea5855b900eb399484f6279bc884a5aa9bb23af327ead114f522203 2928 php-cassandra_1.3.0-2+ubuntu18.04.1+deb.sury.org+10.debian.tar.xz
+ 71716f1128b6b7e5a5808a330a30ba968f55fb75e3b23e9d770713a3dfcae28b 2269 php-cassandra_1.3.0-2+ubuntu18.04.1+deb.sury.org+10.dsc
+Homepage: http://pecl.php.net/package/cassandra
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Package-List: php-cassandra deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-cassandra.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-cassandra
+
+Package: php-defaults
+Binary: libapache2-mod-php, libphp-embed, php, php-all-dev, php-bcmath, php-bz2, php-cgi, php-cli, php-common, php-curl, php-dev, php-enchant, php-fpm, php-gd, php-gmp, php-imap, php-interbase, php-intl, php-json, php-ldap, php-mbstring, php-mysql, php-odbc, php-pgsql, php-phpdbg, php-pspell, php-readline, php-snmp, php-soap, php-sqlite3, php-sybase, php-tidy, php-xml, php-xmlrpc, php-zip
+Version: 75+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Build-Depends: debhelper (>= 9.20150101)
+Architecture: any all
+Standards-Version: 4.5
+Format: 3.0 (native)
+Directory: pool/main/p/php-defaults
+Files:
+ 20feafe19e8db8be4c91d0efd9f62494 15660 php-defaults_75+ubuntu18.04.1+deb.sury.org+1.tar.xz
+ 1ec31848ce92e75847b0dc46cd6624dd 3507 php-defaults_75+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 9434b26209a632d07872f47e6437172ab3a631b5 15660 php-defaults_75+ubuntu18.04.1+deb.sury.org+1.tar.xz
+ 61254408af9d1063383d55f5675185616c26dfc9 3507 php-defaults_75+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ 2cab80ea146e88eef037feea92638a3113ac97d33c79172ae3455b316fa22d76 15660 php-defaults_75+ubuntu18.04.1+deb.sury.org+1.tar.xz
+ 7af2571b107d9818d2452d789ec03b244605732f5315a0afb6bf2cae4f897dfe 3507 php-defaults_75+ubuntu18.04.1+deb.sury.org+1.dsc
+Uploaders: Ondřej Surý <ondrej@debian.org>, Lior Kaplan <kaplan@debian.org>
+Package-List: libapache2-mod-php deb php optional arch=all
+ libphp-embed deb php optional arch=all
+ php deb php optional arch=all
+ php-all-dev deb php optional arch=any
+ php-bcmath deb php optional arch=all
+ php-bz2 deb php optional arch=all
+ php-cgi deb php optional arch=all
+ php-cli deb php optional arch=all
+ php-common deb php optional arch=all
+ php-curl deb php optional arch=all
+ php-dev deb php optional arch=all
+ php-enchant deb php optional arch=all
+ php-fpm deb php optional arch=all
+ php-gd deb php optional arch=all
+ php-gmp deb php optional arch=all
+ php-imap deb php optional arch=all
+ php-interbase deb php optional arch=all
+ php-intl deb php optional arch=all
+ php-json deb php optional arch=all
+ php-ldap deb php optional arch=all
+ php-mbstring deb php optional arch=all
+ php-mysql deb php optional arch=all
+ php-odbc deb php optional arch=all
+ php-pgsql deb php optional arch=all
+ php-phpdbg deb php optional arch=all
+ php-pspell deb php optional arch=all
+ php-readline deb php optional arch=all
+ php-snmp deb php optional arch=all
+ php-soap deb php optional arch=all
+ php-sqlite3 deb php optional arch=all
+ php-sybase deb php optional arch=all
+ php-tidy deb php optional arch=all
+ php-xml deb php optional arch=all
+ php-xmlrpc deb php optional arch=all
+ php-zip deb php optional arch=all
+Vcs-Git: https://salsa.debian.org/php-team/php-defaults.git
+Vcs-Browser: https://salsa.debian.org/php-team/php-defaults
+
+Package: php-ds
+Binary: php-ds
+Version: 1.2.9-1+ubuntu18.04.1+deb.sury.org+20191129
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.33~), php-all-dev
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-ds
+Files:
+ 7e8bb1525c450e8e126a368e7ada4ab7 50709 php-ds_1.2.9.orig.tar.gz
+ bf33be33a2388188edbfa5b084d846c0 2276 php-ds_1.2.9-1+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 607b55e2bbd4f5de4c701f77310d33de 2178 php-ds_1.2.9-1+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha1:
+ 8edc0a1773021b0de337387ecfaa5a9a41320c72 50709 php-ds_1.2.9.orig.tar.gz
+ c3f51ef2558cfb78338bd44bbf3509cb79ac5e68 2276 php-ds_1.2.9-1+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 1ec8ede92fc645a3f65efac47eb85b51956397d2 2178 php-ds_1.2.9-1+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha256:
+ 7d758d5934e8d46f4f9ca47cb1a399590fa497dbfef828a4d282bdf637a62a70 50709 php-ds_1.2.9.orig.tar.gz
+ d83a9e77578439d72d3f882bd13aa9c316d626c4efaa35c65c5af7f199f2a832 2276 php-ds_1.2.9-1+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ edf7ccb9dc4e9fc3537808f8960765b96823c03e63d9695cae437c8d4a90de47 2178 php-ds_1.2.9-1+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Homepage: http://pecl.php.net/package/ds
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Package-List: php-ds deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-ds.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-ds
+
+Package: php-gearman
+Binary: php-gearman
+Version: 2.0.6+1.1.2-7+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.33~), libgearman-dev (>= 1.0.0), php-all-dev
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-gearman
+Files:
+ efc77fb7fad54186ef92d7b44e7f7817 44760 php-gearman_2.0.6+1.1.2.orig.tar.xz
+ 03e35df0e1484461e1ea090d4b51bce3 4128 php-gearman_2.0.6+1.1.2-7+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ ad3430b1e6860198d4916a52e29040f7 2280 php-gearman_2.0.6+1.1.2-7+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ d1cd5d2816686907763a99165efa33eaee640533 44760 php-gearman_2.0.6+1.1.2.orig.tar.xz
+ e7a6dbd61e18884772252d1d6be7186eb39cda0e 4128 php-gearman_2.0.6+1.1.2-7+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 6485a947535e745c68769cb4076d38cf6b8c8452 2280 php-gearman_2.0.6+1.1.2-7+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ 591aab1b77412fdac95eff502e6ffce0096f75b2b4f74f609da1a2dbdc5adda0 44760 php-gearman_2.0.6+1.1.2.orig.tar.xz
+ 73aa2b9fd89785f4cc89c78a736edb7ae1535acf8cde5ed41263df3d19871d10 4128 php-gearman_2.0.6+1.1.2-7+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ bb78130477b33cdbdee036fff22d96720336228e5bf850c9ece468774fb117ba 2280 php-gearman_2.0.6+1.1.2-7+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: https://pecl.php.net/package/gearman
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Package-List: php-gearman deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-gearman.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-gearman
+
+Package: php-geoip
+Binary: php-geoip
+Version: 1.1.1-4+ubuntu18.04.1+deb.sury.org+20191129
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.33~), libgeoip-dev (>= 1.4.0), php-all-dev
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-geoip
+Files:
+ 4f5f4b8a41a5802de6591c79b85cc838 13004 php-geoip_1.1.1.orig.tar.gz
+ db10fe31cdf02d9f678b8dcbb1d5b70c 4316 php-geoip_1.1.1-4+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 34eaca7af0d295519fededc0397c36a7 2240 php-geoip_1.1.1-4+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha1:
+ 704932e9e42eede8f60ffcb33cdc7bf2413c7509 13004 php-geoip_1.1.1.orig.tar.gz
+ 41ed9bd520d26f39ab0bdd63b8af83069da86033 4316 php-geoip_1.1.1-4+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 88db41c77e8c5129f30cd33ce9aa76afe0b61d74 2240 php-geoip_1.1.1-4+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha256:
+ b2d05c03019d46135c249b5a7fa0dbd43ca5ee98aea8ed807bc7aa90ac8c0f06 13004 php-geoip_1.1.1.orig.tar.gz
+ 51ac568b6ff2d2346ff8b924f99c3d93700a1a8aca5300962e3b1786c9b121e2 4316 php-geoip_1.1.1-4+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 1ada9343e8dbae011bf83b4a9799df8b43378c059389a3f4c0eac4f8630de54e 2240 php-geoip_1.1.1-4+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Homepage: http://pecl.php.net/package/geoip/
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Package-List: php-geoip deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-geoip.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-geoip
+
+Package: php-gmagick
+Binary: php-gmagick
+Version: 2.0.5~rc1+1.1.7~rc3-4+ubuntu18.04.1+deb.sury.org+20191129
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.33~), libgraphicsmagick1-dev (>= 1.3.20~), php-all-dev
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-gmagick
+Files:
+ 220dcfbd71cd24589824e620461b429d 109128 php-gmagick_2.0.5~rc1+1.1.7~rc3.orig.tar.xz
+ c5ca1bd5f1617902e331a00068e73342 4352 php-gmagick_2.0.5~rc1+1.1.7~rc3-4+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ a5f6c719c6c4a8d1ea215589a8380df1 2376 php-gmagick_2.0.5~rc1+1.1.7~rc3-4+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha1:
+ 4e1cce5c973412e6dbb6451c64fad35d8f7d9f95 109128 php-gmagick_2.0.5~rc1+1.1.7~rc3.orig.tar.xz
+ 556dd8171361055baa522607efe2f602ee355bcb 4352 php-gmagick_2.0.5~rc1+1.1.7~rc3-4+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 52edd9eba06113f65830e15497d65b0706039bfe 2376 php-gmagick_2.0.5~rc1+1.1.7~rc3-4+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha256:
+ 40dacb4e8b045fdd7fb8dce6445491daaefc1812ee20433c5a9418a51491e3dc 109128 php-gmagick_2.0.5~rc1+1.1.7~rc3.orig.tar.xz
+ 9cab00c03d26762afc3c0b618fad35dc5aaaa117165bf91b64f38c37220e26b8 4352 php-gmagick_2.0.5~rc1+1.1.7~rc3-4+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 61860a9c0d7d4a1e4f687b418f75632b844cf7a65521cb7555e61f299a150c45 2376 php-gmagick_2.0.5~rc1+1.1.7~rc3-4+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Homepage: http://pecl.php.net/package/gmagick
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Package-List: php-gmagick deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-gmagick.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-gmagick
+
+Package: php-gnupg
+Binary: php-gnupg
+Version: 1.4.0-3+ubuntu18.04.1+deb.sury.org+20191129
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9~), dh-php (>= 0.33~), php-all-dev (>= 17~), libgpgme-dev | libgpgme11-dev, gnupg
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-gnupg
+Files:
+ 2354cb56168d8ea0f643e548e139d013 28349 php-gnupg_1.4.0.orig.tar.gz
+ ee17ba57b2d727f2a8f93462a7033309 2500 php-gnupg_1.4.0-3+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 50dfa68d1926a62b04aea37dbd8f9861 2263 php-gnupg_1.4.0-3+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha1:
+ 9cde50cc86fe3628b7313ee8064ee56e41ef43a2 28349 php-gnupg_1.4.0.orig.tar.gz
+ 9f4b39655f27eefa7a831e6cd13f44eb848c2fcf 2500 php-gnupg_1.4.0-3+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 684d092548e6973d8025e1c3f1edf150ac2ba4ad 2263 php-gnupg_1.4.0-3+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha256:
+ 35e16bee11345a7d6bf57bea3cadf45e371ad1ed4e0218b0c06f6f637e4e1772 28349 php-gnupg_1.4.0.orig.tar.gz
+ c3e5adc49eaa630063a5f8ecec3bf3a0cab4af7be29568b3de236acd9b48f9b2 2500 php-gnupg_1.4.0-3+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 615c99f9f719a7519fa2f83e5682b1e99ab961a4738eb825725b6ffe6b350775 2263 php-gnupg_1.4.0-3+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Homepage: https://pecl.php.net/package/gnupg
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Package-List: php-gnupg deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-gnupg.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-gnupg
+
+Package: php-igbinary
+Binary: php-igbinary
+Version: 3.1.2+2.0.8-1+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.33~), php-all-dev, php-apcu
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-igbinary
+Files:
+ ab4e2daecbc256f632a80663269b509b 72244 php-igbinary_3.1.2+2.0.8.orig.tar.xz
+ 7c7dc1a70b8d6cdf2eb4f8fd58f08060 4388 php-igbinary_3.1.2+2.0.8-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 0d93f12d61dd62eeaf5a8bf30d6ba6a9 2276 php-igbinary_3.1.2+2.0.8-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 892596f37da3b289f30b5e42b9d8774dc95cfea7 72244 php-igbinary_3.1.2+2.0.8.orig.tar.xz
+ 4829b149e3968a35aa5febb0e3b8c7a149c362ef 4388 php-igbinary_3.1.2+2.0.8-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ b5db5b074c292f35225b3f16bf4505cb5f5bc8a2 2276 php-igbinary_3.1.2+2.0.8-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ ec129e99dcc8d14622ee284f436c2d8807677157476073611e2c522b6e4a7192 72244 php-igbinary_3.1.2+2.0.8.orig.tar.xz
+ b6f3b6a463ef69f73ea9538c06dda2748314ac8da09cde140da9e8ba0cd504b2 4388 php-igbinary_3.1.2+2.0.8-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ a885da0fd0d122f78939d32bab6e8728edb98cdd37249d92a7c4d7b52d6593a2 2276 php-igbinary_3.1.2+2.0.8-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: http://pecl.php.net/package/igbinary
+Uploaders: Mathieu Parent <sathieu@debian.org>
+Package-List: php-igbinary deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-igbinary.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-igbinary
+
+Package: php-imagick
+Binary: php-imagick
+Version: 3.4.4-4+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.33~), libmagickwand-6.q16-dev | libmagickwand-dev, php-all-dev
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-imagick
+Files:
+ 6d3a7048ab73b0fab931f28c484dbf76 253434 php-imagick_3.4.4.orig.tar.gz
+ f0e9fabe2313c8be8fdd5ac57b89cd57 13188 php-imagick_3.4.4-4+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 7c2caeb01a522c1d20b9fefc288e71b4 2385 php-imagick_3.4.4-4+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ f860b4b82563614883e4a8e8d0dbf3417057c7e1 253434 php-imagick_3.4.4.orig.tar.gz
+ 80ffba43d4058f0309af5e12cc9a7b436791cb73 13188 php-imagick_3.4.4-4+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 97b1315e9bc962006981ba8c661ae77ab9ead286 2385 php-imagick_3.4.4-4+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ 8dd5aa16465c218651fc8993e1faecd982e6a597870fd4b937e9ece02d567077 253434 php-imagick_3.4.4.orig.tar.gz
+ 0baeaf7401f596d6c72dbdc97444ca042f2156ba59d5fed77aa4e905175f9552 13188 php-imagick_3.4.4-4+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 97aa44ded4b3bfc79e8319f82812c0933c447d2fea195c9ffd4bb3436c682f45 2385 php-imagick_3.4.4-4+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: http://pecl.php.net/package/imagick
+Uploaders: Guillaume Delacour <gui@iroqwa.org>, Lior Kaplan <kaplan@debian.org>,
+Testsuite: autopkgtest
+Testsuite-Triggers: gsfonts, imagemagick-6.q16, php-cli, phpunit
+Package-List: php-imagick deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-imagick.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-imagick
+
+Package: php-lua
+Binary: php-lua
+Version: 2.0.7+1.1.0-1+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9~), dh-php (>= 0.33~), liblua5.2-dev, php-all-dev (>= 17~)
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-lua
+Files:
+ c11b638a9d7cc0eaa3936c35ac2ca3ca 17208 php-lua_2.0.7+1.1.0.orig.tar.xz
+ 9ca907208742cae5fbb2165d81897afb 4532 php-lua_2.0.7+1.1.0-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 2c3659b4d8662ddfe675ffd156d58767 2230 php-lua_2.0.7+1.1.0-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 5c7fa11fd6a05d9227eb82b202b11ac4aa7eb31b 17208 php-lua_2.0.7+1.1.0.orig.tar.xz
+ 91f1a5ec61dc5a27b64f1a812b5a29706ffa2a47 4532 php-lua_2.0.7+1.1.0-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 5bcd75672b0fe89922a7c9c3147a2db5a82dade0 2230 php-lua_2.0.7+1.1.0-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ 895561fc2d1e49d401f40f297050e3a66227657c1fc79407de69ee5edc8ffa35 17208 php-lua_2.0.7+1.1.0.orig.tar.xz
+ 8cdd460903adb1877a5483771749c255e3d7c86b62d3aec5f160fc7114820e86 4532 php-lua_2.0.7+1.1.0-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 7675edb603943b047aa70977ae4c2471a1ff5c61e3949218c2453b9fcb7d6eae 2230 php-lua_2.0.7+1.1.0-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: https://pecl.php.net/package/lua
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Package-List: php-lua deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-lua.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-lua
+
+Package: php-mailparse
+Binary: php-mailparse
+Version: 3.0.3+2.1.7~dev20160128-2+ubuntu18.04.1+deb.sury.org+20191129
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.12~), libpcre3-dev, php-all-dev, php-mbstring
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-mailparse
+Files:
+ 0b63bf6e54766c34eaf1e9b5e1bdd52a 940024 php-mailparse_3.0.3+2.1.7~dev20160128.orig.tar.xz
+ c7e272656ca94267ac80bb45f6a23d80 3752 php-mailparse_3.0.3+2.1.7~dev20160128-2+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 93d775dc9c26aaa397a87b6c8d6c885a 2419 php-mailparse_3.0.3+2.1.7~dev20160128-2+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha1:
+ f415347071ebb67b84f1664cdc97731d58caa58d 940024 php-mailparse_3.0.3+2.1.7~dev20160128.orig.tar.xz
+ faee2130e0a5ca963c11f0da0658bfdf8e560ed4 3752 php-mailparse_3.0.3+2.1.7~dev20160128-2+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 75db842ed84360a35d2b5621607070824f59c155 2419 php-mailparse_3.0.3+2.1.7~dev20160128-2+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha256:
+ b1ebd85352dba900ec30cb815f765da49e4b01a5f79769ee3d562337eea2d5b2 940024 php-mailparse_3.0.3+2.1.7~dev20160128.orig.tar.xz
+ 5128d1bf9de759e1e9c56b3e933189dae15fb85974b88edf9a84455b4999ce21 3752 php-mailparse_3.0.3+2.1.7~dev20160128-2+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 3b385e2358352084e91d3523c898cb785709744449b467a49da7c5a64c7980dd 2419 php-mailparse_3.0.3+2.1.7~dev20160128-2+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Homepage: http://pecl.php.net/package/mailparse
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Package-List: php-mailparse deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-mailparse.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-mailparse
+
+Package: php-memcache
+Binary: php-memcache
+Version: 4.0.5.2+3.0.9~20170802.e702b5f9-1+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.33~), php-all-dev, zlib1g-dev
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-memcache
+Files:
+ 3828e15b604d3f19338ffa246ad2ad74 72892 php-memcache_4.0.5.2+3.0.9~20170802.e702b5f9.orig.tar.xz
+ 1684244022b48529ea8190418d40c400 6416 php-memcache_4.0.5.2+3.0.9~20170802.e702b5f9-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 830d0d2a90934b764ced18c6c9b4b242 2426 php-memcache_4.0.5.2+3.0.9~20170802.e702b5f9-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 4faea65ed4e390ad60b18dfd1cf1a7b954729edd 72892 php-memcache_4.0.5.2+3.0.9~20170802.e702b5f9.orig.tar.xz
+ 6197a2245d1b84df4348035d2eee6700718e2e62 6416 php-memcache_4.0.5.2+3.0.9~20170802.e702b5f9-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 393b2f139c2bf22fd04d8021a782b29a5cc9334f 2426 php-memcache_4.0.5.2+3.0.9~20170802.e702b5f9-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ 8869962e151a0b8bc2f6f5199f9a337f8ff5ea25e3ff24a59eb5c6f6d66b5ea6 72892 php-memcache_4.0.5.2+3.0.9~20170802.e702b5f9.orig.tar.xz
+ 316b7b029446e59ce9fa160563dae63a427ff6cd059e33ef980a6f0186a90c0b 6416 php-memcache_4.0.5.2+3.0.9~20170802.e702b5f9-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ f99741c3d255ba2f4075db16c163c167414864aec9e4ec4a2d6e39a835d82fb4 2426 php-memcache_4.0.5.2+3.0.9~20170802.e702b5f9-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: https://github.com/websupport-sk/pecl-memcache
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Package-List: php-memcache deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-memcache.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-memcache
+
+Package: php-memcached
+Binary: php-memcached
+Version: 3.1.4+2.2.0-1+ubuntu18.04.1+deb.sury.org+20191129
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.33~), libmemcached-dev (>= 1.0.18), php-all-dev (>= 28~), php-igbinary, php-json, php-msgpack, pkg-config, zlib1g-dev
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-memcached
+Files:
+ b72a6c31d70a80c42e8b2ff5fbee61f4 87604 php-memcached_3.1.4+2.2.0.orig.tar.xz
+ 9b064489f999cd3d60a669712fd96670 5976 php-memcached_3.1.4+2.2.0-1+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 0afd635fbaa393fcbb4e4ac5b96dbb42 2404 php-memcached_3.1.4+2.2.0-1+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha1:
+ 93b97f3721c0cdc6bf52a9f98df2f1c685116140 87604 php-memcached_3.1.4+2.2.0.orig.tar.xz
+ 9eb793e2f40d28654a034b2a16b22dd90597cd8c 5976 php-memcached_3.1.4+2.2.0-1+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ abb4df3bbbe2414816cefaa642994df4263b9ba5 2404 php-memcached_3.1.4+2.2.0-1+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha256:
+ f90a599150249492dd90c43c53fc9241bf71161d5fcc89c45cadc31d6ca702bc 87604 php-memcached_3.1.4+2.2.0.orig.tar.xz
+ 1557cdbc643611f76fabfea746afd2bccddddb5ed43a119f5f07cd17a9e5b4c8 5976 php-memcached_3.1.4+2.2.0-1+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ f781fb621b845e63361dcde4b3e5bc2a5473155df6c23a34d9ad67a530dcf8f9 2404 php-memcached_3.1.4+2.2.0-1+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Homepage: http://pecl.php.net/package/memcached
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Package-List: php-memcached deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-memcached.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-memcached
+
+Package: php-mongo
+Binary: php-mongo
+Version: 1.6.16-2+ubuntu18.04.1+deb.sury.org+20191129
+Section: php
+Maintainer: Laszlo Boszormenyi (GCS) <gcs@debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.22~), php-all-dev
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-mongo
+Files:
+ cde37cae4fafbb66903ce81d44f7f492 210341 php-mongo_1.6.16.orig.tar.gz
+ 584bfebd142b0a0c218071d13df034eb 2676 php-mongo_1.6.16-2+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 8cff7db4d7eb2565d697c7fa6cd67758 2225 php-mongo_1.6.16-2+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha1:
+ 18d5ac9f75bbd14a2225390975b50aa366e2226c 210341 php-mongo_1.6.16.orig.tar.gz
+ f7b44e844edc036ab2873f74fa83ca1c8ce806ed 2676 php-mongo_1.6.16-2+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ b383264474aca2ec1470d8ba81c20bae844a2a1f 2225 php-mongo_1.6.16-2+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha256:
+ c061ebbeb6618568a71d7a6a9d7a31a34fe107f09c8c01a43c934fbed0665457 210341 php-mongo_1.6.16.orig.tar.gz
+ 2269ba2d2b925cba50c848f58fbffa45f8d49bebfc78fe4ae7744003c56763ac 2676 php-mongo_1.6.16-2+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 5fcf159c9d940538a99634be88cae34419695b3ab3bd7594a7a4c9a88225d6b8 2225 php-mongo_1.6.16-2+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Homepage: http://www.mongodb.org/display/DOCS/PHP+Language+Center
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Package-List: php-mongo deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-mongo.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-mongo
+
+Package: php-mongodb
+Binary: php-mongodb
+Version: 1.7.4-1+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9~), dh-php (>= 0.33~), libpcre3-dev, libsasl2-dev, php-all-dev, pkg-config
+Build-Conflicts: libbson-dev, libmongoc-dev, libmongoc-priv-dev
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-mongodb
+Files:
+ e48806cdcf1a04e08ec0cd3f2bf05ae0 1223416 php-mongodb_1.7.4.orig.tar.gz
+ c968bad984a71b45b19978856f4a6070 6380 php-mongodb_1.7.4-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ de33ff6e95b705aaaef5d96b6500d316 2322 php-mongodb_1.7.4-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 01bed438a157b7e9dd6a6e96ee21e8c4568ca9ca 1223416 php-mongodb_1.7.4.orig.tar.gz
+ 6f4db0eab87460033b5baf5df66efc7b92f84314 6380 php-mongodb_1.7.4-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 7922336f4a41cd882b37a28aa625c0d86cb131cf 2322 php-mongodb_1.7.4-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ 1cec8be860d7d6cff05b075a0e0fc47b1d9f580ef6a0cd46948e455a88a6859a 1223416 php-mongodb_1.7.4.orig.tar.gz
+ f1c78dfc6ea090671e7873dcf39eb7ab8539168b622b4904f3cb83d8a035c4c0 6380 php-mongodb_1.7.4-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ d1c3e223dfb9f0246eb0f2fd45b092e2bc4468ca9e3130df1cfcf5ec91823d35 2322 php-mongodb_1.7.4-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: https://pecl.php.net/package/mongodb
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Package-List: php-mongodb deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-mongodb.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-mongodb
+
+Package: php-msgpack
+Binary: php-msgpack
+Version: 2.1.0+0.5.7-1+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.33~), php-all-dev
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-msgpack
+Files:
+ 9428fc02b185e26edba5bb373ded0584 74932 php-msgpack_2.1.0+0.5.7.orig.tar.xz
+ 81c4299bc77406eb7897da4f89b1da69 3304 php-msgpack_2.1.0+0.5.7-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ aef462a407f5c08e20134411a30eed6d 2254 php-msgpack_2.1.0+0.5.7-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ c161cf6c689c0fcf2e87aed17c5f4517d0a2d166 74932 php-msgpack_2.1.0+0.5.7.orig.tar.xz
+ 77532ed5a4208dc93351a34df49324899e473f90 3304 php-msgpack_2.1.0+0.5.7-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 97a875333c1e48eff323320d0b41cf0d32bd8d84 2254 php-msgpack_2.1.0+0.5.7-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ 0499e85e2af98f0fffa9ba1dc9b31f8f5a439d77fe73fe58862b79f2d2a783e3 74932 php-msgpack_2.1.0+0.5.7.orig.tar.xz
+ c031db81d34e56355cd9d7d4ff01d37cbe7e2590a6b60188c803b8eb50a00dc7 3304 php-msgpack_2.1.0+0.5.7-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ a4eefc92198af16af9a376fcc30ab17cd15e29a0ffb52c543e99e66fc4fcb033 2254 php-msgpack_2.1.0+0.5.7-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: http://pecl.php.net/package/msgpack
+Uploaders: Mathieu Parent <sathieu@debian.org>
+Package-List: php-msgpack deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-msgpack.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-msgpack
+
+Package: php-mysqlnd-ms
+Binary: php-mysqlnd-ms
+Version: 1.6.0+svn333622-3+ubuntu18.04.1+deb.sury.org+20191129
+Section: php
+Maintainer: Debian PHP PECL Maintainers <pkg-php-pecl@lists.alioth.debian.org>
+Build-Depends: debhelper (>= 5), dh-php, libxml2-dev, php-all-dev
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-mysqlnd-ms
+Files:
+ c8e494f7f71a4991498614f3c58efd94 272216 php-mysqlnd-ms_1.6.0+svn333622.orig.tar.xz
+ 079f145f28007385ad78d2adfa6c94f3 3400 php-mysqlnd-ms_1.6.0+svn333622-3+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ e998ddb310627815d59bb77b67ba9d2c 2353 php-mysqlnd-ms_1.6.0+svn333622-3+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha1:
+ 6e1998495f98af946f70a1952aec4e358ea13285 272216 php-mysqlnd-ms_1.6.0+svn333622.orig.tar.xz
+ 90e906c60343792c86f7760c446ed43fc066108e 3400 php-mysqlnd-ms_1.6.0+svn333622-3+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ cc681104f011057b06c624d62c63e42f4e94210e 2353 php-mysqlnd-ms_1.6.0+svn333622-3+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha256:
+ 88efbbcad213eb8eb71c6c71396c7e0d543f7be18d48c39f582154a8d788ec8f 272216 php-mysqlnd-ms_1.6.0+svn333622.orig.tar.xz
+ 5fe0ac233f066c95ddd3f0755863b9ed62c3aedc012e507afbbc792b8428e906 3400 php-mysqlnd-ms_1.6.0+svn333622-3+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 671af2a876148214f04fbd4338d8332a0bd2a6d736b2a8b00eee73174db9a207 2353 php-mysqlnd-ms_1.6.0+svn333622-3+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Homepage: http://pecl.php.net/package/mysqlnd_ms
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Package-List: php-mysqlnd-ms deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-mysqlnd-ms.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-mysqlnd-ms
+
+Package: php-oauth
+Binary: php-oauth
+Version: 2.0.5+1.2.3-1+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9~), dh-php (>= 0.33~), libpcre3-dev, php-all-dev
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-oauth
+Files:
+ 6bbdd4fecf2f0d4262ee1dcee9d95c40 51832 php-oauth_2.0.5+1.2.3.orig.tar.xz
+ 7cb46cf086e21dc131dea38623c3e332 2884 php-oauth_2.0.5+1.2.3-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 7bf30125d80d01e64d8cf9bf0db60931 2279 php-oauth_2.0.5+1.2.3-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ a5f8351dd18c198453d692c994adcd632604fd4b 51832 php-oauth_2.0.5+1.2.3.orig.tar.xz
+ a1d0b42d6671c274d4b7dc7dfee7f7230a547d9e 2884 php-oauth_2.0.5+1.2.3-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 011dc3e3f0cd8070ce781c39639272cda2a0a8fb 2279 php-oauth_2.0.5+1.2.3-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ df59c654e43599cc3b5166d8d7c61ea5f15f0bf45a34f77525a8af4906964bb9 51832 php-oauth_2.0.5+1.2.3.orig.tar.xz
+ 26cce50227c5620605541bec8ad2b0b9fbd2c23a46f27ed8130a57debe4c658c 2884 php-oauth_2.0.5+1.2.3-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ d710a4afaed83966d110bbea2ba043d92cd583989a54252e868f41ad8928a9b7 2279 php-oauth_2.0.5+1.2.3-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: http://pecl.php.net/package/oauth
+Uploaders: Prach Pongpanich <prachpub@gmail.com>, Ondřej Surý <ondrej@debian.org>
+Package-List: php-oauth deb php extra arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-oauth.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-oauth
+
+Package: php-pcov
+Binary: php-pcov
+Version: 1.0.6-1+ubuntu18.04.1+deb.sury.org+20191129
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9.20150101), dh-php (>= 0.34~), php-all-dev
+Architecture: any
+Standards-Version: 4.4.0.1
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-pcov
+Files:
+ 56a531b6d0f4a126eddc4e1681f62fcc 24298 php-pcov_1.0.6.orig.tar.gz
+ 9766381c5d667f7b750cbdddaf582516 3176 php-pcov_1.0.6-1+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 283a7738bd5cfb0991e6dbf2c2f310ce 2246 php-pcov_1.0.6-1+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha1:
+ 721cfb537683da58faa10d6e129f76e0c06f7482 24298 php-pcov_1.0.6.orig.tar.gz
+ 590c9e0238a7f1e901796cb601a2b58e154a9349 3176 php-pcov_1.0.6-1+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 3a483cf40b2d6bc54878eae9380ef60b3c1c267b 2246 php-pcov_1.0.6-1+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha256:
+ 61039955ad242d7a295251bca2f05c8e4c603abbc9e0f82bfa45009699e64edf 24298 php-pcov_1.0.6.orig.tar.gz
+ 930b669e3ad18086fa0dfe69138ca19aef53566fe8b97f73e2cc4526151038c3 3176 php-pcov_1.0.6-1+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ d9c772580d6f74e56bd8ce81c7aa65fd3fd845f4e4772504e372fb9be2dd4363 2246 php-pcov_1.0.6-1+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Homepage: http://pecl.php.net/package/pcov
+Uploaders: Lior Kaplan <kaplan@debian.org>, Ondřej Surý <ondrej@debian.org>
+Package-List: php-pcov deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-pcov.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-pcov
+
+Package: php-pear
+Binary: php-pear
+Version: 1:1.10.8+submodules+notgz-1+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Build-Depends: debhelper (>= 9), php-cli, php-xml
+Architecture: all
+Standards-Version: 4.3.0.2
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-pear
+Files:
+ 3289bd6cdae262bd33e758aade1811ef 2213001 php-pear_1.10.8+submodules+notgz.orig.tar.gz
+ 0f1ba4d9d24e52a6f81cf6f90035e18d 5820 php-pear_1.10.8+submodules+notgz-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ f1a77f5383b7c6e305dcdce23d2f8470 2328 php-pear_1.10.8+submodules+notgz-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 4f10aface9096353c9646baf9d02935b6c35501f 2213001 php-pear_1.10.8+submodules+notgz.orig.tar.gz
+ 2ca06832fa69323466b55230a6fd286b5b460cdd 5820 php-pear_1.10.8+submodules+notgz-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 61e75ea9babc2abec97372f133e9790b09c71617 2328 php-pear_1.10.8+submodules+notgz-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ 342edfbf335a02f502128941b3da8e03a5eea9389d6aed6c3e5362a57ea1d334 2213001 php-pear_1.10.8+submodules+notgz.orig.tar.gz
+ 705a2e3a6c8c96b76750c35663a79b60d64cf4ce7cfad93632a6ffda5faeb0eb 5820 php-pear_1.10.8+submodules+notgz-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 741fe1ac6f353a43bf9640cbe832aa38e799a37e43fb2eb1130b4b4e6d1e487e 2328 php-pear_1.10.8+submodules+notgz-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: https://pear.php.net/package/PEAR
+Uploaders: Mathieu Parent <sathieu@debian.org>, Ondřej Surý <ondrej@debian.org>
+Package-List: php-pear deb php optional arch=all
+Vcs-Git: https://salsa.debian.org/php-team/pear/php-pear.git
+Vcs-Browser: https://salsa.debian.org/php-team/pear/php-pear
+
+Package: php-pecl-http
+Binary: php-http, php-pecl-http, php-pecl-http-dev
+Version: 3.2.3+2.6.0-4+ubuntu18.04.1+deb.sury.org+1
+Section: web
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: chrpath, debhelper (>= 9), dh-php (>= 0.33~), libcurl4-openssl-dev, libevent-dev, libidn2-dev, libpcre3-dev, php-all-dev, php-propro (>= 2.0.0), php-raphf (>= 2.0.0), zlib1g-dev
+Architecture: any all
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-pecl-http
+Files:
+ 2bedfcec3e505b385af8f9506f8f84cf 220028 php-pecl-http_3.2.3+2.6.0.orig.tar.xz
+ aa98bbed7021008beb46f1f0ef19f99b 4708 php-pecl-http_3.2.3+2.6.0-4+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 632d7433166b925d2ac874e1373711b0 2600 php-pecl-http_3.2.3+2.6.0-4+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 23a08fba7c56d31d05c90a540f74f58b68ff9c4a 220028 php-pecl-http_3.2.3+2.6.0.orig.tar.xz
+ 6f4b1a53ef0d262967f84a4bf7201a26645ec677 4708 php-pecl-http_3.2.3+2.6.0-4+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 307e465c43650646f7ce7687f02e1e272f10bf71 2600 php-pecl-http_3.2.3+2.6.0-4+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ 674ec18a325b37a09486ea664350712792c3828336fb5f815c6468e38a7a989c 220028 php-pecl-http_3.2.3+2.6.0.orig.tar.xz
+ 60ece216afd4857fa39c8456fbc48664942259deb2df09fb71b8fcbe076e3173 4708 php-pecl-http_3.2.3+2.6.0-4+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 051c5b2d8daed439deea9502b7130a257a9621b6e08643e3b1ba0cd388027250 2600 php-pecl-http_3.2.3+2.6.0-4+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: http://pecl.php.net/package/pecl_http
+Uploaders: Ulises Vitulli <dererk@debian.org>, Facundo Guerrero <guerremdq@gmail.com>, Ondřej Surý <ondrej@debian.org>
+Package-List: php-http deb web optional arch=any
+ php-pecl-http deb oldlibs extra arch=all
+ php-pecl-http-dev deb oldlibs extra arch=all
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-pecl-http.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-pecl-http
+
+Package: php-phalcon
+Binary: php-phalcon
+Version: 3.4.5-1+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9~), dh-php (>= 0.15~), php-all-dev
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-phalcon
+Files:
+ c9e61f745d14b7b31a888136368eb7a0 6707873 php-phalcon_3.4.5.orig.tar.gz
+ 8a97ac72ecc1d1c20cb72b2011bba776 3992 php-phalcon_3.4.5-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 263583485761d09d8037a50caf658ee3 2205 php-phalcon_3.4.5-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 6ab8623a12b7a4c3b012ed8842c889a826f21a77 6707873 php-phalcon_3.4.5.orig.tar.gz
+ 29ee4ef6ec7c79cbe6e7423dc5f72c86490cfb40 3992 php-phalcon_3.4.5-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ a079c83f26e7b3a716c337072f79abc64631d2f2 2205 php-phalcon_3.4.5-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ 4c56420641a4a12f95e93e65a107aba8ef793817da57a4c29346c012faf66777 6707873 php-phalcon_3.4.5.orig.tar.gz
+ 1d2155010ff27de0fc830b8d05afc3d57c1330e4d0b38bc2b71c3a371f5026a0 3992 php-phalcon_3.4.5-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ afc18e6ae16f8f8e7ed28154d88f579ad0c7a1ad61a3a52492e13a481e5ded4c 2205 php-phalcon_3.4.5-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: https://phalconphp.com/
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Package-List: php-phalcon deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-phalcon.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-phalcon
+
+Package: php-phalcon3
+Binary: php-phalcon3, php-phalcon
+Version: 3.4.5-2+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9~), dh-php (>= 0.15~), php-all-dev
+Architecture: any all
+Standards-Version: 4.4.1
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-phalcon3
+Files:
+ c9e61f745d14b7b31a888136368eb7a0 6707873 php-phalcon3_3.4.5.orig.tar.gz
+ 6316911f3c79fcd2f4d30b742967b4aa 4228 php-phalcon3_3.4.5-2+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ e220d5b146331b67a8db2b534138485b 2272 php-phalcon3_3.4.5-2+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 6ab8623a12b7a4c3b012ed8842c889a826f21a77 6707873 php-phalcon3_3.4.5.orig.tar.gz
+ fe3d25b16e52660841e11be8e1243b7fe137d7f0 4228 php-phalcon3_3.4.5-2+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 45dc768c75d43423ef8f52182f9de95ff86a1c6f 2272 php-phalcon3_3.4.5-2+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ 4c56420641a4a12f95e93e65a107aba8ef793817da57a4c29346c012faf66777 6707873 php-phalcon3_3.4.5.orig.tar.gz
+ 49219c00e5bbd7dc1816a9bdd56549f1be7fce229bfcbec608761bb246385874 4228 php-phalcon3_3.4.5-2+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 1e8b2b680400d357eaada37f48b87077a71a5f90ac3f37a79f8ab815302e1025 2272 php-phalcon3_3.4.5-2+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: https://phalconphp.com/
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Package-List: php-phalcon deb php optional arch=all
+ php-phalcon3 deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-phalcon3.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-phalcon3
+
+Package: php-phalcon4
+Binary: php-phalcon4
+Version: 4.0.4-1+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9~), dh-php (>= 0.15~), php-all-dev
+Architecture: any
+Standards-Version: 4.4.1
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-phalcon4
+Files:
+ a7f4b4bfe830d403def160856c27d98b 6809882 php-phalcon4_4.0.4.orig.tar.gz
+ 7056630b58f4e7bc19fdb8fe362ef596 4220 php-phalcon4_4.0.4-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 5645caa55eedc9be83cd434f67a3a5e3 2216 php-phalcon4_4.0.4-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 0f5c1ed3dc46f676a9323bdb523ee06362618a45 6809882 php-phalcon4_4.0.4.orig.tar.gz
+ db6fc5ee9da7583089e15148fbc6267298471940 4220 php-phalcon4_4.0.4-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 37eb5dab4adc7197794b4352ba3fa3d078f7a0ef 2216 php-phalcon4_4.0.4-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ 86e85381b15b7b5904f35eb64a6f74f7aa56a2362c3a3e9c1a57081326a3a28d 6809882 php-phalcon4_4.0.4.orig.tar.gz
+ 17757bf808ab274c93cfadb3c04cca34a49a53afc40bd38e210361acdadc26de 4220 php-phalcon4_4.0.4-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ bc4a9cc762f63bb49dc2f3bfd31fe72eac20f5de2b0ef427189f89131d0810dd 2216 php-phalcon4_4.0.4-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: https://phalconphp.com/
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Package-List: php-phalcon4 deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-phalcon4.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-phalcon4
+
+Package: php-pinba
+Binary: php-pinba
+Version: 1.1.1-3+ubuntu18.04.1+deb.sury.org+20191129
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.33~), libprotobuf-c-dev, php-all-dev, protobuf-c-compiler
+Architecture: any
+Standards-Version: 4.1.2
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-pinba
+Files:
+ 86f0f7fbb8e57f98f34e118050336c37 39670 php-pinba_1.1.1.orig.tar.gz
+ 3a8c15afc928bde81a7ae6d4c55eb296 4576 php-pinba_1.1.1-3+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ c15402a1d3e25ea2fe666696e6627708 2277 php-pinba_1.1.1-3+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha1:
+ 02ce3e2667f3ac5dc6e98cd1c02a6ca755fc7855 39670 php-pinba_1.1.1.orig.tar.gz
+ 46d095342f5fa7db1f43c2a96e36282841d67b73 4576 php-pinba_1.1.1-3+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 915c66edb183a2c0853287eb8818e0a663be9685 2277 php-pinba_1.1.1-3+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha256:
+ 3c99bb7b7bfe107f3510d1d577aebfe727383ec55ce2d33ee11d5d051f33450e 39670 php-pinba_1.1.1.orig.tar.gz
+ 27d956bd55a0100aec024d8f151d1797c0554d65ceff63b37111d6b029f19b45 4576 php-pinba_1.1.1-3+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 4fbb0988a50c3b686a0c91bce725ce6ae2a749a88469ff18f90c5bdf4dd9dc28 2277 php-pinba_1.1.1-3+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Homepage: http://pinba.org
+Uploaders: Vincent Bernat <bernat@debian.org>, Prach Pongpanich <prachpub@gmail.com>
+Package-List: php-pinba deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-pinba.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-pinba
+
+Package: php-propro
+Binary: php-propro, php-propro-dev
+Version: 2.1.0+1.0.2-3+ubuntu18.04.1+deb.sury.org+20191129
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.33~), php-all-dev, po-debconf, xsltproc
+Architecture: any all
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-propro
+Files:
+ 858ec72f5868d12153eaa6161c91ccef 15800 php-propro_2.1.0+1.0.2.orig.tar.xz
+ 5285d335381505eaf4d3061d577e246f 3012 php-propro_2.1.0+1.0.2-3+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 4306ec3236b52028f6494668c2517e5a 2393 php-propro_2.1.0+1.0.2-3+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha1:
+ c50ab5cc5f55f2bb798dda54352e0731830493a7 15800 php-propro_2.1.0+1.0.2.orig.tar.xz
+ c73a2ea16eac613d113873f13cfda1fd1e0dc4fa 3012 php-propro_2.1.0+1.0.2-3+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ abc1f157b6795be6233fecef2db63df01765048f 2393 php-propro_2.1.0+1.0.2-3+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha256:
+ 75d33b40bb1614d26bda8337d85904a6120ab4f76de57f77c89f161a4fc51102 15800 php-propro_2.1.0+1.0.2.orig.tar.xz
+ 00d889430a1bad8248a38ae4cd43e3490c0df560677c141463f59d9e2cf8f517 3012 php-propro_2.1.0+1.0.2-3+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 62c0fbc60a2d451800c096aae96dfbfa70305e82244d7f58e34eebcc04106e9b 2393 php-propro_2.1.0+1.0.2-3+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Homepage: http://pecl.php.net/package/propro
+Uploaders: Facundo Guerrero <guerremdq@gmail.com>, Ondřej Surý <ondrej@debian.org>
+Package-List: php-propro deb php optional arch=any
+ php-propro-dev deb oldlibs extra arch=all
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-propro.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-propro
+
+Package: php-psr
+Binary: php-psr
+Version: 1.0.0-1+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.33~), php-all-dev, po-debconf
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-psr
+Files:
+ 3b5ae67a6df4162741787ed650de6e79 27096 php-psr_1.0.0.orig.tar.gz
+ c6c4076fa6f8aa359c9c835868ac66bd 2548 php-psr_1.0.0-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ db799ab5c7438ba211f875e28f27586a 2174 php-psr_1.0.0-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ b2a936d77561b71d9166c0aafcdb4ce949ae1c93 27096 php-psr_1.0.0.orig.tar.gz
+ 0a06abe0843a9258859d9624447d06c13abb8506 2548 php-psr_1.0.0-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ dc2c4519d2750d72268b799e9d3313bf160affda 2174 php-psr_1.0.0-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ e7ac18683bb9d76ae022b886bf49693a027ea03b332039cf930938dfdac7d3ae 27096 php-psr_1.0.0.orig.tar.gz
+ 927c7b2b9ee2962fc8712ec20f10ced7be42a4406ff04b8d5c79216daac00052 2548 php-psr_1.0.0-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ c47590a90e9382315039424a2ad00b1145ba9d878e9e1bdcc006cac60973b0a2 2174 php-psr_1.0.0-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: http://pecl.php.net/package/psr
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Package-List: php-psr deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-psr.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-psr
+
+Package: php-radius
+Binary: php-radius
+Version: 1.4.0~b1-10+ubuntu18.04.1+deb.sury.org+20191129
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.33~), php-all-dev, po-debconf
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-radius
+Files:
+ bbe3a592ed6d441223366a71a7a6288e 50953 php-radius_1.4.0~b1.orig.tar.gz
+ aff32ba0402298877654804a928a8e97 5516 php-radius_1.4.0~b1-10+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 6e82607c7f72a1044dd8b623c8e2b219 2301 php-radius_1.4.0~b1-10+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha1:
+ cffa110a59be4ff44aa5cd1940dd78d914ce8551 50953 php-radius_1.4.0~b1.orig.tar.gz
+ 21d9f531831ceb8dc44fc31f66bb849b1d7ab01d 5516 php-radius_1.4.0~b1-10+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ f451519efd05006447cc5bba80fb6cd965853fc7 2301 php-radius_1.4.0~b1-10+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha256:
+ 97dcf2e497131a20804cc508873a123012b773f42d077af398334f3caf86ee54 50953 php-radius_1.4.0~b1.orig.tar.gz
+ fa373a8f5603954eb5e7493276611324f5cc2cbbfeb3a2fc08b13fe047706db2 5516 php-radius_1.4.0~b1-10+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 0e95d03a0dceca70e0118c85cd668565b5bc98abd0db2df422066ef507f6571f 2301 php-radius_1.4.0~b1-10+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Homepage: http://pecl.php.net/package/radius
+Uploaders: Ondřej Surý <ondrej@debian.org>, Roberto Lumbreras <rover@debian.org>
+Package-List: php-radius deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-radius.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-radius
+
+Package: php-raphf
+Binary: php-raphf, php-raphf-dev
+Version: 2.0.1+1.1.2-1+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.33~), php-all-dev
+Architecture: any all
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-raphf
+Files:
+ 531870f8a9b02435050fe034032b1689 17016 php-raphf_2.0.1+1.1.2.orig.tar.xz
+ 68c0b5244b53a58cad387d25434a8ebb 3016 php-raphf_2.0.1+1.1.2-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 92db81fdffe52621959b9843b4c97318 2329 php-raphf_2.0.1+1.1.2-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 73138cebd79dfc43318c3643970f338ee2603f7a 17016 php-raphf_2.0.1+1.1.2.orig.tar.xz
+ 9e606d35d732c53856b81bef1e5e40f36d82b17d 3016 php-raphf_2.0.1+1.1.2-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 846ce4e2ee550af988c4d3a26299e0a0b8789e31 2329 php-raphf_2.0.1+1.1.2-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ 4dd4087c2e276795e7efadc32947732243cb4fe7284da54e330f08ea52ffa964 17016 php-raphf_2.0.1+1.1.2.orig.tar.xz
+ 5a21c2716d40e4d6fc149e4104ba2e9ed5e8380a8c6cfc6c1bebb1249ab4791b 3016 php-raphf_2.0.1+1.1.2-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 397179f6b3f4c15d6731400e6cd9af278688a2e2a14eda02afc9295673386d37 2329 php-raphf_2.0.1+1.1.2-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: http://pecl.php.net/package/raphf
+Uploaders: Facundo Guerrero <guerremdq@gmail.com>, Ondřej Surý <ondrej@debian.org>
+Package-List: php-raphf deb php optional arch=any
+ php-raphf-dev deb oldlibs extra arch=all
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-raphf.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-raphf
+
+Package: php-redis
+Binary: php-redis
+Version: 5.2.1+4.3.0-1+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.33~), php-all-dev, php-igbinary
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-redis
+Files:
+ 8a765f76a3bb10cee46ab7e52d821986 222976 php-redis_5.2.1+4.3.0.orig.tar.xz
+ 6d52cba2ae1276585a89f3360bfe8fcf 4808 php-redis_5.2.1+4.3.0-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ ad540be33bdda91c9bf2d250bb00490a 2323 php-redis_5.2.1+4.3.0-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ dd5ccc163fe55133eb6e79f8dd758396d4f9c5ee 222976 php-redis_5.2.1+4.3.0.orig.tar.xz
+ c64e6498f0db73143380d13c4360a4945ab78abd 4808 php-redis_5.2.1+4.3.0-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 7bd3f48637cc2c9aaa491a55f23dc3b60dea555f 2323 php-redis_5.2.1+4.3.0-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ 89e0f3300beb12cb487ba0265036a7ab260b39ba08e4533373b49c44724a07ca 222976 php-redis_5.2.1+4.3.0.orig.tar.xz
+ 0babdf63793362872ca32c82d371b316c51bd9925c8a672a32b0f9c9c3dcb176 4808 php-redis_5.2.1+4.3.0-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ ae4773aad2fbfda724f0d9489bdd68a92dd8f42cb435bc1887655a3769b59dd3 2323 php-redis_5.2.1+4.3.0-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: https://pecl.php.net/package/redis
+Uploaders: Jonas Genannt <jonas.genannt@capi2name.de>, Cyril Bouthors <cyb@debian.org>, Ondřej Surý <ondrej@debian.org>
+Package-List: php-redis deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-redis.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-redis
+
+Package: php-rrd
+Binary: php-rrd
+Version: 2.0.1+1.1.3-7+ubuntu18.04.1+deb.sury.org+20191129
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.33~), librrd-dev, php-all-dev, pkg-config
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-rrd
+Files:
+ fbb69ad588378d5d15d900091e6ce5f1 20668 php-rrd_2.0.1+1.1.3.orig.tar.xz
+ 33fb882c6431c33334f0c22afa7577ac 3232 php-rrd_2.0.1+1.1.3-7+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 51e6a914f3a10a300fd21b63b5f513bb 2292 php-rrd_2.0.1+1.1.3-7+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha1:
+ 0c635fa17a4486050d619ef742d4f6ec2ee79ea8 20668 php-rrd_2.0.1+1.1.3.orig.tar.xz
+ c42be6128c61035fd489ba4d58ba6c310eb8bb94 3232 php-rrd_2.0.1+1.1.3-7+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 7ed0e70941e5d32d5a90e77ed239e8a424345425 2292 php-rrd_2.0.1+1.1.3-7+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha256:
+ 2544c23d21d86ce274ef8baa1730eb72f1307bf293d24e22b4461ad4caaa6bc2 20668 php-rrd_2.0.1+1.1.3.orig.tar.xz
+ 91c528c3cc051b4f6b65788c7a647160a455cd158bdf46a2a93fcc2e521f1e54 3232 php-rrd_2.0.1+1.1.3-7+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 369f773a509846e5bf5fe294fe19e4c6858baacf657341c32e96235635a70c96 2292 php-rrd_2.0.1+1.1.3-7+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Homepage: http://pecl.php.net/package/rrd
+Uploaders: Ondřej Surý <ondrej@debian.org>, Dario Minnucci <midget@debian.org>
+Package-List: php-rrd deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-rrd.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-rrd
+
+Package: php-smbclient
+Binary: php-smbclient
+Version: 1.0.0-1+ubuntu18.04.1+deb.sury.org+20191129
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9~), dh-php (>= 0.33~), libsmbclient-dev, php-all-dev (>= 17~)
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-smbclient
+Files:
+ 5b88182308fac70896ce9178647e75eb 32017 php-smbclient_1.0.0.orig.tar.gz
+ 7b855077b4a86cbb4bd15cd423be1382 3020 php-smbclient_1.0.0-1+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 0bcc370d72a58cba47b43b9c0c4d9de7 2282 php-smbclient_1.0.0-1+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha1:
+ 7196476f1c685da392ee684b3f9c1b8a120309f7 32017 php-smbclient_1.0.0.orig.tar.gz
+ 59065e098e6540fb9c37b8dd492220e820c35f79 3020 php-smbclient_1.0.0-1+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ f581ded5596c5b0172791ecc7f5b5f9957a369df 2282 php-smbclient_1.0.0-1+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha256:
+ c57cd1be108673ada51f9cc14d874a6b24d849d7e817d5e2774c18ebd6a389a5 32017 php-smbclient_1.0.0.orig.tar.gz
+ 1afdd23779fca65ed4f1b6f5e5b9c5a2dfb6fb12c16a8af421a358e9087d81aa 3020 php-smbclient_1.0.0-1+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 632ed4a2fca3ba342ad7b1d0ed78a4d545e87a3abfe271eda54e5cda8c8f1e7f 2282 php-smbclient_1.0.0-1+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Homepage: http://pecl.php.net/smbclient
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Package-List: php-smbclient deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-smbclient.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-smbclient
+
+Package: php-sodium
+Binary: php-sodium
+Version: 2.0.22-1+ubuntu18.04.1+deb.sury.org+20191129
+Section: php
+Maintainer: Debian PHP PECL Maintainers <pkg-php-pecl@lists.alioth.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.12~), libsodium-dev (>= 1.0.9), php-all-dev
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-sodium
+Files:
+ 8830fd69b9d9f42e8fa8ec265fa56eb2 28531 php-sodium_2.0.22.orig.tar.gz
+ 7ad8cfb041c50586887fff7ac840f92a 2968 php-sodium_2.0.22-1+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 3ab9fcc10a2ffa8198575415d697f61e 2266 php-sodium_2.0.22-1+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha1:
+ 846cfbb85d9bd2c0df197cabe3e9f35e2a31e0e4 28531 php-sodium_2.0.22.orig.tar.gz
+ d3fcb73b04ad4cdb70cde92d2337fb18690f83f2 2968 php-sodium_2.0.22-1+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 6671409ad90780a789eba3eaaba16ee2ef991d0c 2266 php-sodium_2.0.22-1+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha256:
+ c302a8b1527f2b0b08110122191c7363d28479291411c94494619bc313c33b95 28531 php-sodium_2.0.22.orig.tar.gz
+ efd5143c7e89370539b696d66d6c6c80611d199864c523042319935347bb839d 2968 php-sodium_2.0.22-1+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 86a193a09de5d4b37e6196ed0cb5a7628bc5e681500974ee4e8d46d5f154938f 2266 php-sodium_2.0.22-1+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Homepage: http://pecl.php.net/package/libsodium
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Package-List: php-sodium deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-sodium.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-sodium
+
+Package: php-solr
+Binary: php-solr
+Version: 2.5.0+2.4.0-4+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: chrpath, debhelper (>= 9), dh-php (>= 0.33~), libcurl4-openssl-dev, liblzma-dev, libxml2-dev, php-all-dev, pkg-config, po-debconf, xsltproc, zlib1g-dev
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-solr
+Files:
+ 839157a06e34c24bda1e7c1c58979eee 978431 php-solr_2.5.0+2.4.0.orig.tar.gz
+ ac13d813405d5b82a6437ec41bdde988 5104 php-solr_2.5.0+2.4.0-4+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 24be7d9e8fbf4683507d7d5a52f6721f 2327 php-solr_2.5.0+2.4.0-4+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 53ee8e0bbe88a9bd7f0be8efeea73c215f707a64 978431 php-solr_2.5.0+2.4.0.orig.tar.gz
+ 1ad2b9e746996705111b897995a395e4df2087d7 5104 php-solr_2.5.0+2.4.0-4+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 917dc044930a9da1b3b7841fce48aa3a4a595643 2327 php-solr_2.5.0+2.4.0-4+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ 7eeb00cfa89ce597e7c9c59fdfc3aece123406b40c6a0f6a67cf9fb0d46e30c4 978431 php-solr_2.5.0+2.4.0.orig.tar.gz
+ 0a0e93bc189cfb95d015adfa5f5a37d9d83bcdac671d36fa6c8ed87d4ef1ad8e 5104 php-solr_2.5.0+2.4.0-4+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ e9117f273fb5e0a8757ea8a378a65718db80576ac3cb7009e4a4e90a6b58a63c 2327 php-solr_2.5.0+2.4.0-4+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: http://pecl.php.net/package/solr
+Uploaders: Facundo Guerrero <guerremdq@gmail.com>
+Package-List: php-solr deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-solr.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-solr
+
+Package: php-ssh2
+Binary: php-ssh2
+Version: 1.2+0.13-1+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.33~), libssh2-1-dev, libtool, php-all-dev
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-ssh2
+Files:
+ b79fca6f41614f61ae0fb20139932cef 33252 php-ssh2_1.2+0.13.orig.tar.xz
+ 5e1e21a2e881546619b0640d71fe5520 4232 php-ssh2_1.2+0.13-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 816308932a9a0e9b9adb66fc5028dcd8 2285 php-ssh2_1.2+0.13-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ c61f766f08f36db2edc5b047801569474606c9bf 33252 php-ssh2_1.2+0.13.orig.tar.xz
+ ad6063cf9c66ba4f80d52864d8e60fce81ee6f3d 4232 php-ssh2_1.2+0.13-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 6392588ea68aea516b14a49e24739fdd3cb64b66 2285 php-ssh2_1.2+0.13-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ e4a5c6289bc56ca359024ae7d7c9eb9a0ace63c79758881ada7708fc0b0eb5e3 33252 php-ssh2_1.2+0.13.orig.tar.xz
+ 9f4798c35ec54d765704edc257bbc1e3633819a32bb866efef7ee4f0190626ea 4232 php-ssh2_1.2+0.13-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 09673d421694a58328339898ba06f0da040412412bd4d22d49c304de426e75f0 2285 php-ssh2_1.2+0.13-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: http://pecl.php.net/package/ssh2
+Uploaders: Martin Meredith <mez@debian.org>, Lior Kaplan <kaplan@debian.org>, Mathieu Parent <sathieu@debian.org>
+Package-List: php-ssh2 deb php extra arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-ssh2.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-ssh2
+
+Package: php-stomp
+Binary: php-stomp
+Version: 2.0.2+1.0.9-3+ubuntu18.04.1+deb.sury.org+20191129
+Section: web
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.33~), php-all-dev
+Architecture: any
+Standards-Version: 3.9.7
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-stomp
+Files:
+ 3aeeb7223ed07ea1b090fc7430df9b9c 24992 php-stomp_2.0.2+1.0.9.orig.tar.xz
+ 4fa35016cc3b9ddd30b7142b4509c1af 3732 php-stomp_2.0.2+1.0.9-3+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ c7efa670ab400c58cc6cf21b63bc4061 2293 php-stomp_2.0.2+1.0.9-3+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha1:
+ 8042ca51263146f4b99f8173bcac490904b7a506 24992 php-stomp_2.0.2+1.0.9.orig.tar.xz
+ 96241b5e4c16902fbca0e54f3434c25a7e10fd90 3732 php-stomp_2.0.2+1.0.9-3+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 68d49d24fc4778250f82540dadbce24c57132e5c 2293 php-stomp_2.0.2+1.0.9-3+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha256:
+ 9e58805a712d51857f2f4829d1510c65d3d737a3dec11a0d5235b9fa71d82169 24992 php-stomp_2.0.2+1.0.9.orig.tar.xz
+ efd5fbb0554e2ab6055d5934c89480c9ed164c1a4fb5dc7bd3394c6298db865f 3732 php-stomp_2.0.2+1.0.9-3+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ a8595edb56d89a322c224fea31666c96eb8347c665e9799958459b1b1e47d1d0 2293 php-stomp_2.0.2+1.0.9-3+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Homepage: https://pecl.php.net/package/stomp
+Uploaders: Jonas Genannt <genannt@debian.org>, Ondřej Surý <ondrej@debian.org>
+Package-List: php-stomp deb web optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-stomp.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-stomp
+
+Package: php-uopz
+Binary: php-uopz
+Version: 6.1.1-1+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 10), dh-php (>= 0.33~), php-all-dev
+Architecture: any
+Standards-Version: 4.4.1.2
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-uopz
+Files:
+ b01e3af0e710911da71e1b2226e87dbc 31729 php-uopz_6.1.1.orig.tar.gz
+ 799e60a56631a845b9841526651a3460 2976 php-uopz_6.1.1-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 14db82e8956657da8c124c0bc68c56cc 2177 php-uopz_6.1.1-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 4c70523361003f1403b1110d61866c074c1974cf 31729 php-uopz_6.1.1.orig.tar.gz
+ 2588b096916f4c21d0967e7e74256e20453d73fd 2976 php-uopz_6.1.1-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ dc294bfe90a830db4d80a46b0a2ce13a801ecc3f 2177 php-uopz_6.1.1-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ 29e8f50a4a6486ea6e9ba5bea706d1e75153e4d7052407ae27ca74c457b953e6 31729 php-uopz_6.1.1.orig.tar.gz
+ bbaefb82d3dd90a19bd45987ef70a44eeccb4cc936db5abc029263210314723a 2976 php-uopz_6.1.1-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 4fadd7394a5ff95edac18e4a1bf71c732182d4aa6d03f0d8fe4f65327b60f6a1 2177 php-uopz_6.1.1-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: http://pecl.php.net/package/uopz
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Package-List: php-uopz deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-uopz.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-uopz
+
+Package: php-uploadprogress
+Binary: php-uploadprogress
+Version: 1.1.3-1+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9~), dh-php (>= 0.33~), php-all-dev (>= 17~)
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-uploadprogress
+Files:
+ ffcd796c7ec3149f8f38504290bc5291 14798 php-uploadprogress_1.1.3.orig.tar.gz
+ e4ebd85474a032d889b120e5ccdf8917 3456 php-uploadprogress_1.1.3-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ c7b5a9762734130e8b425ff949c671b5 2305 php-uploadprogress_1.1.3-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 38d8e09643dc8ef18d4fe49e3af612d96f0885ac 14798 php-uploadprogress_1.1.3.orig.tar.gz
+ 99ef6d6ff88b811764a9e00f03ccb558123cf39e 3456 php-uploadprogress_1.1.3-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ e6685c5136eabea878ed63f82a0b84bc59fb6009 2305 php-uploadprogress_1.1.3-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ bcbf96631d257113ef7e85d21870d9b937bed9e00d68a6f1c0accab089af0e69 14798 php-uploadprogress_1.1.3.orig.tar.gz
+ 92da0dfbc5e446859098252ba07ee552e8a451d576398d4258df43883704d68c 3456 php-uploadprogress_1.1.3-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ cbbb4bae23f6e242b925867e176913e067f7bbe214f99c3537d2665b77e373d0 2305 php-uploadprogress_1.1.3-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: https://pecl.php.net/package/uploadprogress
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Package-List: php-uploadprogress deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-uploadprogress.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-uploadprogress
+
+Package: php-uuid
+Binary: php-uuid
+Version: 1.1.0-1+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9~), dh-php (>= 0.33~), php-all-dev (>= 17~), uuid-dev
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-uuid
+Files:
+ 8a4afcd46b4fba49601845d55a608449 15225 php-uuid_1.1.0.orig.tar.gz
+ a0971596173bf27166006b355212a1bd 2616 php-uuid_1.1.0-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 23589ab16e0249359a44984bce4099e1 2195 php-uuid_1.1.0-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 3c74c03dfd6c26b097bb9ac477834ed55472cbe4 15225 php-uuid_1.1.0.orig.tar.gz
+ d44df2ab8e1a34b81acbda057b60e90165fe526f 2616 php-uuid_1.1.0-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 294a38d317f3da100d1aa8b1fea1ecb6d4641137 2195 php-uuid_1.1.0-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ 981c1c2fec77aaffec29242c29a346bc6ec2115053e9b6b5afb4a4e149a2333f 15225 php-uuid_1.1.0.orig.tar.gz
+ c5ce28e683448ef93865ad5a46930918ab74b9a0065886c7c32b74c167dc1c9e 2616 php-uuid_1.1.0-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ e741727cba8fee9932d4dba393496f4371b66991b6c459414bd2622aa54307e7 2195 php-uuid_1.1.0-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: https://pecl.php.net/package/uuid
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Package-List: php-uuid deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-uuid.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-uuid
+
+Package: php-xhprof
+Binary: php-xhprof
+Version: 2.1.4+0.9.4-1+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP PECL Maintainers <pkg-php-pecl@lists.alioth.debian.org>
+Build-Depends: debhelper (>= 9), dh-php, php-all-dev
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-xhprof
+Files:
+ cd91a56efeb554102e7c0263a25fa4be 1686038 php-xhprof_2.1.4+0.9.4.orig.tar.gz
+ 079dbd51a4c079ec27249d7f1c1eb024 4012 php-xhprof_2.1.4+0.9.4-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 85ac091a5fe52847a66138102e9910ee 2282 php-xhprof_2.1.4+0.9.4-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ b072a8c7ad73e049267ef9112a171de8a875fea1 1686038 php-xhprof_2.1.4+0.9.4.orig.tar.gz
+ 3e339a074b598aed461f2b6de1e23e13ef893d92 4012 php-xhprof_2.1.4+0.9.4-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 34eaab33265cf4bfec0b180aa69b2416edd76aef 2282 php-xhprof_2.1.4+0.9.4-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ dd1fa91cc476d095ad8c566a3a01cba78f94113e51aa17f185b94df1a3f10537 1686038 php-xhprof_2.1.4+0.9.4.orig.tar.gz
+ 1ede66d841668ff781d3b7c1449cbe9a9edebb8784a0775db48080cb168021e1 4012 php-xhprof_2.1.4+0.9.4-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 3c0c3e0c0534f852f58409616345cebd28cebb56b7cc472130a9950ab6b3a6b0 2282 php-xhprof_2.1.4+0.9.4-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: https://pecl.php.net/package/xhprof
+Uploaders: Ondřej Surý <ondrej@debian.org>, László Böszörményi <gcs@debian.org>
+Package-List: php-xhprof deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-xhprof.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-xhprof
+
+Package: php-yac
+Binary: php-yac
+Version: 2.0.4+0.9.2-1+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.33~), libpcre3-dev, php-all-dev
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-yac
+Files:
+ adadb825bbea7c022268c842bd1c54bc 33308 php-yac_2.0.4+0.9.2.orig.tar.xz
+ 5f181fa09e62f7ee9dc93a7ad68678c6 4700 php-yac_2.0.4+0.9.2-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ ba574c6cb1f42a945aa15d34108e7444 2218 php-yac_2.0.4+0.9.2-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ a4ab5386a391947308fb85525aaaaaedcb16e34a 33308 php-yac_2.0.4+0.9.2.orig.tar.xz
+ a6d6473de07adc912d10c76411eb95503438f8f3 4700 php-yac_2.0.4+0.9.2-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 287aa257a5fd95fca2cebd9fbf8605d4dd2fc45c 2218 php-yac_2.0.4+0.9.2-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ d3968e5ceafeaf27e8fb2ef8627ae9aebca1462e65c1269dd30efbb1d1adaf5c 33308 php-yac_2.0.4+0.9.2.orig.tar.xz
+ 374dca6c90c540545a32e282b2c6feb09ad5fbd022b5825856d1e7eff7e16f54 4700 php-yac_2.0.4+0.9.2-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 75a59d170d99ce0cd951dd1e3389f6c526a64f396e6bcba6f5ba1eace8f22199 2218 php-yac_2.0.4+0.9.2-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: http://pecl.php.net/package/yac
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Package-List: php-yac deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-yac.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-yac
+
+Package: php-yaml
+Binary: php-yaml
+Version: 2.0.4+1.3.2-1+ubuntu18.04.1+deb.sury.org+20191129
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.31~), libyaml-dev, php-all-dev
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-yaml
+Files:
+ 5882d3d6e87e9b458e538fc879129236 39720 php-yaml_2.0.4+1.3.2.orig.tar.xz
+ df42e82571b9d2339ec5d272c4e0dc3a 2476 php-yaml_2.0.4+1.3.2-1+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 0b38c3627e5545fee5d83caf0a0cc822 2290 php-yaml_2.0.4+1.3.2-1+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha1:
+ 63a595ff06daa4716fa7915c5e8af1ecf2826a0f 39720 php-yaml_2.0.4+1.3.2.orig.tar.xz
+ 4318b05e3cba6e31cb8480ac69a01408211d989e 2476 php-yaml_2.0.4+1.3.2-1+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ dd3c338915c602831faaeefa9c07b99f7bc10e9e 2290 php-yaml_2.0.4+1.3.2-1+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha256:
+ 75c8b34b031e8efcd000e43233c8a6e49f537fe4aa67453170990abdb57bbf36 39720 php-yaml_2.0.4+1.3.2.orig.tar.xz
+ b2661db700bef65426544d1cdb726151f52b3c1d885b09699b182bd5a05fa59f 2476 php-yaml_2.0.4+1.3.2-1+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ bb51f52510341e5e7f0636ee171ee0fcfb33d19601fcecb50069dda8b21224c0 2290 php-yaml_2.0.4+1.3.2-1+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Homepage: http://pecl.php.net/package/Yaml
+Uploaders: Lior Kaplan <kaplan@debian.org>, Ondřej Surý <ondrej@debian.org>
+Package-List: php-yaml deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-yaml.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-yaml
+
+Package: php-zmq
+Binary: php-zmq
+Version: 1.1.3-10+ubuntu18.04.1+deb.sury.org+20191129
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9), dh-php (>= 0.33~), libzmq5-dev | libzmq3-dev, php-all-dev, pkg-config
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/p/php-zmq
+Files:
+ 9c638df5a6347a0fefb0d43d780e6480 82397 php-zmq_1.1.3.orig.tar.gz
+ a32b0a9256dc86ca003b334a460b64b6 10008 php-zmq_1.1.3-10+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 5433fc5c8cadb5b59351e41706fe3033 2240 php-zmq_1.1.3-10+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha1:
+ 04274be5deb53240d9f182475b7841a313038ecf 82397 php-zmq_1.1.3.orig.tar.gz
+ ed517ac312d8177452c40749b7028350db1a39f7 10008 php-zmq_1.1.3-10+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ 62aeb45898d735182d84087fe25087babe722d35 2240 php-zmq_1.1.3-10+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Checksums-Sha256:
+ c492375818bd51b355352798fb94f04d6828c6aeda41ba813849624af74144ce 82397 php-zmq_1.1.3.orig.tar.gz
+ 720a2d49b99d8f1689715b1bdc41e90da1355f7b5ed6d32783f621fead75f5f0 10008 php-zmq_1.1.3-10+ubuntu18.04.1+deb.sury.org+20191129.debian.tar.xz
+ bec746eaf8db611b6f5d234a439c49dc63a2feeddc48811289ef15bc9744d1e0 2240 php-zmq_1.1.3-10+ubuntu18.04.1+deb.sury.org+20191129.dsc
+Homepage: http://pecl.php.net/package/zmq
+Uploaders: Prach Pongpanich <prachpub@gmail.com>
+Package-List: php-zmq deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/php-zmq.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/php-zmq
+
+Package: php5.6
+Binary: libapache2-mod-php5.6, libphp5.6-embed, php5.6, php5.6-cgi, php5.6-cli, php5.6-dev, php5.6-fpm, php5.6-phpdbg, php5.6-xsl, php5.6-odbc, php5.6-readline, php5.6-recode, php5.6-sqlite3, php5.6-xml, php5.6-sybase, php5.6-zip, php5.6-gd, php5.6-gmp, php5.6-ldap, php5.6-common, php5.6-intl, php5.6-mysql, php5.6-mcrypt, php5.6-snmp, php5.6-curl, php5.6-json, php5.6-pgsql, php5.6-mbstring, php5.6-enchant, php5.6-opcache, php5.6-imap, php5.6-bcmath, php5.6-tidy, php5.6-soap, php5.6-dba, php5.6-interbase, php5.6-xmlrpc, php5.6-pspell, php5.6-bz2
+Version: 5.6.40-26+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Build-Depends: apache2-dev (>= 2.4), autoconf (>= 2.63), automake, bison, chrpath, debhelper (>= 9.20150101), default-libmysqlclient-dev | libmysqlclient-dev, default-mysql-server <!nocheck> | mysql-server <!nocheck> | virtual-mysql-server <!nocheck>, dh-apache2, dh-systemd (>= 1.3) [linux-any], dpkg-dev (>= 1.16.1~), firebird-dev [!hurd-any !m68k !hppa !ppc64] | firebird2.5-dev [!hurd-any !m68k !hppa !ppc64] | firebird2.1-dev [!hurd-any !m68k !hppa !ppc64], flex, freetds-dev, libapparmor-dev, libapr1-dev (>= 1.2.7-8), libbz2-dev, libc-client-dev, libcurl4-openssl-dev | libcurl-dev, libdb-dev, libedit-dev (>= 2.11-20080614-4), libenchant-dev, libevent-dev (>= 1.4.11), libexpat1-dev (>= 1.95.2-2.1), libfreetype6-dev, libgcrypt20-dev (>> 1.6.3) | libgcrypt11-dev (<< 1.5.4), libgd-dev (>= 2.1.0) | libgd2-dev, libglib2.0-dev, libgmp3-dev, libicu-dev, libjpeg-dev | libjpeg62-dev, libkrb5-dev, libldap2-dev, libmagic-dev, libmcrypt-dev, libmhash-dev (>= 0.8.8), libnss-myhostname [linux-any], libonig-dev, libpam0g-dev, libpcre3-dev (>= 2:8.35), libpng-dev, libpq-dev, libpspell-dev, libqdbm-dev, librecode-dev, libsasl2-dev, libsnmp-dev, libsqlite3-dev, libssl-dev, libsystemd-dev [linux-any], libtidy-dev (>= 1:5.2.0), libtool (>= 2.2), libwebp-dev, libwrap0-dev, libxml2-dev, libxmlrpc-epi-dev, libxmltok1-dev, libxslt1-dev (>= 1.0.18), libzip-dev (>= 1.0.0), locales-all | language-pack-de, netbase, netcat-traditional, re2c, systemtap-sdt-dev [amd64 i386 powerpc armel armhf ia64], tzdata, unixodbc-dev, zlib1g-dev
+Build-Conflicts: bind-dev, libxmlrpc-core-c3-dev
+Architecture: any all
+Standards-Version: 4.5.0.0
+Format: 3.0 (quilt)
+Directory: pool/main/p/php5.6
+Files:
+ c7dde3afb16ce7b761abf2805125d372 12472236 php5.6_5.6.40.orig.tar.xz
+ 73eb62224215dfc1c4f79116dc279dcd 1419544 php5.6_5.6.40-26+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ e81543e6d89629d7967a601123d9ceb5 5830 php5.6_5.6.40-26+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 0403ae06273fe8c1acdbd45b181a8a53f4b0b4d7 12472236 php5.6_5.6.40.orig.tar.xz
+ b12873c5a77b0352b6c012c2fc636f16108d4c7f 1419544 php5.6_5.6.40-26+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 8698399abd77962bc1d84d2fb70f79d877688872 5830 php5.6_5.6.40-26+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ 1369a51eee3995d7fbd1c5342e5cc917760e276d561595b6052b21ace2656d1c 12472236 php5.6_5.6.40.orig.tar.xz
+ 1aa54057d4f07989f579d952e05219c2da6bf95175d3c8c0a41b6bcf44949300 1419544 php5.6_5.6.40-26+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ fef7aaa4bdf7fca65799dbe371d02cb2615dff1d292535a2cfaca286fa192bce 5830 php5.6_5.6.40-26+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: http://www.php.net/
+Uploaders: Ondřej Surý <ondrej@debian.org>, Lior Kaplan <kaplan@debian.org>
+Testsuite: autopkgtest
+Testsuite-Triggers: apache2, wget
+Package-List: libapache2-mod-php5.6 deb httpd optional arch=any
+ libphp5.6-embed deb php optional arch=any
+ php5.6 deb php optional arch=all
+ php5.6-bcmath deb php optional arch=any
+ php5.6-bz2 deb php optional arch=any
+ php5.6-cgi deb php optional arch=any
+ php5.6-cli deb php optional arch=any
+ php5.6-common deb php optional arch=any
+ php5.6-curl deb php optional arch=any
+ php5.6-dba deb php optional arch=any
+ php5.6-dev deb php optional arch=any
+ php5.6-enchant deb php optional arch=any
+ php5.6-fpm deb php optional arch=any
+ php5.6-gd deb php optional arch=any
+ php5.6-gmp deb php optional arch=any
+ php5.6-imap deb php optional arch=any
+ php5.6-interbase deb php optional arch=any
+ php5.6-intl deb php optional arch=any
+ php5.6-json deb php optional arch=any
+ php5.6-ldap deb php optional arch=any
+ php5.6-mbstring deb php optional arch=any
+ php5.6-mcrypt deb php optional arch=any
+ php5.6-mysql deb php optional arch=any
+ php5.6-odbc deb php optional arch=any
+ php5.6-opcache deb php optional arch=any
+ php5.6-pgsql deb php optional arch=any
+ php5.6-phpdbg deb php optional arch=any
+ php5.6-pspell deb php optional arch=any
+ php5.6-readline deb php optional arch=any
+ php5.6-recode deb php optional arch=any
+ php5.6-snmp deb php optional arch=any
+ php5.6-soap deb php optional arch=any
+ php5.6-sqlite3 deb php optional arch=any
+ php5.6-sybase deb php optional arch=any
+ php5.6-tidy deb php optional arch=any
+ php5.6-xml deb php optional arch=any
+ php5.6-xmlrpc deb php optional arch=any
+ php5.6-xsl deb php optional arch=all
+ php5.6-zip deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/php.git -b master-5.6
+Vcs-Browser: https://salsa.debian.org/php-team/php
+
+Package: php7.0
+Binary: libapache2-mod-php7.0, libphp7.0-embed, php7.0, php7.0-cgi, php7.0-cli, php7.0-dev, php7.0-fpm, php7.0-phpdbg, php7.0-xsl, php7.0-odbc, php7.0-readline, php7.0-recode, php7.0-sqlite3, php7.0-xml, php7.0-sybase, php7.0-zip, php7.0-gd, php7.0-gmp, php7.0-ldap, php7.0-common, php7.0-intl, php7.0-mysql, php7.0-mcrypt, php7.0-snmp, php7.0-curl, php7.0-json, php7.0-pgsql, php7.0-mbstring, php7.0-enchant, php7.0-opcache, php7.0-imap, php7.0-bcmath, php7.0-tidy, php7.0-soap, php7.0-dba, php7.0-interbase, php7.0-xmlrpc, php7.0-pspell, php7.0-bz2
+Version: 7.0.33-26+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Build-Depends: apache2-dev (>= 2.4), autoconf (>= 2.63), automake, bison, chrpath, debhelper (>= 9.20150101), default-libmysqlclient-dev | libmysqlclient-dev, default-mysql-server <!nocheck> | mysql-server <!nocheck> | virtual-mysql-server <!nocheck>, dh-apache2, dh-systemd (>= 1.3) [linux-any], dpkg-dev (>= 1.16.1~), firebird-dev [!hurd-any !m68k !hppa !ppc64] | firebird2.5-dev [!hurd-any !m68k !hppa !ppc64] | firebird2.1-dev [!hurd-any !m68k !hppa !ppc64], flex, freetds-dev, libapparmor-dev, libapr1-dev (>= 1.2.7-8), libbz2-dev, libc-client-dev, libcurl4-openssl-dev | libcurl-dev, libdb-dev, libedit-dev (>= 2.11-20080614-4), libenchant-dev, libevent-dev (>= 1.4.11), libexpat1-dev (>= 1.95.2-2.1), libfreetype6-dev, libgcrypt20-dev (>> 1.6.3) | libgcrypt11-dev (<< 1.5.4), libgd-dev (>= 2.1.0) | libgd2-dev, libglib2.0-dev, libgmp3-dev, libicu-dev, libjpeg-dev | libjpeg62-dev, libkrb5-dev, libldap2-dev, libmagic-dev, libmcrypt-dev, libmhash-dev (>= 0.8.8), libnss-myhostname [linux-any], libonig-dev, libpam0g-dev, libpcre3-dev (>= 2:8.35), libpng-dev, libpq-dev, libpspell-dev, libqdbm-dev, librecode-dev, libsasl2-dev, libsnmp-dev, libsqlite3-dev, libssl-dev, libsystemd-dev [linux-any], libtidy-dev (>= 1:5.2.0), libtool (>= 2.2), libwebp-dev, libwrap0-dev, libxml2-dev, libxmlrpc-epi-dev, libxmltok1-dev, libxslt1-dev (>= 1.0.18), libzip-dev (>= 1.0.0), locales-all | language-pack-de, netbase, netcat-traditional, re2c, systemtap-sdt-dev [amd64 i386 powerpc armel armhf ia64], tzdata, unixodbc-dev, zlib1g-dev
+Build-Conflicts: bind-dev, libxmlrpc-core-c3-dev
+Architecture: any all
+Standards-Version: 4.5.0.0
+Format: 3.0 (quilt)
+Directory: pool/main/p/php7.0
+Files:
+ a6d7c355d023301a1a9ec8b4f32a4856 12033040 php7.0_7.0.33.orig.tar.xz
+ b600c5e63aeafa7532eb26106c4532f6 841580 php7.0_7.0.33-26+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 544d0e207091e6e2af9cbaf3a10ddec8 5827 php7.0_7.0.33-26+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ fef2bfd1285325a4ac2c367fab6a9062c144a790 12033040 php7.0_7.0.33.orig.tar.xz
+ a296a4073cb55ede98d22b486f3f664c23f1597e 841580 php7.0_7.0.33-26+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 9c94d4554cfc1c065ba9b206cf69d30dc6e4b176 5827 php7.0_7.0.33-26+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ ab8c5be6e32b1f8d032909dedaaaa4bbb1a209e519abb01a52ce3914f9a13d96 12033040 php7.0_7.0.33.orig.tar.xz
+ 8753100e0a018a70cfe8770e162e965827ec94d0d9bf23ffd5f266742bc555ea 841580 php7.0_7.0.33-26+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 411fd131548ccaacad8b2251d7301664e7f80b42fa26285aacbc871ef5d6a1ef 5827 php7.0_7.0.33-26+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: http://www.php.net/
+Uploaders: Ondřej Surý <ondrej@debian.org>, Lior Kaplan <kaplan@debian.org>
+Testsuite: autopkgtest
+Testsuite-Triggers: apache2, wget
+Package-List: libapache2-mod-php7.0 deb httpd optional arch=any
+ libphp7.0-embed deb php optional arch=any
+ php7.0 deb php optional arch=all
+ php7.0-bcmath deb php optional arch=any
+ php7.0-bz2 deb php optional arch=any
+ php7.0-cgi deb php optional arch=any
+ php7.0-cli deb php optional arch=any
+ php7.0-common deb php optional arch=any
+ php7.0-curl deb php optional arch=any
+ php7.0-dba deb php optional arch=any
+ php7.0-dev deb php optional arch=any
+ php7.0-enchant deb php optional arch=any
+ php7.0-fpm deb php optional arch=any
+ php7.0-gd deb php optional arch=any
+ php7.0-gmp deb php optional arch=any
+ php7.0-imap deb php optional arch=any
+ php7.0-interbase deb php optional arch=any
+ php7.0-intl deb php optional arch=any
+ php7.0-json deb php optional arch=any
+ php7.0-ldap deb php optional arch=any
+ php7.0-mbstring deb php optional arch=any
+ php7.0-mcrypt deb php optional arch=any
+ php7.0-mysql deb php optional arch=any
+ php7.0-odbc deb php optional arch=any
+ php7.0-opcache deb php optional arch=any
+ php7.0-pgsql deb php optional arch=any
+ php7.0-phpdbg deb php optional arch=any
+ php7.0-pspell deb php optional arch=any
+ php7.0-readline deb php optional arch=any
+ php7.0-recode deb php optional arch=any
+ php7.0-snmp deb php optional arch=any
+ php7.0-soap deb php optional arch=any
+ php7.0-sqlite3 deb php optional arch=any
+ php7.0-sybase deb php optional arch=any
+ php7.0-tidy deb php optional arch=any
+ php7.0-xml deb php optional arch=any
+ php7.0-xmlrpc deb php optional arch=any
+ php7.0-xsl deb php optional arch=all
+ php7.0-zip deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/php.git -b master-7.0
+Vcs-Browser: https://salsa.debian.org/php-team/php
+
+Package: php7.1
+Binary: libapache2-mod-php7.1, libphp7.1-embed, php7.1, php7.1-cgi, php7.1-cli, php7.1-dev, php7.1-fpm, php7.1-phpdbg, php7.1-xsl, php7.1-odbc, php7.1-readline, php7.1-recode, php7.1-sqlite3, php7.1-xml, php7.1-sybase, php7.1-zip, php7.1-gd, php7.1-gmp, php7.1-ldap, php7.1-common, php7.1-intl, php7.1-mysql, php7.1-mcrypt, php7.1-snmp, php7.1-curl, php7.1-json, php7.1-pgsql, php7.1-mbstring, php7.1-enchant, php7.1-opcache, php7.1-imap, php7.1-bcmath, php7.1-tidy, php7.1-soap, php7.1-dba, php7.1-interbase, php7.1-xmlrpc, php7.1-pspell, php7.1-bz2
+Version: 7.1.33-14+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Build-Depends: apache2-dev (>= 2.4), autoconf (>= 2.63), automake, bison, chrpath, debhelper (>= 9.20150101), default-libmysqlclient-dev | libmysqlclient-dev, default-mysql-server <!nocheck> | mysql-server <!nocheck> | virtual-mysql-server <!nocheck>, dh-apache2, dh-systemd (>= 1.3) [linux-any], dpkg-dev (>= 1.16.1~), firebird-dev [!hurd-any !m68k !hppa !ppc64] | firebird2.5-dev [!hurd-any !m68k !hppa !ppc64] | firebird2.1-dev [!hurd-any !m68k !hppa !ppc64], flex, freetds-dev, libapparmor-dev, libapr1-dev (>= 1.2.7-8), libbz2-dev, libc-client-dev, libcurl4-openssl-dev | libcurl-dev, libdb-dev, libedit-dev (>= 2.11-20080614-4), libenchant-dev, libevent-dev (>= 1.4.11), libexpat1-dev (>= 1.95.2-2.1), libfreetype6-dev, libgcrypt20-dev (>> 1.6.3) | libgcrypt11-dev (<< 1.5.4), libgd-dev (>= 2.1.0) | libgd2-dev, libglib2.0-dev, libgmp3-dev, libicu-dev, libjpeg-dev | libjpeg62-dev, libkrb5-dev, libldap2-dev, libmagic-dev, libmcrypt-dev, libmhash-dev (>= 0.8.8), libnss-myhostname [linux-any], libonig-dev, libpam0g-dev, libpcre3-dev (>= 2:8.35), libpng-dev, libpq-dev, libpspell-dev, libqdbm-dev, librecode-dev, libsasl2-dev, libsnmp-dev, libsqlite3-dev, libssl-dev, libsystemd-dev [linux-any], libtidy-dev (>= 1:5.2.0), libtool (>= 2.2), libwebp-dev, libwrap0-dev, libxml2-dev, libxmlrpc-epi-dev, libxmltok1-dev, libxslt1-dev (>= 1.0.18), libzip-dev (>= 1.0.0), locales-all | language-pack-de, netbase, netcat-traditional, re2c, systemtap-sdt-dev [amd64 i386 powerpc armel armhf ia64], tzdata, unixodbc-dev, zlib1g-dev
+Build-Conflicts: bind-dev, libxmlrpc-core-c3-dev
+Architecture: any all
+Standards-Version: 4.5.0.0
+Format: 3.0 (quilt)
+Directory: pool/main/p/php7.1
+Files:
+ b27bb5ce72995bc0ea56276e156be889 12370228 php7.1_7.1.33.orig.tar.xz
+ 6c7b63a9769831699e32143ce18fe1c9 89296 php7.1_7.1.33-14+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ a45717363daa2029f734317b406ab0a4 5824 php7.1_7.1.33-14+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ fbcc9ab926f793e1031864c7c268ba7bfd244d70 12370228 php7.1_7.1.33.orig.tar.xz
+ a222cdf3f684608957e3e343fc02c45641633b25 89296 php7.1_7.1.33-14+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ bf82b6cfa39b2d0b00855b83bcd26e18f2a77b68 5824 php7.1_7.1.33-14+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ bd7c0a9bd5433289ee01fd440af3715309faf583f75832b64fe169c100d52968 12370228 php7.1_7.1.33.orig.tar.xz
+ 3aad5ae9259a46991d0bb3f5513ea1f5113c12f0531bebeb421f8e5e6e6cf674 89296 php7.1_7.1.33-14+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ df855a9b07f6673b2f4a7f6d3f84d416e69530e71ec0538bca1ee5509f7b9291 5824 php7.1_7.1.33-14+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: http://www.php.net/
+Uploaders: Ondřej Surý <ondrej@debian.org>, Lior Kaplan <kaplan@debian.org>
+Testsuite: autopkgtest
+Testsuite-Triggers: apache2, wget
+Package-List: libapache2-mod-php7.1 deb httpd optional arch=any
+ libphp7.1-embed deb php optional arch=any
+ php7.1 deb php optional arch=all
+ php7.1-bcmath deb php optional arch=any
+ php7.1-bz2 deb php optional arch=any
+ php7.1-cgi deb php optional arch=any
+ php7.1-cli deb php optional arch=any
+ php7.1-common deb php optional arch=any
+ php7.1-curl deb php optional arch=any
+ php7.1-dba deb php optional arch=any
+ php7.1-dev deb php optional arch=any
+ php7.1-enchant deb php optional arch=any
+ php7.1-fpm deb php optional arch=any
+ php7.1-gd deb php optional arch=any
+ php7.1-gmp deb php optional arch=any
+ php7.1-imap deb php optional arch=any
+ php7.1-interbase deb php optional arch=any
+ php7.1-intl deb php optional arch=any
+ php7.1-json deb php optional arch=any
+ php7.1-ldap deb php optional arch=any
+ php7.1-mbstring deb php optional arch=any
+ php7.1-mcrypt deb php optional arch=any
+ php7.1-mysql deb php optional arch=any
+ php7.1-odbc deb php optional arch=any
+ php7.1-opcache deb php optional arch=any
+ php7.1-pgsql deb php optional arch=any
+ php7.1-phpdbg deb php optional arch=any
+ php7.1-pspell deb php optional arch=any
+ php7.1-readline deb php optional arch=any
+ php7.1-recode deb php optional arch=any
+ php7.1-snmp deb php optional arch=any
+ php7.1-soap deb php optional arch=any
+ php7.1-sqlite3 deb php optional arch=any
+ php7.1-sybase deb php optional arch=any
+ php7.1-tidy deb php optional arch=any
+ php7.1-xml deb php optional arch=any
+ php7.1-xmlrpc deb php optional arch=any
+ php7.1-xsl deb php optional arch=all
+ php7.1-zip deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/php.git -b master-7.1
+Vcs-Browser: https://salsa.debian.org/php-team/php
+
+Package: php7.2
+Binary: libapache2-mod-php7.2, libphp7.2-embed, php7.2, php7.2-cgi, php7.2-cli, php7.2-dev, php7.2-fpm, php7.2-phpdbg, php7.2-xsl, php7.2-odbc, php7.2-readline, php7.2-recode, php7.2-sqlite3, php7.2-xml, php7.2-sybase, php7.2-zip, php7.2-gd, php7.2-gmp, php7.2-ldap, php7.2-common, php7.2-intl, php7.2-mysql, php7.2-snmp, php7.2-curl, php7.2-json, php7.2-pgsql, php7.2-mbstring, php7.2-enchant, php7.2-opcache, php7.2-imap, php7.2-bcmath, php7.2-tidy, php7.2-soap, php7.2-dba, php7.2-interbase, php7.2-xmlrpc, php7.2-pspell, php7.2-bz2
+Version: 7.2.29-1+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Build-Depends: apache2-dev (>= 2.4), autoconf (>= 2.63), automake, bison, chrpath, debhelper (>= 9.20150101), default-libmysqlclient-dev | libmysqlclient-dev, default-mysql-server <!nocheck> | mysql-server <!nocheck> | virtual-mysql-server <!nocheck>, dh-apache2, dh-systemd (>= 1.3) [linux-any], dpkg-dev (>= 1.16.1~), firebird-dev [!hurd-any !m68k !hppa !ppc64] | firebird2.5-dev [!hurd-any !m68k !hppa !ppc64] | firebird2.1-dev [!hurd-any !m68k !hppa !ppc64], flex, freetds-dev, libapparmor-dev, libapr1-dev (>= 1.2.7-8), libargon2-dev | libargon2-0-dev, libbz2-dev, libc-client-dev, libcurl4-openssl-dev | libcurl-dev, libdb-dev, libedit-dev (>= 2.11-20080614-4), libenchant-dev, libevent-dev (>= 1.4.11), libexpat1-dev (>= 1.95.2-2.1), libfreetype6-dev, libgcrypt20-dev (>> 1.6.3) | libgcrypt11-dev (<< 1.5.4), libgd-dev (>= 2.1.0) | libgd2-dev, libglib2.0-dev, libgmp3-dev, libicu-dev, libjpeg-dev | libjpeg62-dev, libkrb5-dev, libldap2-dev, liblmdb-dev, libmagic-dev, libmhash-dev (>= 0.8.8), libnss-myhostname [linux-any], libonig-dev, libpam0g-dev, libpcre3-dev (>= 2:8.35), libpng-dev, libpq-dev, libpspell-dev, libqdbm-dev, librecode-dev, libsasl2-dev, libsnmp-dev, libsodium-dev, libsqlite3-dev, libssl-dev, libsystemd-dev [linux-any], libtidy-dev (>= 1:5.2.0), libtool (>= 2.2), libwebp-dev, libwrap0-dev, libxml2-dev, libxmlrpc-epi-dev, libxmltok1-dev, libxslt1-dev (>= 1.0.18), libzip-dev (>= 1.0.0), locales-all | language-pack-de, netbase, netcat-traditional, re2c, systemtap-sdt-dev [amd64 i386 powerpc armel armhf ia64], tzdata, unixodbc-dev, zlib1g-dev
+Build-Conflicts: bind-dev, libxmlrpc-core-c3-dev
+Architecture: any all
+Standards-Version: 4.5.0.0
+Format: 3.0 (quilt)
+Directory: pool/main/p/php7.2
+Files:
+ df40f1052d6678c65b7679182e58b3de 12308380 php7.2_7.2.29.orig.tar.xz
+ 4cdb6023c15b06bca6e028cead69d9d1 69644 php7.2_7.2.29-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 881487c5cdb26e93c0bfb5927f8cb3ee 5810 php7.2_7.2.29-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 910952c26c51a5fcc97e0306e7921efeb5d18379 12308380 php7.2_7.2.29.orig.tar.xz
+ 3a3326fe6f9cb8ffd919210a6f6d90b07cb796ce 69644 php7.2_7.2.29-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 72789f9b2723aa8a31a6a4768bfe68c7aff50d83 5810 php7.2_7.2.29-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ b117de74136bf4b439d663be9cf0c8e06a260c1f340f6b75ccadb609153a7fe8 12308380 php7.2_7.2.29.orig.tar.xz
+ a8e994cfa7b9f83d427cd7ae09f33bec648d7534e5b2d278e24d8455395e215b 69644 php7.2_7.2.29-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 0359dd56851c453ff9604d05abf9eaff20a00409733a7eac5f7a2859e7266215 5810 php7.2_7.2.29-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: http://www.php.net/
+Uploaders: Ondřej Surý <ondrej@debian.org>, Lior Kaplan <kaplan@debian.org>
+Testsuite: autopkgtest
+Testsuite-Triggers: apache2, wget
+Package-List: libapache2-mod-php7.2 deb httpd optional arch=any
+ libphp7.2-embed deb php optional arch=any
+ php7.2 deb php optional arch=all
+ php7.2-bcmath deb php optional arch=any
+ php7.2-bz2 deb php optional arch=any
+ php7.2-cgi deb php optional arch=any
+ php7.2-cli deb php optional arch=any
+ php7.2-common deb php optional arch=any
+ php7.2-curl deb php optional arch=any
+ php7.2-dba deb php optional arch=any
+ php7.2-dev deb php optional arch=any
+ php7.2-enchant deb php optional arch=any
+ php7.2-fpm deb php optional arch=any
+ php7.2-gd deb php optional arch=any
+ php7.2-gmp deb php optional arch=any
+ php7.2-imap deb php optional arch=any
+ php7.2-interbase deb php optional arch=any
+ php7.2-intl deb php optional arch=any
+ php7.2-json deb php optional arch=any
+ php7.2-ldap deb php optional arch=any
+ php7.2-mbstring deb php optional arch=any
+ php7.2-mysql deb php optional arch=any
+ php7.2-odbc deb php optional arch=any
+ php7.2-opcache deb php optional arch=any
+ php7.2-pgsql deb php optional arch=any
+ php7.2-phpdbg deb php optional arch=any
+ php7.2-pspell deb php optional arch=any
+ php7.2-readline deb php optional arch=any
+ php7.2-recode deb php optional arch=any
+ php7.2-snmp deb php optional arch=any
+ php7.2-soap deb php optional arch=any
+ php7.2-sqlite3 deb php optional arch=any
+ php7.2-sybase deb php optional arch=any
+ php7.2-tidy deb php optional arch=any
+ php7.2-xml deb php optional arch=any
+ php7.2-xmlrpc deb php optional arch=any
+ php7.2-xsl deb php optional arch=all
+ php7.2-zip deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/php.git -b master-7.2
+Vcs-Browser: https://salsa.debian.org/php-team/php
+
+Package: php7.3
+Binary: libapache2-mod-php7.3, libphp7.3-embed, php7.3, php7.3-cgi, php7.3-cli, php7.3-dev, php7.3-fpm, php7.3-phpdbg, php7.3-xsl, php7.3-bcmath, php7.3-bz2, php7.3-common, php7.3-curl, php7.3-dba, php7.3-enchant, php7.3-gd, php7.3-gmp, php7.3-imap, php7.3-interbase, php7.3-intl, php7.3-json, php7.3-ldap, php7.3-mbstring, php7.3-mysql, php7.3-odbc, php7.3-opcache, php7.3-pgsql, php7.3-pspell, php7.3-readline, php7.3-recode, php7.3-snmp, php7.3-soap, php7.3-sqlite3, php7.3-sybase, php7.3-tidy, php7.3-xml, php7.3-xmlrpc, php7.3-zip
+Version: 7.3.16-1+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Build-Depends: apache2-dev (>= 2.4), autoconf (>= 2.63), automake, bison, chrpath, debhelper (>= 9.20150101), default-libmysqlclient-dev | libmysqlclient-dev, default-mysql-server <!nocheck> | mysql-server <!nocheck> | virtual-mysql-server <!nocheck>, dh-apache2, dh-systemd (>= 1.3) [linux-any], dpkg-dev (>= 1.16.1~), firebird-dev [!hurd-any !m68k !hppa !ppc64] | firebird2.5-dev [!hurd-any !m68k !hppa !ppc64] | firebird2.1-dev [!hurd-any !m68k !hppa !ppc64], flex, freetds-dev, libapparmor-dev, libapr1-dev (>= 1.2.7-8), libargon2-dev | libargon2-0-dev, libbz2-dev, libc-client-dev, libcurl4-openssl-dev | libcurl-dev, libdb-dev, libedit-dev (>= 2.11-20080614-4), libenchant-dev, libevent-dev (>= 1.4.11), libexpat1-dev (>= 1.95.2-2.1), libfreetype6-dev, libgcrypt20-dev (>> 1.6.3) | libgcrypt11-dev (<< 1.5.4), libgd-dev (>= 2.1.0) | libgd2-dev, libglib2.0-dev, libgmp3-dev, libicu-dev, libjpeg-dev | libjpeg62-dev, libkrb5-dev, libldap2-dev, liblmdb-dev, libmagic-dev, libmhash-dev (>= 0.8.8), libnss-myhostname [linux-any], libonig-dev, libpam0g-dev, libpcre2-dev (>= 10.30), libpng-dev, libpq-dev, libpspell-dev, libqdbm-dev, librecode-dev, libsasl2-dev, libsnmp-dev, libsodium-dev, libsqlite3-dev, libssl-dev, libsystemd-dev [linux-any], libtidy-dev (>= 1:5.2.0), libtool (>= 2.2), libwebp-dev, libwrap0-dev, libxml2-dev, libxmlrpc-epi-dev, libxmltok1-dev, libxslt1-dev (>= 1.0.18), libzip-dev (>= 1.0.0), locales-all | language-pack-de, netbase, netcat-traditional, re2c, systemtap-sdt-dev [amd64 i386 powerpc armel armhf ia64], tzdata, unixodbc-dev, zlib1g-dev
+Build-Conflicts: bind-dev, libxmlrpc-core-c3-dev
+Architecture: any all
+Standards-Version: 4.5.0.0
+Format: 3.0 (quilt)
+Directory: pool/main/p/php7.3
+Files:
+ 9aad7c60fded1e0d76b803e6ff5004bb 12113688 php7.3_7.3.16.orig.tar.xz
+ 031588cb3c64d8d6676953104a1dc064 64896 php7.3_7.3.16-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ b8ba5b5ccf3d1b9111a7f9e77ad07699 5809 php7.3_7.3.16-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 2571100c75b24aaa913339eafee3e3c8f410cc07 12113688 php7.3_7.3.16.orig.tar.xz
+ 6938a5de4f422c32880ff7f1c93342d408779b79 64896 php7.3_7.3.16-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 22ea7b53a05d6ecf7509301b5403e72a298bb0e6 5809 php7.3_7.3.16-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ 91aaee3dbdc71b69b4f3292f9d99211172a2fa926c3f3bbdb0e85dab03dd2bcb 12113688 php7.3_7.3.16.orig.tar.xz
+ 3b3f8a3c3c1f094d9f6ae8411fd0081139d8a9d0bb9c8106b4b2881e55ec1906 64896 php7.3_7.3.16-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 8313efce70bbb9317175ccb52f5c05d773844e094d5c97ad8a024eb6074fb629 5809 php7.3_7.3.16-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: http://www.php.net/
+Uploaders: Ondřej Surý <ondrej@debian.org>, Lior Kaplan <kaplan@debian.org>
+Testsuite: autopkgtest
+Testsuite-Triggers: apache2, wget
+Package-List: libapache2-mod-php7.3 deb httpd optional arch=any
+ libphp7.3-embed deb php optional arch=any
+ php7.3 deb php optional arch=all
+ php7.3-bcmath deb php optional arch=any
+ php7.3-bz2 deb php optional arch=any
+ php7.3-cgi deb php optional arch=any
+ php7.3-cli deb php optional arch=any
+ php7.3-common deb php optional arch=any
+ php7.3-curl deb php optional arch=any
+ php7.3-dba deb php optional arch=any
+ php7.3-dev deb php optional arch=any
+ php7.3-enchant deb php optional arch=any
+ php7.3-fpm deb php optional arch=any
+ php7.3-gd deb php optional arch=any
+ php7.3-gmp deb php optional arch=any
+ php7.3-imap deb php optional arch=any
+ php7.3-interbase deb php optional arch=any
+ php7.3-intl deb php optional arch=any
+ php7.3-json deb php optional arch=any
+ php7.3-ldap deb php optional arch=any
+ php7.3-mbstring deb php optional arch=any
+ php7.3-mysql deb php optional arch=any
+ php7.3-odbc deb php optional arch=any
+ php7.3-opcache deb php optional arch=any
+ php7.3-pgsql deb php optional arch=any
+ php7.3-phpdbg deb php optional arch=any
+ php7.3-pspell deb php optional arch=any
+ php7.3-readline deb php optional arch=any
+ php7.3-recode deb php optional arch=any
+ php7.3-snmp deb php optional arch=any
+ php7.3-soap deb php optional arch=any
+ php7.3-sqlite3 deb php optional arch=any
+ php7.3-sybase deb php optional arch=any
+ php7.3-tidy deb php optional arch=any
+ php7.3-xml deb php optional arch=any
+ php7.3-xmlrpc deb php optional arch=any
+ php7.3-xsl deb php optional arch=all
+ php7.3-zip deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/php.git -b master-7.3
+Vcs-Browser: https://salsa.debian.org/php-team/php
+
+Package: php7.4
+Binary: libapache2-mod-php7.4, libphp7.4-embed, php7.4, php7.4-cgi, php7.4-cli, php7.4-dev, php7.4-fpm, php7.4-phpdbg, php7.4-xsl, php7.4-bcmath, php7.4-bz2, php7.4-common, php7.4-curl, php7.4-dba, php7.4-enchant, php7.4-gd, php7.4-gmp, php7.4-imap, php7.4-interbase, php7.4-intl, php7.4-json, php7.4-ldap, php7.4-mbstring, php7.4-mysql, php7.4-odbc, php7.4-opcache, php7.4-pgsql, php7.4-pspell, php7.4-readline, php7.4-snmp, php7.4-soap, php7.4-sqlite3, php7.4-sybase, php7.4-tidy, php7.4-xml, php7.4-xmlrpc, php7.4-zip
+Version: 7.4.4-1+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP Maintainers <team+pkg-php@tracker.debian.org>
+Build-Depends: apache2-dev (>= 2.4), autoconf (>= 2.63), automake, bison, chrpath, debhelper (>= 9.20150101), default-libmysqlclient-dev | libmysqlclient-dev, default-mysql-server <!nocheck> | mysql-server <!nocheck> | virtual-mysql-server <!nocheck>, dh-apache2, dh-systemd (>= 1.3) [linux-any], dpkg-dev (>= 1.16.1~), firebird-dev [!hurd-any !m68k !hppa !ppc64] | firebird2.5-dev [!hurd-any !m68k !hppa !ppc64] | firebird2.1-dev [!hurd-any !m68k !hppa !ppc64], flex, freetds-dev, libapparmor-dev, libapr1-dev (>= 1.2.7-8), libargon2-dev | libargon2-0-dev, libbz2-dev, libc-client-dev, libcurl4-openssl-dev | libcurl-dev, libdb-dev, libedit-dev (>= 2.11-20080614-4), libenchant-dev, libevent-dev (>= 1.4.11), libexpat1-dev (>= 1.95.2-2.1), libffi-dev, libfreetype6-dev, libgcrypt20-dev (>> 1.6.3) | libgcrypt11-dev (<< 1.5.4), libgd-dev (>= 2.1.0) | libgd2-dev, libglib2.0-dev, libgmp3-dev, libicu-dev, libjpeg-dev | libjpeg62-dev, libkrb5-dev, libldap2-dev, liblmdb-dev, libmagic-dev, libmhash-dev (>= 0.8.8), libnss-myhostname [linux-any], libonig-dev, libpam0g-dev, libpcre2-dev (>= 10.30), libpng-dev, libpq-dev, libpspell-dev, libqdbm-dev, libsasl2-dev, libsnmp-dev, libsodium-dev, libsqlite3-dev, libssl-dev, libsystemd-dev [linux-any], libtidy-dev (>= 1:5.2.0), libtool (>= 2.2), libwebp-dev, libwrap0-dev, libxml2-dev, libxmlrpc-epi-dev, libxmltok1-dev, libxslt1-dev (>= 1.0.18), libzip-dev (>= 1.0.0), locales-all | language-pack-de, netbase, netcat-traditional, re2c, systemtap-sdt-dev [amd64 i386 powerpc armel armhf ia64], tzdata, unixodbc-dev, zlib1g-dev
+Build-Conflicts: bind-dev, libxmlrpc-core-c3-dev
+Architecture: any all
+Standards-Version: 4.5.0.0
+Format: 3.0 (quilt)
+Directory: pool/main/p/php7.4
+Files:
+ a5632697e223b8386025520662dcb78f 10267308 php7.4_7.4.4.orig.tar.xz
+ 3f9a54291a9c7760d23cc0f6507ec684 64876 php7.4_7.4.4-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 5c5963e1f868d465e7806a72c75b30bd 5743 php7.4_7.4.4-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ ac18ea90842e79d2a4b07bdc8b5ab121e5519550 10267308 php7.4_7.4.4.orig.tar.xz
+ 6aff8b66bb26276ed4f838107c422ee1065bc973 64876 php7.4_7.4.4-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 1fa3b8d46e6ef058a1695d88bcc6ed6a4ad413ed 5743 php7.4_7.4.4-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ 1873c4cefdd3df9a78dcffb2198bba5c2f0464f55c9c960720c84df483fca74c 10267308 php7.4_7.4.4.orig.tar.xz
+ bb0c880ab7004f12c53c2af2eb2fde00c584bf772f39ce1eaa9b7f256c553bf2 64876 php7.4_7.4.4-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ da77d40daca3bb5b521e4ae17e9720e20f973e7555bd74451544d6c6858fddd8 5743 php7.4_7.4.4-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: http://www.php.net/
+Uploaders: Ondřej Surý <ondrej@debian.org>, Lior Kaplan <kaplan@debian.org>
+Testsuite: autopkgtest
+Testsuite-Triggers: apache2, wget
+Package-List: libapache2-mod-php7.4 deb httpd optional arch=any
+ libphp7.4-embed deb php optional arch=any
+ php7.4 deb php optional arch=all
+ php7.4-bcmath deb php optional arch=any
+ php7.4-bz2 deb php optional arch=any
+ php7.4-cgi deb php optional arch=any
+ php7.4-cli deb php optional arch=any
+ php7.4-common deb php optional arch=any
+ php7.4-curl deb php optional arch=any
+ php7.4-dba deb php optional arch=any
+ php7.4-dev deb php optional arch=any
+ php7.4-enchant deb php optional arch=any
+ php7.4-fpm deb php optional arch=any
+ php7.4-gd deb php optional arch=any
+ php7.4-gmp deb php optional arch=any
+ php7.4-imap deb php optional arch=any
+ php7.4-interbase deb php optional arch=any
+ php7.4-intl deb php optional arch=any
+ php7.4-json deb php optional arch=any
+ php7.4-ldap deb php optional arch=any
+ php7.4-mbstring deb php optional arch=any
+ php7.4-mysql deb php optional arch=any
+ php7.4-odbc deb php optional arch=any
+ php7.4-opcache deb php optional arch=any
+ php7.4-pgsql deb php optional arch=any
+ php7.4-phpdbg deb php optional arch=any
+ php7.4-pspell deb php optional arch=any
+ php7.4-readline deb php optional arch=any
+ php7.4-snmp deb php optional arch=any
+ php7.4-soap deb php optional arch=any
+ php7.4-sqlite3 deb php optional arch=any
+ php7.4-sybase deb php optional arch=any
+ php7.4-tidy deb php optional arch=any
+ php7.4-xml deb php optional arch=any
+ php7.4-xmlrpc deb php optional arch=any
+ php7.4-xsl deb php optional arch=all
+ php7.4-zip deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/php.git -b master-7.4
+Vcs-Browser: https://salsa.debian.org/php-team/php
+
+Package: python-boto
+Binary: python-boto, python3-boto
+Version: 2.44.0-1.1+ubuntu18.04.1+deb.sury.org+1
+Section: python
+Maintainer: Eric Evans <eevans@debian.org>
+Build-Depends: debhelper (>= 7), python-all (>= 2.6.6-3), python-setuptools, python3-all (>= 3.2), python3-setuptools, python-six, python3-six, dh-python
+Architecture: all
+Standards-Version: 3.9.8
+Format: 1.0
+Directory: pool/main/p/python-boto
+Files:
+ 20eba2ccf9cf67ad35f0af52cf4da119 1454248 python-boto_2.44.0.orig.tar.gz
+ 1289d8dd48e249071e12eb3bd5195e18 7366 python-boto_2.44.0-1.1+ubuntu18.04.1+deb.sury.org+1.diff.gz
+ 9514ed2451b41c2a7110273ebd23c6e9 2370 python-boto_2.44.0-1.1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 431ed97b7f0a1b212b3af6eb7bb7cdff35bcc012 1454248 python-boto_2.44.0.orig.tar.gz
+ 9af39a9482f3d00da82ac234f2a99df80cc5c607 7366 python-boto_2.44.0-1.1+ubuntu18.04.1+deb.sury.org+1.diff.gz
+ 5d63cf91fd94c665c0b4d1c40f20960ec692b730 2370 python-boto_2.44.0-1.1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ 6b25065d62872b5bc9c974c98ddceae4de8c87336ff5309aa47876d0bcf13046 1454248 python-boto_2.44.0.orig.tar.gz
+ 8bca0e4dea0234d144eddf06f033b9fbc8e067d9b215cc5acf599665603cda87 7366 python-boto_2.44.0-1.1+ubuntu18.04.1+deb.sury.org+1.diff.gz
+ b514cdaf2f50a7034016213b5e51735c5893b32682bffb66a450a446648acbc8 2370 python-boto_2.44.0-1.1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: https://github.com/boto/boto
+Testsuite: autopkgtest
+Testsuite-Triggers: python-httpretty, python-mock, python-nose
+Package-List: python-boto deb python optional arch=all
+ python3-boto deb python optional arch=all
+Vcs-Git: git://anonscm.debian.org/users/eevans/python-boto.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=users/eevans/python-boto.git
+
+Package: python-httplib2
+Binary: python-httplib2, python3-httplib2
+Version: 0.11.3-1+ubuntu18.04.1+deb.sury.org+1
+Section: python
+Maintainer: Andrea Colangelo <warp10@debian.org>
+Build-Depends: debhelper (>= 9), dh-python, python3-all (>= 3.1.2-10), python3-setuptools, python-all (>= 2.6.6-3~), python-setuptools
+Architecture: all
+Standards-Version: 4.2.1
+Format: 3.0 (quilt)
+Directory: pool/main/p/python-httplib2
+Files:
+ 9aa3e074da9a235cd675dd65e1fbcf39 215815 python-httplib2_0.11.3.orig.tar.gz
+ 365a097084515f7d2434ce807718ceab 6200 python-httplib2_0.11.3-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 1401267e6172f097a95ff3b7a59e359c 2429 python-httplib2_0.11.3-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 45abaec7c9d7e1a37933f4f6bf7b5dabf92efd5e 215815 python-httplib2_0.11.3.orig.tar.gz
+ 08143c17d2a93d61a0ab44556dc43dfe8805837f 6200 python-httplib2_0.11.3-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 7466f2174560526332bc0e099e1e3420867f32a7 2429 python-httplib2_0.11.3-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ e71daed9a0e6373642db61166fa70beecc9bf04383477f84671348c02a04cbdf 215815 python-httplib2_0.11.3.orig.tar.gz
+ ec3a9a043984a5163191ce0f14cf2fab4c1abd196e76beb281513a9bd28f4e02 6200 python-httplib2_0.11.3-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ dc42b2bba7807b2f54c2c3a7eaca03ce12266e041c880a43a38ea0ddeb24a91d 2429 python-httplib2_0.11.3-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: https://github.com/httplib2/httplib2
+Uploaders: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+Package-List: python-httplib2 deb python optional arch=all
+ python3-httplib2 deb python optional arch=all
+Vcs-Git: https://salsa.debian.org/python-team/modules/python-httplib2.git
+Vcs-Browser: https://salsa.debian.org/python-team/modules/python-httplib2
+
+Package: sassphp
+Binary: php-sass
+Version: 0.7-1+ubuntu18.04.1+deb.sury.org+1
+Section: web
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9), libsass-dev, php-all-dev, dh-php
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/s/sassphp
+Files:
+ 08c2f49f7db678a2c6a58060bb72f843 23130 sassphp_0.7.orig.tar.gz
+ 21eda697acc78243f288418e3bca0631 3008 sassphp_0.7-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 0133dbe09781f4327df7e66bb2255946 2156 sassphp_0.7-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 24c663355f98fb25014bc8bcd65caf5583010b6e 23130 sassphp_0.7.orig.tar.gz
+ 58c60c750c5a5ecfbc31c01c2a13a01b81c5d429 3008 sassphp_0.7-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 6aa7b9cad8f631b1c1bd1459e19859a4422ff1ba 2156 sassphp_0.7-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ 945f66fa02bcf38068feb36cf42b5a9d6a366c69590d6f6cb6eb889bd7e449c2 23130 sassphp_0.7.orig.tar.gz
+ ca03289a94376e78972674affdd5363b8124be21bd4e2d9beff3b9193dae9768 3008 sassphp_0.7-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ acc469c59d0cb09dd70adee9896a5c6f1a3bf9da270a4a7af563929f060eebe3 2156 sassphp_0.7-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: https://github.com/absalomedia/sassphp
+Uploaders: Rhonda D'Vine <rhonda@strg.at>
+Package-List: php-sass deb web optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/sassphp.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/sassphp
+
+Package: tideways
+Binary: php-tideways
+Version: 5.0.2-1+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9~), dh-php (>= 0.15~), php-all-dev
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/t/tideways
+Files:
+ 374cf4ff7ba03401a279777abe94815d 24843 tideways_5.0.2.orig.tar.gz
+ cb6b9e202b908f94c57f6865fab6198a 3348 tideways_5.0.2-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 7262d895861e2666e3bdfcd25b778882 2238 tideways_5.0.2-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 9721f2e215e3de92e58ec1bccd6cc7598cd648c2 24843 tideways_5.0.2.orig.tar.gz
+ a8a77e27ae7dfcf1d9d236e488426a210af8777e 3348 tideways_5.0.2-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ bb7e50bab24e03e34960226e2563e5e263a1f3bf 2238 tideways_5.0.2-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ 9ef4accba5a060128a6f4fb4e91da94f55cf42615cea47379d536d9702394559 24843 tideways_5.0.2.orig.tar.gz
+ 684c50e08ca5830835c1d6182475de1c41b0a604e1e336f6d7b73abda92a62bb 3348 tideways_5.0.2-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 35be6a174044e84e6c8eb763a1e1180d802d69ef1e78011ca3f8347fc397e857 2238 tideways_5.0.2-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: https://tideways.io/
+Uploaders: Martin Meredith <mez@debian.org>, Lior Kaplan <kaplan@debian.org>, Ondřej Surý <ondrej@debian.org>
+Package-List: php-tideways deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/tideways.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/tideways
+
+Package: tidy-html5
+Binary: libtidy-dev, libtidy5deb1, tidy
+Version: 2:5.6.0-6+ubuntu18.04.1+deb.sury.org+2
+Section: web
+Maintainer: Tidy HTML5 <tidy-html5@packages.debian.org>
+Build-Depends: cmake, debhelper (>= 9), xsltproc
+Architecture: any
+Standards-Version: 4.2.1
+Format: 3.0 (quilt)
+Directory: pool/main/t/tidy-html5
+Files:
+ 85c8a163d9ece6a02fe12bc9bddbc455 665438 tidy-html5_5.6.0.orig.tar.gz
+ bf2f38a49aeafe14401a6ed63a932e83 14768 tidy-html5_5.6.0-6+ubuntu18.04.1+deb.sury.org+2.debian.tar.xz
+ 9c2138585eb34e4a90cc6549dcedd651 2282 tidy-html5_5.6.0-6+ubuntu18.04.1+deb.sury.org+2.dsc
+Checksums-Sha1:
+ bd6812f3493095c4ca42be11fe3884d1da11c361 665438 tidy-html5_5.6.0.orig.tar.gz
+ 51739acf24b645121ee09b5378714872d562fdf1 14768 tidy-html5_5.6.0-6+ubuntu18.04.1+deb.sury.org+2.debian.tar.xz
+ 794ca58e9282db07658ded65904391d1792e4c68 2282 tidy-html5_5.6.0-6+ubuntu18.04.1+deb.sury.org+2.dsc
+Checksums-Sha256:
+ 08a63bba3d9e7618d1570b4ecd6a7daa83c8e18a41c82455b6308bc11fe34958 665438 tidy-html5_5.6.0.orig.tar.gz
+ e1ffba1dd53a89424d264118d9273ae77b2483811c651502580da39ed8755820 14768 tidy-html5_5.6.0-6+ubuntu18.04.1+deb.sury.org+2.debian.tar.xz
+ ea3bc13fb199f345c660d12afd7bd2a44c4ce383e54879f01979cb0ff5ab0d37 2282 tidy-html5_5.6.0-6+ubuntu18.04.1+deb.sury.org+2.dsc
+Homepage: http://www.html-tidy.org/
+Uploaders: Ondřej Surý <ondrej@debian.org>, Boyuan Yang <byang@debian.org>,
+Package-List: libtidy-dev deb libdevel optional arch=any
+ libtidy5deb1 deb libs optional arch=any
+ tidy deb web optional arch=any
+Vcs-Git: https://salsa.debian.org/debian/tidy-html5.git
+Vcs-Browser: https://salsa.debian.org/debian/tidy-html5
+
+Package: xcache
+Binary: php-xcache
+Version: 3.2.0-2+ubuntu18.04.1+deb.sury.org+10
+Section: php
+Maintainer: Debian PHP PECL Maintainers <pkg-php-pecl@lists.alioth.debian.org>
+Build-Depends: debhelper (>= 9~), dh-php (>= 0.15~), php-all-dev (>= 17~)
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/x/xcache
+Files:
+ 8b0a6f27de630c4714ca261480f34cda 173368 xcache_3.2.0.orig.tar.gz
+ 180013be5ff3d04a0df34876c4d66480 4012 xcache_3.2.0-2+ubuntu18.04.1+deb.sury.org+10.debian.tar.xz
+ 8c9559a1bb27253499b24e5bc435396a 2093 xcache_3.2.0-2+ubuntu18.04.1+deb.sury.org+10.dsc
+Checksums-Sha1:
+ 99a381388350fda20fbc8ef03362b2247263eecd 173368 xcache_3.2.0.orig.tar.gz
+ c8bbaa553c087b776f8d89e574343cd33c8e5098 4012 xcache_3.2.0-2+ubuntu18.04.1+deb.sury.org+10.debian.tar.xz
+ 284ff69f702620ee150e44936a33002b737a8cc3 2093 xcache_3.2.0-2+ubuntu18.04.1+deb.sury.org+10.dsc
+Checksums-Sha256:
+ 9d7bea91dabb3e0c859195a85562f24c77a5967722753018966beb7a421c6bc0 173368 xcache_3.2.0.orig.tar.gz
+ 8a7e4c566ed94a4c90549e62b3faafc67f160f5602d8b20b82563b6620dfcfdb 4012 xcache_3.2.0-2+ubuntu18.04.1+deb.sury.org+10.debian.tar.xz
+ 911cabaab8e73e985f87ba47f4d3da0adc2b785ebd165aa92a72af474df0d786 2093 xcache_3.2.0-2+ubuntu18.04.1+deb.sury.org+10.dsc
+Homepage: http://xcache.lighttpd.net/
+Uploaders: Michal Čihař <nijel@debian.org>, Ondřej Surý <ondrej@debian.org>
+Package-List: php-xcache deb php optional arch=any
+
+Package: xdebug
+Binary: php-xdebug
+Version: 2.9.3+2.8.1+2.5.5-1+ubuntu18.04.1+deb.sury.org+1
+Section: php
+Maintainer: Debian PHP PECL Maintainers <team+php-pecl@tracker.debian.org>
+Build-Depends: debhelper (>= 9~), dh-php (>= 0.33~), php-all-dev (>= 17~)
+Architecture: any
+Standards-Version: 3.9.8
+Format: 3.0 (quilt)
+Directory: pool/main/x/xdebug
+Files:
+ e8f1d2f7bc1d8843e24e134be7697e27 294176 xdebug_2.9.3+2.8.1+2.5.5.orig.tar.xz
+ a2b77b716d1da852c0b116569eb6f5f6 5868 xdebug_2.9.3+2.8.1+2.5.5-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ dc3ea8dfd1d49c45487d67b67914e84f 2310 xdebug_2.9.3+2.8.1+2.5.5-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 26890621eaf219c0b5d6dc2f512d0365481fffc9 294176 xdebug_2.9.3+2.8.1+2.5.5.orig.tar.xz
+ a923ed598fccec46df09f8fb870e596b1355dae0 5868 xdebug_2.9.3+2.8.1+2.5.5-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 35aa479498836017e91f6bdaec5c1769280f3bc4 2310 xdebug_2.9.3+2.8.1+2.5.5-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ a412af221f2e6631b9256f89af7fdf1377a868cd35cc633907de5ffb48cc0a71 294176 xdebug_2.9.3+2.8.1+2.5.5.orig.tar.xz
+ 52599a3f47883c330c558d3289311e2afc265cbd8785716d6b7e7850bd1f3290 5868 xdebug_2.9.3+2.8.1+2.5.5-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 35a90368d001380d2b8678a235e245f09ce5d5b6b800ebfba15ae7d9af22a357 2310 xdebug_2.9.3+2.8.1+2.5.5-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: http://xdebug.org/
+Uploaders: Martin Meredith <mez@debian.org>, Lior Kaplan <kaplan@debian.org>, Ondřej Surý <ondrej@debian.org>
+Package-List: php-xdebug deb php optional arch=any
+Vcs-Git: https://salsa.debian.org/php-team/pecl/xdebug.git
+Vcs-Browser: https://salsa.debian.org/php-team/pecl/xdebug
+
+Package: zeromq3
+Binary: libzmq5, libzmq3-dev
+Version: 4.3.1-5+ubuntu18.04.1+deb.sury.org+1
+Section: libs
+Maintainer: Laszlo Boszormenyi (GCS) <gcs@debian.org>
+Build-Depends: autotools-dev, dh-autoreconf, debhelper (>= 9), libpgm-dev (>= 5.2.122~dfsg), libsodium-dev, libnorm-dev, libkrb5-dev, pkg-config, xmlto, asciidoc
+Architecture: any
+Standards-Version: 4.3.0
+Format: 3.0 (quilt)
+Directory: pool/main/z/zeromq3
+Files:
+ 7e32132123473bb38ee76e07c0f30e4f 788963 zeromq3_4.3.1.orig.tar.gz
+ 9f9db564b4586993b7cdc9eaa7157963 15720 zeromq3_4.3.1-5+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ d20f9b27efb294f37cbeba416cfad042 2130 zeromq3_4.3.1-5+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 7c434e1cb76e099ef5390cadc7606257567423cb 788963 zeromq3_4.3.1.orig.tar.gz
+ fadb11711bac24ea6d7522b126e2a80b0b196d42 15720 zeromq3_4.3.1-5+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ db20dfce10b0fdd1c2d262b00c3504f6c71857dc 2130 zeromq3_4.3.1-5+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ e1dec061725b55d791e0c6952b8c220846c8cd901c09d1283a6e902898205b9d 788963 zeromq3_4.3.1.orig.tar.gz
+ 01c8b58e0251cef66688aaed704811b8b636cda7430b3321bb199c6781ea64b9 15720 zeromq3_4.3.1-5+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ ef01871cb848b567e23c6c7547055fe54fa5f37f0cd2fd10f026de28c15a4fe2 2130 zeromq3_4.3.1-5+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: https://www.zeromq.org/
+Package-List: libzmq3-dev deb libdevel optional arch=any
+ libzmq5 deb libs optional arch=any
+

@@ -1,0 +1,173 @@
+Package: apache2
+Binary: apache2, apache2-data, apache2-bin, apache2-utils, apache2-suexec-pristine, apache2-suexec-custom, apache2-doc, apache2-dev, apache2-ssl-dev, libapache2-mod-md, libapache2-mod-proxy-uwsgi
+Version: 2.4.41-1+ubuntu18.04.1+deb.sury.org+5
+Section: httpd
+Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
+Build-Depends: autotools-dev, debhelper (>= 9), dpkg-dev (>= 1.16.1~), dh-systemd, bison, gawk | awk, libapr1-dev (>= 1.6.0), libaprutil1-dev (>= 1.6.0), libbrotli-dev, liblua5.2-dev, libnghttp2-dev, libpcre3-dev, libssl-dev (>= 1.1.1), libxml2-dev, lsb-release, perl, zlib1g-dev, libcurl4-openssl-dev | libcurl4-dev, libjansson-dev
+Build-Conflicts: autoconf2.13
+Architecture: any all
+Standards-Version: 4.3.0
+Format: 3.0 (quilt)
+Directory: pool/main/a/apache2
+Files:
+ 9dd9c5fae398c3696805d19cb1f1a104 9267917 apache2_2.4.41.orig.tar.gz
+ 40b635a90614657b0cae868598da947e 1015188 apache2_2.4.41-1+ubuntu18.04.1+deb.sury.org+5.debian.tar.xz
+ 44e6d20ebfffda4508880b287328edef 3510 apache2_2.4.41-1+ubuntu18.04.1+deb.sury.org+5.dsc
+Checksums-Sha1:
+ b713e835aa7cde823a4b7f8e3463164f3d9fe63e 9267917 apache2_2.4.41.orig.tar.gz
+ b4c29a321bdc2b05523de0ff1d9dae4b5467e69a 1015188 apache2_2.4.41-1+ubuntu18.04.1+deb.sury.org+5.debian.tar.xz
+ c3ff167c65e9dde22dced1e1642644a2be4776d2 3510 apache2_2.4.41-1+ubuntu18.04.1+deb.sury.org+5.dsc
+Checksums-Sha256:
+ 3c0f9663240beb0f008acf3b4501c4f339d7467ee345a36c86c46b4d6f3a5461 9267917 apache2_2.4.41.orig.tar.gz
+ 9d7268adc74c2bf3f473d877c5f31a26af0be624055da8e8bf04fee621063af9 1015188 apache2_2.4.41-1+ubuntu18.04.1+deb.sury.org+5.debian.tar.xz
+ 1510f2e6dfd37efb121a74418a32e974c5b61862767f3d62c3b62bc86aff5c75 3510 apache2_2.4.41-1+ubuntu18.04.1+deb.sury.org+5.dsc
+Homepage: https://httpd.apache.org/
+Uploaders: Stefan Fritsch <sf@debian.org>, Arno Töll <arno@debian.org>, Ondřej Surý <ondrej@debian.org>, Xavier Guimard <yadd@debian.org>
+Testsuite: autopkgtest
+Testsuite-Triggers: build-essential, curl, dpkg-dev, expect, libanyevent-perl, libcrypt-ssleay-perl, libdatetime-perl, libfcgi-perl, libhtml-parser-perl, libhttp-dav-perl, libnet-ssleay-perl, libprotocol-http2-perl, libtime-hires-perl, libwww-perl, perl-doc, ssl-cert, wget
+Package-List: apache2 deb httpd optional arch=any
+ apache2-bin deb httpd optional arch=any
+ apache2-data deb httpd optional arch=all
+ apache2-dev deb httpd optional arch=any
+ apache2-doc deb doc optional arch=all
+ apache2-ssl-dev deb httpd optional arch=any
+ apache2-suexec-custom deb httpd optional arch=any
+ apache2-suexec-pristine deb httpd optional arch=any
+ apache2-utils deb httpd optional arch=any
+ libapache2-mod-md deb oldlibs optional arch=any
+ libapache2-mod-proxy-uwsgi deb oldlibs optional arch=any
+Vcs-Git: https://salsa.debian.org/apache-team/apache2.git
+Vcs-Browser: https://salsa.debian.org/apache-team/apache2
+
+Package: apr-util
+Binary: libaprutil1, libaprutil1-ldap, libaprutil1-dbd-mysql, libaprutil1-dbd-sqlite3, libaprutil1-dbd-odbc, libaprutil1-dbd-pgsql, libaprutil1-dev
+Version: 1.6.1-5+ubuntu18.04.1+deb.sury.org+1
+Section: libs
+Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
+Build-Depends: debhelper (>> 9~), autoconf, autotools-dev, mawk, libldap2-dev, libexpat1-dev, libdb-dev, libgdbm-dev, libapr1-dev (>> 1.4.8-2~), libsqlite3-dev, libpq-dev, python:any, default-libmysqlclient-dev, unixodbc-dev, doxygen, libssl-dev
+Architecture: any
+Standards-Version: 4.2.1
+Format: 3.0 (quilt)
+Directory: pool/main/a/apr-util
+Files:
+ bd502b9a8670a8012c4d90c31a84955f 554301 apr-util_1.6.1.orig.tar.gz
+ 1891a784b13959d4d2260adae0bc10a0 341964 apr-util_1.6.1-5+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ b0284a4b5ccf56fb0bdf6df48419c211 2773 apr-util_1.6.1-5+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 5bae4ff8f1dad3d7091036d59c1c0b2e76903bf4 554301 apr-util_1.6.1.orig.tar.gz
+ 51a2a567f1954e77beef4a6e3097ae28d1e6a0e4 341964 apr-util_1.6.1-5+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 9fb34a73b3d78377e6c1839008f85fb986293d29 2773 apr-util_1.6.1-5+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ b65e40713da57d004123b6319828be7f1273fbc6490e145874ee1177e112c459 554301 apr-util_1.6.1.orig.tar.gz
+ 6e99e08f0faa58a66b335231728f1d7731ebf718750aa153670a8ecbddc33671 341964 apr-util_1.6.1-5+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 058964fd622e6716dfa277be553967e6b0e4121d63a1c6852e90477d81bf5877 2773 apr-util_1.6.1-5+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: http://apr.apache.org/
+Uploaders: Stefan Fritsch <sf@debian.org>
+Package-List: libaprutil1 deb libs optional arch=any
+ libaprutil1-dbd-mysql deb libs optional arch=any
+ libaprutil1-dbd-odbc deb libs optional arch=any
+ libaprutil1-dbd-pgsql deb libs optional arch=any
+ libaprutil1-dbd-sqlite3 deb libs optional arch=any
+ libaprutil1-dev deb libdevel optional arch=any
+ libaprutil1-ldap deb libs optional arch=any
+Vcs-Git: https://salsa.debian.org/apache-team/apr-util.git
+Vcs-Browser: https://salsa.debian.org/apache-team/apr-util
+
+Package: brotli
+Binary: python-brotli, python3-brotli, brotli, libbrotli-dev, libbrotli1
+Version: 1.0.7-2+ubuntu18.04.1+deb.sury.org+1
+Section: python
+Maintainer: Tomasz Buchert <tomasz@debian.org>
+Build-Depends: cmake, debhelper (>= 10~), dh-python, python, python-dev, python-setuptools, python3, python3-all-dev, python3-setuptools
+Architecture: any
+Standards-Version: 4.3.0
+Format: 3.0 (quilt)
+Directory: pool/main/b/brotli
+Files:
+ 7b6edd4f2128f22794d0ca28c53898a5 23827908 brotli_1.0.7.orig.tar.gz
+ 1cd1151252c85425124cf64a3f6dc7a0 4144 brotli_1.0.7-2+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ b4f1d99320c58386aa6543c8b80ba16a 2493 brotli_1.0.7-2+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ ee64a380152aa20fbc1098fe3799104884c570c1 23827908 brotli_1.0.7.orig.tar.gz
+ 9f6fd6090bab4619b7fb63a0c3c9f5525311fb5a 4144 brotli_1.0.7-2+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 050d8b3d05bdfe79fd553264d1903c9712a585cd 2493 brotli_1.0.7-2+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ 4c61bfb0faca87219ea587326c467b95acb25555b53d1a421ffa3c8a9296ee2c 23827908 brotli_1.0.7.orig.tar.gz
+ 3b91f45e91224f3060ff40972b77302937752c5275792208c10ce8e6d7304ab8 4144 brotli_1.0.7-2+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ 6bc02b9cb29bf6d21f1b0f7c2b7ed411fc46484838300fcbc00648f1c1b46d88 2493 brotli_1.0.7-2+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: https://github.com/google/brotli
+Uploaders: Ondřej Surý <ondrej@debian.org>
+Testsuite: autopkgtest
+Testsuite-Triggers: python-all, python3-all
+Package-List: brotli deb utils optional arch=any
+ libbrotli-dev deb libdevel optional arch=any
+ libbrotli1 deb libs optional arch=any
+ python-brotli deb python optional arch=any
+ python3-brotli deb python optional arch=any
+Vcs-Git: https://salsa.debian.org/debian/brotli.git
+Vcs-Browser: https://salsa.debian.org/debian/brotli
+
+Package: openssl
+Binary: openssl, libssl1.1, libcrypto1.1-udeb, libssl1.1-udeb, libssl-dev, libssl-doc
+Version: 1.1.1d-1+ubuntu18.04.1+deb.sury.org+2
+Section: utils
+Maintainer: Debian OpenSSL Team <pkg-openssl-devel@lists.alioth.debian.org>
+Build-Depends: debhelper (>= 9), m4, bc, dpkg-dev (>= 1.15.7)
+Architecture: any all
+Standards-Version: 4.2.1
+Format: 3.0 (quilt)
+Directory: pool/main/o/openssl
+Files:
+ 905985dcf3a16e63c777b69cf868898f 9012933 openssl_1.1.1d.orig.tar.gz
+ ebf79afe30b37e529659896089501388 84168 openssl_1.1.1d-1+ubuntu18.04.1+deb.sury.org+2.debian.tar.xz
+ d0913d1a027c987c376787aa511ccae2 2612 openssl_1.1.1d-1+ubuntu18.04.1+deb.sury.org+2.dsc
+Checksums-Sha1:
+ 7e6aecd3f150d608b72c765aa3f8c0eb975c1648 9012933 openssl_1.1.1d.orig.tar.gz
+ 6ae2aeba57ef963f16e956a18a86186897fc8e31 84168 openssl_1.1.1d-1+ubuntu18.04.1+deb.sury.org+2.debian.tar.xz
+ c1abc7b3950cfc8493f3f977322ef49b5fc0643a 2612 openssl_1.1.1d-1+ubuntu18.04.1+deb.sury.org+2.dsc
+Checksums-Sha256:
+ db227f74232c57e8c7d6490e89f9e81dee543b4959c19676348062ce2f81cbe4 9012933 openssl_1.1.1d.orig.tar.gz
+ 3c2868f42e347a2c0041160919104d6d127898435fb0fc43b249549801d4e189 84168 openssl_1.1.1d-1+ubuntu18.04.1+deb.sury.org+2.debian.tar.xz
+ 0646cf79b47dcb32a20d54866126ea2d174ca3bc9f176b835f61b7adea68c6ae 2612 openssl_1.1.1d-1+ubuntu18.04.1+deb.sury.org+2.dsc
+Homepage: https://www.openssl.org/
+Uploaders: Christoph Martin <christoph.martin@uni-mainz.de>, Kurt Roeckx <kurt@roeckx.be>, Sebastian Andrzej Siewior <sebastian@breakpoint.cc>
+Testsuite: autopkgtest
+Testsuite-Triggers: perl
+Package-List: libcrypto1.1-udeb udeb debian-installer optional arch=any
+ libssl-dev deb libdevel optional arch=any
+ libssl-doc deb doc optional arch=all
+ libssl1.1 deb libs optional arch=any
+ libssl1.1-udeb udeb debian-installer optional arch=any
+ openssl deb utils optional arch=any
+Vcs-Git: https://salsa.debian.org/debian/openssl.git
+Vcs-Browser: https://salsa.debian.org/debian/openssl
+
+Package: python-httplib2
+Binary: python-httplib2, python3-httplib2
+Version: 0.11.3-1+ubuntu18.04.1+deb.sury.org+1
+Section: python
+Maintainer: Andrea Colangelo <warp10@debian.org>
+Build-Depends: debhelper (>= 9), dh-python, python3-all (>= 3.1.2-10), python3-setuptools, python-all (>= 2.6.6-3~), python-setuptools
+Architecture: all
+Standards-Version: 4.2.1
+Format: 3.0 (quilt)
+Directory: pool/main/p/python-httplib2
+Files:
+ 9aa3e074da9a235cd675dd65e1fbcf39 215815 python-httplib2_0.11.3.orig.tar.gz
+ 8071426acdcd57b9faf000a5a796d305 6204 python-httplib2_0.11.3-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ b05a5f987e7f17c617406d98e67ef557 2429 python-httplib2_0.11.3-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha1:
+ 45abaec7c9d7e1a37933f4f6bf7b5dabf92efd5e 215815 python-httplib2_0.11.3.orig.tar.gz
+ abe1133b0ad91f85f3a0e21241f183742235f4e1 6204 python-httplib2_0.11.3-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ c4303fa5ae44324d34e971adcfaf7dcd486e1379 2429 python-httplib2_0.11.3-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Checksums-Sha256:
+ e71daed9a0e6373642db61166fa70beecc9bf04383477f84671348c02a04cbdf 215815 python-httplib2_0.11.3.orig.tar.gz
+ 9f8515cf3e4658d6df8823ff0e9e9cd11394db8eaa215a3ece0ccf68cf01f8c4 6204 python-httplib2_0.11.3-1+ubuntu18.04.1+deb.sury.org+1.debian.tar.xz
+ f67476535948a6862eee32f273ce6ee2b4e5ef68ec117efb991ca06113cb3014 2429 python-httplib2_0.11.3-1+ubuntu18.04.1+deb.sury.org+1.dsc
+Homepage: https://github.com/httplib2/httplib2
+Uploaders: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+Package-List: python-httplib2 deb python optional arch=all
+ python3-httplib2 deb python optional arch=all
+Vcs-Git: https://salsa.debian.org/python-team/modules/python-httplib2.git
+Vcs-Browser: https://salsa.debian.org/python-team/modules/python-httplib2
+

@@ -1,0 +1,6 @@
+Archive: bionic
+Version: 18.04
+Component: main
+Origin: LP-PPA-xapienz-curl34
+Label: Curl 3 and 4
+Architecture: i386

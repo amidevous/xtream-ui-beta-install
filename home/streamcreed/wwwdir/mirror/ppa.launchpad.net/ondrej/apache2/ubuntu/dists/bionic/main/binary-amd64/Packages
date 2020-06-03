@@ -1,0 +1,572 @@
+Package: apache2
+Priority: optional
+Section: httpd
+Installed-Size: 512
+Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
+Architecture: amd64
+Version: 2.4.41-1+ubuntu18.04.1+deb.sury.org+5
+Recommends: ssl-cert
+Replaces: apache2.2-bin, apache2.2-common, libapache2-mod-proxy-uwsgi (<< 2.4.33)
+Suggests: apache2-doc, apache2-suexec-pristine | apache2-suexec-custom, www-browser
+Provides: httpd, httpd-cgi
+Depends: apache2-bin (= 2.4.41-1+ubuntu18.04.1+deb.sury.org+5), apache2-data (= 2.4.41-1+ubuntu18.04.1+deb.sury.org+5), apache2-utils (= 2.4.41-1+ubuntu18.04.1+deb.sury.org+5), lsb-base, mime-support, perl:any, procps
+Conflicts: apache2.2-bin, apache2.2-common
+Breaks: libapache2-mod-proxy-uwsgi (<< 2.4.33)
+Filename: pool/main/a/apache2/apache2_2.4.41-1+ubuntu18.04.1+deb.sury.org+5_amd64.deb
+Size: 161092
+MD5sum: ecfe45fc15a1e1542bccf5e249b2af9f
+SHA1: 3ab1c87ed024f519c969251ebe4788bacff0d964
+SHA256: 3590d9c5ded9437f95b001ba05ed55df45e3504671fce0d881f558f1bc82a79a
+Description: Apache HTTP Server
+Description-md5: d02426bc360345e5acd45367716dc35c
+
+Package: apache2-bin
+Source: apache2
+Priority: optional
+Section: httpd
+Installed-Size: 4344
+Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
+Architecture: amd64
+Version: 2.4.41-1+ubuntu18.04.1+deb.sury.org+5
+Replaces: libapache2-mod-proxy-uwsgi (<< 2.4.33)
+Suggests: apache2-doc, apache2-suexec-pristine | apache2-suexec-custom, www-browser
+Provides: apache2-api-20120211, apache2-api-20120211-openssl1.1
+Depends: perl:any, libapr1 (>= 1.6.2), libaprutil1 (>= 1.6.0), libaprutil1-dbd-sqlite3 | libaprutil1-dbd-mysql | libaprutil1-dbd-odbc | libaprutil1-dbd-pgsql | libaprutil1-dbd-freetds, libaprutil1-ldap, libbrotli1 (>= 0.6.0), libc6 (>= 2.14), libcurl4 (>= 7.16.2), libjansson4 (>= 2.4), libldap-2.4-2 (>= 2.4.7), liblua5.2-0, libnghttp2-14 (>= 1.15.0), libpcre3, libssl1.1 (>= 1.1.1), libxml2 (>= 2.7.4), zlib1g (>= 1:1.1.4)
+Breaks: gridsite (<< 3.0.0~20170225gitd51b2fd-1~), libapache2-mod-dacs (<= 1.4.38a-2), libapache2-mod-proxy-uwsgi (<< 2.4.33)
+Filename: pool/main/a/apache2/apache2-bin_2.4.41-1+ubuntu18.04.1+deb.sury.org+5_amd64.deb
+Size: 1235384
+MD5sum: 8e443ef1a4d27ba1536c17dd26243c8a
+SHA1: e7d2a1b6aa18e54886ff63d31a8ea2e81755b498
+SHA256: 4c47897ce8ea6d3c3c1d7218b71216e1870ff505a0ead69c84653fa8f10cb46f
+Description: Apache HTTP Server (modules and other binary files)
+Description-md5: 37901ca6bbb9305b61d0920ecc08204f
+
+Package: apache2-data
+Source: apache2
+Priority: optional
+Section: httpd
+Installed-Size: 848
+Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
+Architecture: all
+Version: 2.4.41-1+ubuntu18.04.1+deb.sury.org+5
+Filename: pool/main/a/apache2/apache2-data_2.4.41-1+ubuntu18.04.1+deb.sury.org+5_all.deb
+Size: 159892
+MD5sum: e90ac6b7efdd8698b6dc5a98eb7ab102
+SHA1: a629b823852f90fba99d507f6ab91fb42d476d47
+SHA256: 299483b31dca07f0782c82c0ffd2a53a6eb5b7ce0709e255f3b06415a055a9c5
+Description: Apache HTTP Server (common files)
+Description-md5: 9f2fab36019a61312dec627d1cd80365
+Multi-Arch: foreign
+
+Package: apache2-data
+Source: apache2
+Priority: optional
+Section: httpd
+Installed-Size: 892
+Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
+Architecture: all
+Version: 2.4.37-1+ubuntu18.04.1+deb.sury.org+1
+Filename: pool/main/a/apache2/apache2-data_2.4.37-1+ubuntu18.04.1+deb.sury.org+1_all.deb
+Size: 165004
+MD5sum: 46c3b49bb9208b1782e858c77981d1ad
+SHA1: bea50f881d475ffbfe2aaf96d271a11d6d472638
+SHA256: cfe5d0f86c07c30e67613cddd744b70d756d8e5167d8ba9c27fe1432893171a9
+Description: Apache HTTP Server (common files)
+Description-md5: 9f2fab36019a61312dec627d1cd80365
+Multi-Arch: foreign
+
+Package: apache2-dbg
+Source: apache2
+Priority: optional
+Section: debug
+Installed-Size: 5436
+Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
+Architecture: amd64
+Version: 2.4.37-1+ubuntu18.04.1+deb.sury.org+1
+Depends: apache2-bin (= 2.4.37-1+ubuntu18.04.1+deb.sury.org+1), apache2 (= 2.4.37-1+ubuntu18.04.1+deb.sury.org+1)
+Filename: pool/main/a/apache2/apache2-dbg_2.4.37-1+ubuntu18.04.1+deb.sury.org+1_amd64.deb
+Size: 4257176
+MD5sum: d2d85527486bd87289028269b68238b7
+SHA1: 19f5fe1cb30f5266d40b70c660c83533bc01fb17
+SHA256: 4882fe01a5a72fcc0b80cde77e8f7155a86d480a4a14db0af2acb8af50a0ac6b
+Description: Apache debugging symbols
+Description-md5: 1dc9b1b377a5ebff4fae9939578a7f2c
+Build-Ids: 0164e765446de2e1ce54318b44c50ca87ea6ea69 017533912183f876116e53c6ec34928cc759d43e 09760eca91f8388c107af760787e3984b8deaf83 0a4435b692db02d858a9c4cdee747aabaf77dc98 0c92c300caeaf9754ef85ee34cb6df4220e0aa9b 0cf3ad45c55ed8a9fdef5800fb3b2270d0eea5bf 0d50ee419b3fe22e5e22ff8affb31adce500c9fb 0e429e0f0e64d116a1e1bb28732b8dacbf326849 0ed9ac27a8992363b946c60921e65bd8b2d99f42 0fb3d0c2b80e694ca6e58df390a30fbcf1413e57 10112252f04b4da832fb1b83c53ee99f64fe327d 1999281bde1dbbf53760af056356c08eddc69edf 199ee76ad03484717edfd637f93a57eea02879a4 1ad271633e545e82459128815ebc5316e72a1aa5 1d1894d59eb6c1464fa18d3bc3586ebaa13c538d 1d44576bdc7879b4e30602c070f9284c0c4f577b 1d6f43165700b80fdb0a3c0f95718b95b0158cc9 20a3aeb1a01c60fd325db00e2218cc5385f81465 23172ffc5ba03166e64e4ce33d5da43835255063 252b7e111c86b0c6fd8ba53c121851a5bb3369a1 25eacfdb361325717bbe0f9fd09b858a2b7f63a4 261bacec72e36f90bc136d392aa1861e3a56e26f 2f6fea208b13bfa35a9f80631b73bbf485a3cc8c 33b084246156669be5a36a621fe85b68a118425b 3792d80ff2cb6d98384d38c54405c86bf5d533b1 3924775076a0f775586e7cd19d94b9bf1ad42102 3a02698ce37c46f9082d76d391e0e0399fdc924f 3c0b213502117e89faa759ede3372cb57a4bc3a8 3daf185609a1ed20b971a74b0181e0e5cfc45d87 4060a3bba4f06d041c71a6b7b93c6ab669e57589 428fdc7646eb7b53df248b06fe0852f9f1b61237 430657757b8c5c30fa8c52395e42ebc080c03c2e 47b4a3b7b9faeaa01e6845b4470377d927262778 48d6beaf8490054a9efa71ac0d2321d53ba8b1b4 4da8dbbcb72b19c7dcca2891fc59b013a866c4d7 4ef2741e0238e4e98b6fd8d598d7c28a76389c1a 539f175c81641bc4f54c98e757acbc5fd55e6441 53ddf56ad6160743d011c56c379c346b7922c154 566d139ea0c1d12904edc711a2e3bc42cd75bb7d 56cb688759f8d38690fee19437c5358ef7da9671 585457aa7bddb3d7ad7ce2f0ea5172b35273329b 5a53cb31c0a95cb52b460169020af24b36279557 5ab67c78f405db1720879b5c688831554db5590a 5bd2534ec834b4bfba5ba641b19fca8b83ebf5d7 5ea965efbfc7056c4ba13c9a7c6a7469093429b3 5f9599c5563f2a817531bf78dc9c4eb2884f3c61 5fd8e69153cca76ac34d207fa58f6524361564aa 60acf151ca96f7f7e1d5c3d84e74cd925ea3abc7 6206798848184fd19d707a3e4ae07e3d7ccf748d 620cda9dbedcb559c56663d707183a2adb11db73 679f8f7fc2c9f9452106926411a4a9bcc1b7b222 67d716216d30789fdbce6d4ac6b45987aa5ffcea 6813bf456b1617d3d1f432332e55a5028316f11f 68ad4fc5fd20e122d3c1886df854dc69577d05fb 6a4280b6021930011303ac798b380a422eb52d48 6c196404bd29e33cb697b100d04bacbc211be48e 6d694223be12c33e3597a719ecd696190cf161d7 6ef068315317199fdb32b4a7b016b2aec4ee7af1 70b16ee730e967106a243c28e56c75084819a157 70dd7f1b5d1b9b913be233ba1a4641e60f9b812b 716827761a5133ca1d316f2e393a1207bf0143b9 74edc7a855469f5247c2ed67a9c36855b1331b90 75e9319ae5604186413126e651a5f63a6a64374f 75fa64676b75566811df5eecd13b384b10609ce0 77b5065839bb3271726248bdfdefac218f066b6d 78558d44481194eba80a625101c1ab2ed51293d4 7ccd1a243e03f6a3ebaacff9e092366375cdf4f1 80f657196de11deaba55d47d74a351c580d6c7ec 82b1790101ab11578d167483f0762b60351e739e 86aa7fc744f4d4b6774034dd76749e33f0b9029f 8b0377c3670fc1f2199dfc74866a38e5035406f7 8be133c82d4330516ef61d3349f7b566eb8081a8 8cdeeac21b62ae26decbee32f1980be1d936a8cf 8ed85816574ee9c6606ab82baefc5ecb6ca98cd4 91a90566638deab2c699869b28bf47e483bccfe4 93de8845c4eeb78f514b4c3e8dc43151e9edcdbe 94bd6239ec652445cc3fd4d90ab6cee2be04b329 952d306f34aeb4ecb0a953f17e65447b9f837e81 95324766b1eb2d49930429959702f40103265cc1 95c76df16d04d0c5283419056bd220adf014ff3f 95d99971fc5e7ecebe8777533bf8a102e9fa0136 967065435519ec47e20c3b16a34c41127ba2659e 976beeb58dcd1f3087a86cee702b7a491d9ea13c 97ef85c7bf0d1b4dc8facf97d2ee4c8277465625 9c7cb1d0a29973d562828b46a4d3987b6eb1e5f2 9e2d798726a95e7109a66f2c78d5ee8701894146 9fd0294f7b51b7bdb3919b73614423354c19fa11 a0b872e6443ea8e5940d6277a1930553986d72bb a13662df7d47a42edd8a9dfcb07919a4db909d8d a61031b0d20dc6446034231644afbdb514fd51b3 a62565554114ee463bff54005712ead0b18e9f2b a6295ebafaddcdc661b96a5c47222ad6b9e58b81 a690a3b65b516cdb2eadcd27e2287b1f7a6b5652 a7b02799a802cef9ab1463d9bde3714fb189a295 a7d71183a0639abbf22e582664d5b2cda6b86e81 a9626633615455710944ac5ebac039693991088a ac23f236b6a5a637f06401045c0388afad96277b ad71f9b34eebddedbefb9f86bd87380d0d0a3b54 ae7cf6120ed48effabfb4417455130bf76a359af b3b8df1bcafc84ae9616060f52bd48a781cb63e0 b5795bbf9c41f075d5e7ceabb3ebcaf2af53b0c8 b94972c42d781ac363938dcb6eb2551df3a94c47 b9a8b0123096e6248be30d71f1a39dbbb2401d57 bd851363381459f119dcfd7c8065af168171a990 be676a82c4f3dadcb8cf7e60e3d2cc47698e8362 c534a9f4cabf9dcc662e0f5b95bc940c6e7c1910 c59a17638cd01a53e59c7720a899bfd9ea879cb5 c8fa90a375e8f1bb522a701541ea761348a6bedd cab7c20f009083fd8e9631f7b590f97d657cff19 d0d94af042f1eefe0fbe27531af15cf9305050b0 d168646eab6d003f76bd0e22cf8e88cf83b7c2e1 d28e928a7ba95ebd04ad97e494a6b361f9429afe d2cc614bfe8adc7548ebea35ecaee909edd00e46 d5985535a5a589e1a8865e908345cbb91d56c410 d81cd834bebbc739a60002a3994dc01fc1b56724 db4efc646ecad7cd8f4bc84d419c9a0a87f6736a dc680720f516f37d08a1b6beeeca4edb226f4023 dc96ab11961da62de249d767c635a0d6f8bbe0fc dea9c3ce043afaa5f54decbd4fa25089efbd0516 dedc425523f0fcc02cefa8b8fd7e173029e120cf dfbaeac18363779a8802de668e360b614067a176 e0a4e33bc89ceb514b97c5ff6850e0ed5344ae87 e2ed3b28d4e1a3d75acfa7ee6f2f349825a718d1 e6bd9e5ee5a3ac05ed59a3be1805b02916f2b654 e6ca9667e92185ce167b688c27b3abc095a68013 f0259d27d3b605e259e9dcb4e78e7d269b44ae68 f3522c3f45369e62edeb4a0405f9dcb0661d6ebd f5786a74c79525f71261edaa4b22c390b884cbff fad3da44699a03db9512e8620a4dd564b4dc815e fd4bb918495dea867f1d5b047a43661f7a197511
+
+Package: apache2-dev
+Source: apache2
+Priority: optional
+Section: httpd
+Installed-Size: 989
+Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
+Architecture: amd64
+Version: 2.4.41-1+ubuntu18.04.1+deb.sury.org+5
+Provides: dh-apache2
+Depends: debhelper (>= 9), libapr1-dev, libaprutil1-dev, openssl, perl
+Filename: pool/main/a/apache2/apache2-dev_2.4.41-1+ubuntu18.04.1+deb.sury.org+5_amd64.deb
+Size: 242240
+MD5sum: 793fa8657807f2ba6365af47a588cd18
+SHA1: a2fbdbcc33ae1c2eaac8a1a58293e3fc009e3174
+SHA256: bacd35aa61f469d1c19fda007dab0eb42da36d04c11548f544f734d481d542e7
+Description: Apache HTTP Server (development headers)
+Description-md5: ec5fb4465b2fd1034115a06268054ae9
+
+Package: apache2-doc
+Source: apache2
+Priority: optional
+Section: doc
+Installed-Size: 24250
+Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
+Architecture: all
+Version: 2.4.41-1+ubuntu18.04.1+deb.sury.org+5
+Recommends: apache2
+Filename: pool/main/a/apache2/apache2-doc_2.4.41-1+ubuntu18.04.1+deb.sury.org+5_all.deb
+Size: 3911604
+MD5sum: b933801e3b5b58b33dbebe382ed4b0d0
+SHA1: 095f45d0e6a5d2339db3a4cca260ec1c697dd90c
+SHA256: da9449ae2aa8687ad6ca461adb4a267c51fc54aecf1ad5ed424dfa040604241d
+Description: Apache HTTP Server (on-site documentation)
+Description-md5: 04f8562fb3fd21e5886e40af9aeb7b7d
+
+Package: apache2-doc
+Source: apache2
+Priority: optional
+Section: doc
+Installed-Size: 24054
+Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
+Architecture: all
+Version: 2.4.37-1+ubuntu18.04.1+deb.sury.org+1
+Recommends: apache2
+Filename: pool/main/a/apache2/apache2-doc_2.4.37-1+ubuntu18.04.1+deb.sury.org+1_all.deb
+Size: 3896316
+MD5sum: e748ad0dbe30153de96d69cd9566c7a9
+SHA1: 2de863fa61099a197a92f4598873cce6e6dc103c
+SHA256: 0b0050457b1052ab075ea1fddb2800b59316a3b0ca9d32aee1bbf9832aba005a
+Description: Apache HTTP Server (on-site documentation)
+Description-md5: 04f8562fb3fd21e5886e40af9aeb7b7d
+
+Package: apache2-ssl-dev
+Source: apache2
+Priority: optional
+Section: httpd
+Installed-Size: 13
+Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
+Architecture: amd64
+Version: 2.4.41-1+ubuntu18.04.1+deb.sury.org+5
+Depends: apache2-dev (= 2.4.41-1+ubuntu18.04.1+deb.sury.org+5), libssl-dev (>= 1.1)
+Filename: pool/main/a/apache2/apache2-ssl-dev_2.4.41-1+ubuntu18.04.1+deb.sury.org+5_amd64.deb
+Size: 3128
+MD5sum: ae8d44e0fb2e4976ee98c620888d4c9e
+SHA1: b40d10249b2627acda237c43f0911ced5f388ee5
+SHA256: 57b47faef1612721bde0c3989279df24da8a936168eca99524d348264b4e38ab
+Description: Apache HTTP Server (mod_ssl development headers)
+Description-md5: 160d9bdafec462b08db62740b1eb83d2
+
+Package: apache2-suexec-custom
+Source: apache2
+Priority: optional
+Section: httpd
+Installed-Size: 126
+Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
+Architecture: amd64
+Version: 2.4.41-1+ubuntu18.04.1+deb.sury.org+5
+Provides: apache2-suexec
+Depends: apache2-bin, libc6 (>= 2.8)
+Filename: pool/main/a/apache2/apache2-suexec-custom_2.4.41-1+ubuntu18.04.1+deb.sury.org+5_amd64.deb
+Size: 81156
+MD5sum: a50491ec4c2c8345a161f4285b06e4d6
+SHA1: 1fac85a603cd0f98f4f34b79bf6a76dc071f9c41
+SHA256: babe66c407260a934dd6cbe4147658a4118b0e33ac24ec0e2ba11746d1d82c4f
+Description: Apache HTTP Server configurable suexec program for mod_suexec
+Description-md5: 116f52596e88b0c7717e1f4973ada661
+
+Package: apache2-suexec-pristine
+Source: apache2
+Priority: optional
+Section: httpd
+Installed-Size: 120
+Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
+Architecture: amd64
+Version: 2.4.41-1+ubuntu18.04.1+deb.sury.org+5
+Provides: apache2-suexec
+Depends: apache2-bin, libc6 (>= 2.4)
+Filename: pool/main/a/apache2/apache2-suexec-pristine_2.4.41-1+ubuntu18.04.1+deb.sury.org+5_amd64.deb
+Size: 79664
+MD5sum: 64c8490eef76a358acba50f13aa304fb
+SHA1: 74bafd124deb1f100f4dfdd672b3e2b52d79346f
+SHA256: 21557e39180b61da7159b39ceff5cde885755a97f581b91f568726289bef3504
+Description: Apache HTTP Server standard suexec program for mod_suexec
+Description-md5: 86a22eab8bdd72ac81f3d8aab53bf001
+
+Package: apache2-utils
+Source: apache2
+Priority: optional
+Section: httpd
+Installed-Size: 324
+Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
+Architecture: amd64
+Version: 2.4.41-1+ubuntu18.04.1+deb.sury.org+5
+Depends: libapr1 (>= 1.4.8-2~), libaprutil1 (>= 1.5.0), libc6 (>= 2.14), libssl1.1 (>= 1.1.0)
+Filename: pool/main/a/apache2/apache2-utils_2.4.41-1+ubuntu18.04.1+deb.sury.org+5_amd64.deb
+Size: 148552
+MD5sum: 45505dca50d8250b06a5e01a49c56c59
+SHA1: ee757ee5639d1653687435d1dd165afd1aef99e9
+SHA256: 18f97d8b58a52e0f95e2a5036dedfe9c2c2093adc6de6caad0b50151528fe0c8
+Description: Apache HTTP Server (utility programs for web servers)
+Description-md5: e30a2415fa3efbbf31dd32106edbb811
+Multi-Arch: foreign
+
+Package: brotli
+Priority: optional
+Section: utils
+Installed-Size: 754
+Maintainer: Tomasz Buchert <tomasz@debian.org>
+Architecture: amd64
+Version: 1.0.7-2+ubuntu18.04.1+deb.sury.org+1
+Depends: libc6 (>= 2.14)
+Filename: pool/main/b/brotli/brotli_1.0.7-2+ubuntu18.04.1+deb.sury.org+1_amd64.deb
+Size: 274240
+MD5sum: 0f013732dfbfabe1459027dab3208ddb
+SHA1: 3688dfeb21d8d6cefd6a23b2aa4a9f65126f7d6c
+SHA256: e2f2d181a427869333f03fd3db459e520f695f4f327e14a5eb77ac8fbf504cdc
+Description: lossless compression algorithm and format (command line utility)
+Description-md5: aee765d3571821ffe40670742c9b514d
+
+Package: libapache2-mod-md
+Source: apache2
+Priority: optional
+Section: oldlibs
+Installed-Size: 6
+Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
+Architecture: amd64
+Version: 2.4.41-1+ubuntu18.04.1+deb.sury.org+5
+Depends: apache2 (= 2.4.41-1+ubuntu18.04.1+deb.sury.org+5)
+Filename: pool/main/a/apache2/libapache2-mod-md_2.4.41-1+ubuntu18.04.1+deb.sury.org+5_amd64.deb
+Size: 944
+MD5sum: a672583e9a1aa69e30184986f1c7b162
+SHA1: 4557de68bcabdc65473d51ec4bd03f4f752890ea
+SHA256: 392a56337a2a5763960520bda6aa44e728c228ab45d5f484a6e7618f6cc9bcde
+Description: transitional package
+Description-md5: c2abd3d451fbe9f8b62453ebd20f7096
+
+Package: libapache2-mod-proxy-uwsgi
+Source: apache2
+Priority: optional
+Section: oldlibs
+Installed-Size: 10
+Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
+Architecture: amd64
+Version: 2.4.41-1+ubuntu18.04.1+deb.sury.org+5
+Depends: apache2 (= 2.4.41-1+ubuntu18.04.1+deb.sury.org+5)
+Filename: pool/main/a/apache2/libapache2-mod-proxy-uwsgi_2.4.41-1+ubuntu18.04.1+deb.sury.org+5_amd64.deb
+Size: 1144
+MD5sum: 2e6b82db4417937a2dde8697f2e13ba5
+SHA1: 2a0a43943f5933adfe83675a95446445a3198053
+SHA256: 15941e5f046b6d9acdcf3f754d7d24f22c3bc87c14ad11fbe96f95c3281f304a
+Description: transitional package
+Description-md5: d2fa4db85203c7bfc8bfdc64d863cf45
+
+Package: libaprutil1
+Source: apr-util
+Priority: optional
+Section: libs
+Installed-Size: 258
+Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
+Architecture: amd64
+Version: 1.6.1-5+ubuntu18.04.1+deb.sury.org+1
+Depends: libapr1 (>= 1.6.2), libc6 (>= 2.25), libdb5.3, libexpat1 (>= 2.0.1), libgdbm5 (>= 1.14), libssl1.1 (>= 1.1.0)
+Breaks: libapr1 (<< 1.4.8-2~)
+Filename: pool/main/a/apr-util/libaprutil1_1.6.1-5+ubuntu18.04.1+deb.sury.org+1_amd64.deb
+Size: 89860
+MD5sum: 26658429246abc47a633e7831599a0bd
+SHA1: feb96ae7ce04770f80ff51b9473392634881c64d
+SHA256: de2cc5dafe12c447c26471686663b6014b9902c7e354b2c303534c4a01b9fb3d
+Description: Apache Portable Runtime Utility Library
+Description-md5: e0d4198f7ab8d2d00a12d0e044194068
+Multi-Arch: same
+
+Package: libaprutil1-dbd-mysql
+Source: apr-util
+Priority: optional
+Section: libs
+Installed-Size: 51
+Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
+Architecture: amd64
+Version: 1.6.1-5+ubuntu18.04.1+deb.sury.org+1
+Depends: libaprutil1 (= 1.6.1-5+ubuntu18.04.1+deb.sury.org+1), libc6 (>= 2.4), libmysqlclient20 (>= 5.7.11)
+Filename: pool/main/a/apr-util/libaprutil1-dbd-mysql_1.6.1-5+ubuntu18.04.1+deb.sury.org+1_amd64.deb
+Size: 19732
+MD5sum: a879013803ce26943aae2516d1429361
+SHA1: 3f4e6c59f1eb9542cb98beb01e0a5958ab54968c
+SHA256: 130cef45e07c78615dc7f5eea5fd65fe01fcf8e8306b4a255f8b72eb74fe3629
+Description: Apache Portable Runtime Utility Library - MySQL Driver
+Description-md5: 15a666ed46c11f75bd13c5e02383601c
+Multi-Arch: same
+
+Package: libaprutil1-dbd-odbc
+Source: apr-util
+Priority: optional
+Section: libs
+Installed-Size: 59
+Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
+Architecture: amd64
+Version: 1.6.1-5+ubuntu18.04.1+deb.sury.org+1
+Depends: libaprutil1 (= 1.6.1-5+ubuntu18.04.1+deb.sury.org+1), libc6 (>= 2.14), libodbc1 (>= 2.3.1)
+Filename: pool/main/a/apr-util/libaprutil1-dbd-odbc_1.6.1-5+ubuntu18.04.1+deb.sury.org+1_amd64.deb
+Size: 23392
+MD5sum: ab2011c2c62115984f893f173efa5640
+SHA1: 7a54fb8e78e246ec4f2e4a6f4dc80f1a3b356603
+SHA256: c706f2e275ede87c4d383d1a9ba2cdcbb5b665fd30aa5401fe4ea5b1c4577d18
+Description: Apache Portable Runtime Utility Library - ODBC Driver
+Description-md5: 085602535c579227169d691cc9bd9db1
+Multi-Arch: same
+
+Package: libaprutil1-dbd-pgsql
+Source: apr-util
+Priority: optional
+Section: libs
+Installed-Size: 51
+Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
+Architecture: amd64
+Version: 1.6.1-5+ubuntu18.04.1+deb.sury.org+1
+Depends: libaprutil1 (= 1.6.1-5+ubuntu18.04.1+deb.sury.org+1), libc6 (>= 2.14), libpq5
+Filename: pool/main/a/apr-util/libaprutil1-dbd-pgsql_1.6.1-5+ubuntu18.04.1+deb.sury.org+1_amd64.deb
+Size: 19640
+MD5sum: 0f3e5f5dbfda2cee065fa6710d6560fa
+SHA1: 7dea55f616077c8ed691f0fa78b5f7e8beea58d6
+SHA256: 6d3d9481baaed2eb5ee147661d55090bed324f94b4b47c950728c572366b52b6
+Description: Apache Portable Runtime Utility Library - PostgreSQL Driver
+Description-md5: 3e0d8248ad62a14f055f01f5218a8c8f
+Multi-Arch: same
+
+Package: libaprutil1-dbd-sqlite3
+Source: apr-util
+Priority: optional
+Section: libs
+Installed-Size: 47
+Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
+Architecture: amd64
+Version: 1.6.1-5+ubuntu18.04.1+deb.sury.org+1
+Depends: libaprutil1 (= 1.6.1-5+ubuntu18.04.1+deb.sury.org+1), libc6 (>= 2.4), libsqlite3-0 (>= 3.5.9)
+Filename: pool/main/a/apr-util/libaprutil1-dbd-sqlite3_1.6.1-5+ubuntu18.04.1+deb.sury.org+1_amd64.deb
+Size: 17676
+MD5sum: 34c2db8b703cb0c57bfb669358639105
+SHA1: b0bac501a07275b3d852dae7d558a1990b4b86b4
+SHA256: b62b4ea3a0abb78510a8c5ee8f8976dba7a36cd73134e0f1df2bbd2426549fd1
+Description: Apache Portable Runtime Utility Library - SQLite3 Driver
+Description-md5: f471c87c1f3c003cda76426ff2939b9c
+Multi-Arch: same
+
+Package: libaprutil1-dev
+Source: apr-util
+Priority: optional
+Section: libdevel
+Installed-Size: 4922
+Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
+Architecture: amd64
+Version: 1.6.1-5+ubuntu18.04.1+deb.sury.org+1
+Depends: libaprutil1 (= 1.6.1-5+ubuntu18.04.1+deb.sury.org+1), libldap2-dev, libexpat1-dev, libapr1-dev
+Filename: pool/main/a/apr-util/libaprutil1-dev_1.6.1-5+ubuntu18.04.1+deb.sury.org+1_amd64.deb
+Size: 402732
+MD5sum: de0a2f149e5e4ca6512979d0bde44a04
+SHA1: 99758e6eb7577309296a3b238dbc6de1281a3954
+SHA256: 2c0fc81f997ed3e5cf8c0dd4c952234e147270a085cdc21ca0b550a38e884dff
+Description: Apache Portable Runtime Utility Library - Development Headers
+Description-md5: d6ae06fa24afa413ea1d1cd0db69d8a4
+
+Package: libaprutil1-ldap
+Source: apr-util
+Priority: optional
+Section: libs
+Installed-Size: 39
+Maintainer: Debian Apache Maintainers <debian-apache@lists.debian.org>
+Architecture: amd64
+Version: 1.6.1-5+ubuntu18.04.1+deb.sury.org+1
+Depends: libaprutil1 (= 1.6.1-5+ubuntu18.04.1+deb.sury.org+1), libc6 (>= 2.4), libldap-2.4-2 (>= 2.4.7)
+Filename: pool/main/a/apr-util/libaprutil1-ldap_1.6.1-5+ubuntu18.04.1+deb.sury.org+1_amd64.deb
+Size: 15816
+MD5sum: f92a90ea9f5910feee73a0cd27e95b25
+SHA1: f9ca2a531ad5d7884ff3e02d6b9e5903e2a74727
+SHA256: 393e6c4c9300333fa2fd001807904b7f725fc48a1d55f3af85c750d3cd1664b8
+Description: Apache Portable Runtime Utility Library - LDAP Driver
+Description-md5: d25faaa24a0fbf145505cba06b4192d7
+Multi-Arch: same
+
+Package: libbrotli-dev
+Source: brotli
+Priority: optional
+Section: libdevel
+Installed-Size: 66
+Maintainer: Tomasz Buchert <tomasz@debian.org>
+Architecture: amd64
+Version: 1.0.7-2+ubuntu18.04.1+deb.sury.org+1
+Depends: libbrotli1 (= 1.0.7-2+ubuntu18.04.1+deb.sury.org+1)
+Filename: pool/main/b/brotli/libbrotli-dev_1.0.7-2+ubuntu18.04.1+deb.sury.org+1_amd64.deb
+Size: 12728
+MD5sum: b8be3cd08f33ba2abd222ee242227d7e
+SHA1: 43212b2a58d0b9ee6c1a2b57bcbfd23cbe1257ee
+SHA256: ee33716dc2cb604f36f398d075b5988a1d70cea96f610866ada3efc1a6e770e3
+Description: library implementing brotli encoder and decoder (development files)
+Description-md5: 3b36d04bb9d45464076d6d3951ac43af
+
+Package: libbrotli1
+Source: brotli
+Priority: optional
+Section: libs
+Installed-Size: 757
+Maintainer: Tomasz Buchert <tomasz@debian.org>
+Architecture: amd64
+Version: 1.0.7-2+ubuntu18.04.1+deb.sury.org+1
+Depends: libc6 (>= 2.14)
+Filename: pool/main/b/brotli/libbrotli1_1.0.7-2+ubuntu18.04.1+deb.sury.org+1_amd64.deb
+Size: 272796
+MD5sum: 68c9a2ff318f09d690f0ee2ed572a0fd
+SHA1: c9ed0cbef0c80b0c302f33aa783637d1e945f7ea
+SHA256: 123c2616d1450b3176c3ad13deb344b1900f18834df29e452d7efe07511a49c8
+Description: library implementing brotli encoder and decoder (shared libraries)
+Description-md5: 907235dad2acd28ce4f1a8b4e1a35321
+Multi-Arch: same
+
+Package: libssl-dev
+Source: openssl
+Priority: optional
+Section: libdevel
+Installed-Size: 7890
+Maintainer: Debian OpenSSL Team <pkg-openssl-devel@lists.alioth.debian.org>
+Architecture: amd64
+Version: 1.1.1d-1+ubuntu18.04.1+deb.sury.org+2
+Suggests: libssl-doc
+Depends: libssl1.1 (= 1.1.1d-1+ubuntu18.04.1+deb.sury.org+2)
+Conflicts: libssl1.0-dev
+Filename: pool/main/o/openssl/libssl-dev_1.1.1d-1+ubuntu18.04.1+deb.sury.org+2_amd64.deb
+Size: 1792036
+MD5sum: e8abe35b48427cf85c63dce727f9e646
+SHA1: 29ae57633e1357ee8e1d1f6ce329522fa580c030
+SHA256: ba9492cd29dcb2f50a0b91306c759c5322b3d1901b33ed457fc09988dfe4b6c8
+Description: Secure Sockets Layer toolkit - development files
+Description-md5: 27044468897c45b271f879c7c6e135fe
+Multi-Arch: same
+
+Package: libssl-doc
+Source: openssl
+Priority: optional
+Section: doc
+Installed-Size: 5434
+Maintainer: Debian OpenSSL Team <pkg-openssl-devel@lists.alioth.debian.org>
+Architecture: all
+Version: 1.1.1d-1+ubuntu18.04.1+deb.sury.org+2
+Replaces: libssl-dev (<< 1.0.0)
+Breaks: libssl-dev (<< 1.0.0)
+Filename: pool/main/o/openssl/libssl-doc_1.1.1d-1+ubuntu18.04.1+deb.sury.org+2_all.deb
+Size: 1710476
+MD5sum: 2a2170a11d78375ff03a2ea30759560a
+SHA1: 4c3f8b9b0fd1a698e35320c7f657c5af7f07963c
+SHA256: c84280958177f61504a8065f2e0c2228ff3af4116ac4d2e0a085841e5a0fd7ff
+Description: Secure Sockets Layer toolkit - development documentation
+Description-md5: 863c8f0d45ab34415ebc295c04753c98
+Multi-Arch: foreign
+
+Package: libssl1.1
+Source: openssl
+Priority: optional
+Section: libs
+Installed-Size: 3932
+Maintainer: Debian OpenSSL Team <pkg-openssl-devel@lists.alioth.debian.org>
+Architecture: amd64
+Version: 1.1.1d-1+ubuntu18.04.1+deb.sury.org+2
+Depends: libc6 (>= 2.25), debconf (>= 0.5) | debconf-2.0
+Breaks: isync (<< 1.3.0-2), lighttpd (<< 1.4.49-2), python-boto (<< 2.44.0-1.1), python-httplib2 (<< 0.11.3-1), python-imaplib2 (<< 2.57-5), python3-boto (<< 2.44.0-1.1), python3-imaplib2 (<< 2.57-5)
+Filename: pool/main/o/openssl/libssl1.1_1.1.1d-1+ubuntu18.04.1+deb.sury.org+2_amd64.deb
+Size: 1523708
+MD5sum: 38a73e9acd28a6c4ec7ab031a4b008ee
+SHA1: 67a56eff3903015ab6afe2867397b569d0d1ed0f
+SHA256: 29995f41a9d3b26fcdde398ccd935ed51cc8f30e6858eadc6f2fc6f35f353437
+Description: Secure Sockets Layer toolkit - shared libraries
+Description-md5: 88547c6206c7fbc4fcc7d09ce100d210
+Multi-Arch: same
+
+Package: openssl
+Priority: optional
+Section: utils
+Installed-Size: 1348
+Maintainer: Debian OpenSSL Team <pkg-openssl-devel@lists.alioth.debian.org>
+Architecture: amd64
+Version: 1.1.1d-1+ubuntu18.04.1+deb.sury.org+2
+Suggests: ca-certificates
+Depends: libc6 (>= 2.15), libssl1.1 (>= 1.1.1)
+Filename: pool/main/o/openssl/openssl_1.1.1d-1+ubuntu18.04.1+deb.sury.org+2_amd64.deb
+Size: 827124
+MD5sum: 9f521c08631da3c6b5c36311b3057a49
+SHA1: 57ee1ee90aa4bfcd6808128cc1ce72c507f580a1
+SHA256: f95a2d30528843bce13bac7a6302c215e8d371a580155e639166a7492a2ef9b2
+Description: Secure Sockets Layer toolkit - cryptographic utility
+Description-md5: 1f6f070f1d0a8f3ed379c44218ff7bbf
+Multi-Arch: foreign
+
+Package: python-brotli
+Source: brotli
+Priority: optional
+Section: python
+Installed-Size: 761
+Maintainer: Tomasz Buchert <tomasz@debian.org>
+Architecture: amd64
+Version: 1.0.7-2+ubuntu18.04.1+deb.sury.org+1
+Depends: python (<< 2.8), python (>= 2.7~), python:any (<< 2.8), python:any (>= 2.7.5-5~), libc6 (>= 2.14), libgcc1 (>= 1:3.0), libstdc++6 (>= 4.1.1)
+Filename: pool/main/b/brotli/python-brotli_1.0.7-2+ubuntu18.04.1+deb.sury.org+1_amd64.deb
+Size: 273284
+MD5sum: 6e83762a99ee4803f87a54b2aeeeefa4
+SHA1: 6814adece275afd3e6990a6ebad1077e041d2ae7
+SHA256: 9ed68dd5a8d710221a46e68376ad22f037ee9ef36aac49d7b3926c92a1985184
+Description: lossless compression algorithm and format (Python 2 version)
+Description-md5: 44f1706cef6311caf73e213bd7cf4708
+
+Package: python-httplib2
+Priority: optional
+Section: python
+Installed-Size: 125
+Maintainer: Andrea Colangelo <warp10@debian.org>
+Architecture: all
+Version: 0.11.3-1+ubuntu18.04.1+deb.sury.org+1
+Depends: python:any (<< 2.8), python:any (>= 2.7.5-5~), ca-certificates
+Filename: pool/main/p/python-httplib2/python-httplib2_0.11.3-1+ubuntu18.04.1+deb.sury.org+1_all.deb
+Size: 30192
+MD5sum: 258f2e26b6cf618cbc2e6c01a41f82dc
+SHA1: b4966b0682b739baead053d85fc5ac08597873e4
+SHA256: add73d2678d3ff7fe314ec58298fca10d78849cb242cdb0956ab19bb1cab7060
+Description: comprehensive HTTP client library written for Python
+Description-md5: 8a9e122d0f25fde65fa6402022c3eaf8
+
+Package: python3-brotli
+Source: brotli
+Priority: optional
+Section: python
+Installed-Size: 761
+Maintainer: Tomasz Buchert <tomasz@debian.org>
+Architecture: amd64
+Version: 1.0.7-2+ubuntu18.04.1+deb.sury.org+1
+Depends: python3 (<< 3.7), python3 (>= 3.6~), python3:any (>= 3.3.2-2~), libc6 (>= 2.14), libgcc1 (>= 1:3.0), libstdc++6 (>= 4.1.1)
+Filename: pool/main/b/brotli/python3-brotli_1.0.7-2+ubuntu18.04.1+deb.sury.org+1_amd64.deb
+Size: 276500
+MD5sum: 85e81902814941103ab15ac1572f2d1e
+SHA1: 831353f28864158e530a4f741651efde0cca9145
+SHA256: 20dfe0b06a0959df5c1c85e6f57c2c4e46537721a714d5148297718a0f76f9c0
+Description: lossless compression algorithm and format (Python 3 version)
+Description-md5: f79f8a65d809e32c7143932aeb4e3c15
+
+Package: python3-httplib2
+Source: python-httplib2
+Priority: optional
+Section: python
+Installed-Size: 118
+Maintainer: Andrea Colangelo <warp10@debian.org>
+Architecture: all
+Version: 0.11.3-1+ubuntu18.04.1+deb.sury.org+1
+Depends: python3:any (>= 3.3.2-2~), ca-certificates
+Filename: pool/main/p/python-httplib2/python3-httplib2_0.11.3-1+ubuntu18.04.1+deb.sury.org+1_all.deb
+Size: 28944
+MD5sum: 73d04d2316898bdccab7c453ab14d69a
+SHA1: adbe31f3187755282178e463716883834fdded10
+SHA256: 67968be67f2b0cad4b7d5f8eabbf5f5a443f43ab811d9283d016017cc794eab5
+Description: comprehensive HTTP client library written for Python3
+Description-md5: ff7865fe3c78f3c052fb9c2538cc384c
+

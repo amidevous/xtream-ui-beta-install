@@ -1,0 +1,6 @@
+Archive: bionic
+Version: 18.04
+Component: main
+Origin: LP-PPA-ondrej-apache2
+Label: PPA for Apache 2.x
+Architecture: source

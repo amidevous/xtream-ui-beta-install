@@ -1,0 +1,164 @@
+Package: curl
+Priority: optional
+Section: web
+Installed-Size: 387
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Version: 7.58.0-2ubuntu3.8ppa2
+Depends: libc6 (>= 2.17), libcurl4 (= 7.58.0-2ubuntu3.8ppa2), zlib1g (>= 1:1.1.4)
+Filename: pool/main/c/curl/curl_7.58.0-2ubuntu3.8ppa2_amd64.deb
+Size: 254616
+MD5sum: 28648b121be176d108305019a9acc87d
+SHA1: 36231e356966ecc23dced062c103f6b1db98485f
+SHA256: b0ef72bb5bde75e49db091f045c2d091f5983a5e74e8910f13a0dc1b39f9ee27
+Description: command line tool for transferring data with URL syntax
+Description-md5: f83293d10df083ae6f7bb7d01642913c
+Multi-Arch: foreign
+Original-Maintainer: Alessandro Ghedini <ghedo@debian.org>
+
+Package: libcurl3-gnutls
+Source: curl
+Priority: optional
+Section: libs
+Installed-Size: 622
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Version: 7.58.0-2ubuntu3.8ppa2
+Recommends: ca-certificates
+Depends: libc6 (>= 2.17), libgnutls30 (>= 3.5.6), libgssapi-krb5-2 (>= 1.14+dfsg), libidn2-0 (>= 0.6), libldap-2.4-2 (>= 2.4.7), libnettle6, libnghttp2-14 (>= 1.12.0), libpsl5 (>= 0.13.0), librtmp1 (>= 2.4+20131018.git79459a2-3~), zlib1g (>= 1:1.1.4)
+Filename: pool/main/c/curl/libcurl3-gnutls_7.58.0-2ubuntu3.8ppa2_amd64.deb
+Size: 306280
+MD5sum: c75f1897163f7252198f82f863190470
+SHA1: 416f939210ee3c6137ad499d1e2f93b6ab51dc6d
+SHA256: cf9c2991c2898a40392eb7f454fff149b9f86c14c33d44301aa727acbba8d8cb
+Description: easy-to-use client-side URL transfer library (GnuTLS flavour)
+Description-md5: 785baf29d91f9f781677a7f569940052
+Multi-Arch: same
+Original-Maintainer: Alessandro Ghedini <ghedo@debian.org>
+
+Package: libcurl3-nss
+Source: curl
+Priority: optional
+Section: libs
+Installed-Size: 638
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Version: 7.58.0-2ubuntu3.8ppa2
+Recommends: ca-certificates
+Depends: libc6 (>= 2.17), libgssapi-krb5-2 (>= 1.14+dfsg), libidn2-0 (>= 0.6), libldap-2.4-2 (>= 2.4.7), libnghttp2-14 (>= 1.12.0), libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.26), libpsl5 (>= 0.13.0), librtmp1 (>= 2.4+20131018.git79459a2-3~), zlib1g (>= 1:1.1.4)
+Filename: pool/main/c/curl/libcurl3-nss_7.58.0-2ubuntu3.8ppa2_amd64.deb
+Size: 311936
+MD5sum: fc50cf1cc84dfaae2b0c27d182f8d15e
+SHA1: da2dacc6d2f1f54ef8c7f2a1a199dcbe22cbc4e2
+SHA256: ef51234182b942b4b96fa43506b2aaa36a3a84b7ff575ded765e2bd8dad6d457
+Description: easy-to-use client-side URL transfer library (NSS flavour)
+Description-md5: 459d2b4fbb16cf9975276e1d24a7ffe8
+Multi-Arch: same
+Original-Maintainer: Alessandro Ghedini <ghedo@debian.org>
+
+Package: libcurl4
+Source: curl
+Priority: optional
+Section: libs
+Installed-Size: 634
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Version: 7.58.0-2ubuntu3.8ppa2
+Recommends: ca-certificates
+Provides: libcurl3 (= 7.58.0-2ubuntu3.8ppa2)
+Depends: libc6 (>= 2.17), libgssapi-krb5-2 (>= 1.14+dfsg), libidn2-0 (>= 0.6), libldap-2.4-2 (>= 2.4.7), libnghttp2-14 (>= 1.12.0), libpsl5 (>= 0.13.0), librtmp1 (>= 2.4+20131018.git79459a2-3~), libssl1.1 (>= 1.1.1), zlib1g (>= 1:1.1.4)
+Filename: pool/main/c/curl/libcurl4_7.58.0-2ubuntu3.8ppa2_amd64.deb
+Size: 307824
+MD5sum: 5f07717c42e9be92b7944e05eb669e8d
+SHA1: e1561959240dbb3b76aed87c3859240e5cd3ddff
+SHA256: 429605ee8a78731f3e6ba502e5eb2882545fac1aeb090d046b6d1357e77e6dc1
+Description: easy-to-use client-side URL transfer library (OpenSSL flavour)
+Description-md5: f1c7f18aba2d8ab7a7e32acea1dc61e7
+Multi-Arch: same
+Original-Maintainer: Alessandro Ghedini <ghedo@debian.org>
+
+Package: libcurl4-doc
+Source: curl
+Priority: optional
+Section: doc
+Installed-Size: 1383
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: all
+Version: 7.58.0-2ubuntu3.8ppa2
+Replaces: libcurl4-gnutls-dev (<< 7.30.0-2), libcurl4-nss-dev (<< 7.30.0-2), libcurl4-openssl-dev (<< 7.30.0-2)
+Breaks: libcurl4-gnutls-dev (<< 7.30.0-2), libcurl4-nss-dev (<< 7.30.0-2), libcurl4-openssl-dev (<< 7.30.0-2)
+Filename: pool/main/c/curl/libcurl4-doc_7.58.0-2ubuntu3.8ppa2_all.deb
+Size: 927616
+MD5sum: a096889043105751bcc07eb78ae437dd
+SHA1: 6337528b6956f05c69e38064377ee372af7c6cb4
+SHA256: 93b12998c6caf8f60990c0571e688f3181dbc5ba8856a5e7b038b73303966121
+Description: documentation for libcurl
+Description-md5: 6462959fec3647baef16ff31a5f39d94
+Original-Maintainer: Alessandro Ghedini <ghedo@debian.org>
+
+Package: libcurl4-gnutls-dev
+Source: curl
+Priority: optional
+Section: libdevel
+Installed-Size: 1360
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Version: 7.58.0-2ubuntu3.8ppa2
+Suggests: libcurl4-doc, libgnutls28-dev, libidn11-dev, libkrb5-dev, libldap2-dev, librtmp-dev, libssh2-1-dev, pkg-config, zlib1g-dev
+Provides: libcurl-dev, libcurl-ssl-dev, libcurl3-gnutls-dev, libcurl4-dev
+Depends: libcurl3-gnutls (= 7.58.0-2ubuntu3.8ppa2)
+Conflicts: libcurl4-nss-dev, libcurl4-openssl-dev
+Filename: pool/main/c/curl/libcurl4-gnutls-dev_7.58.0-2ubuntu3.8ppa2_amd64.deb
+Size: 389408
+MD5sum: 7a7856ec6085db44216be6069174f1ed
+SHA1: 106185f7d1587e769e5691a456b640bf2d7b39f4
+SHA256: 00744c2e86aae4868bca12167d16377e9b5c8bccbe37097dfad97bb7f1a1bf8d
+Description: development files and documentation for libcurl (GnuTLS flavour)
+Description-md5: a780e9fd64d55eccc7d421f6da7dc01d
+Original-Maintainer: Alessandro Ghedini <ghedo@debian.org>
+Multi-Arch: same
+
+Package: libcurl4-nss-dev
+Source: curl
+Priority: optional
+Section: libdevel
+Installed-Size: 1378
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Version: 7.58.0-2ubuntu3.8ppa2
+Suggests: libcurl4-doc, libidn11-dev, libkrb5-dev, libldap2-dev, libnss3-dev, librtmp-dev, libssh2-1-dev, pkg-config, zlib1g-dev
+Provides: libcurl-dev, libcurl-ssl-dev, libcurl3-nss-dev, libcurl4-dev
+Depends: libcurl3-nss (= 7.58.0-2ubuntu3.8ppa2)
+Conflicts: libcurl4-gnutls-dev, libcurl4-openssl-dev
+Filename: pool/main/c/curl/libcurl4-nss-dev_7.58.0-2ubuntu3.8ppa2_amd64.deb
+Size: 395796
+MD5sum: 8fc0fa43efca34e67363405ccda98f05
+SHA1: 91670e1ba03ed5959efc551f13689d32ba7e4127
+SHA256: 290fed9e9b83ba673081c3a8fb71ad46afc71ab1f6ae58b289a056212efc47fa
+Description: development files and documentation for libcurl (NSS flavour)
+Description-md5: b83e9196a054062dc76fc2a693802052
+Original-Maintainer: Alessandro Ghedini <ghedo@debian.org>
+Multi-Arch: same
+
+Package: libcurl4-openssl-dev
+Source: curl
+Priority: optional
+Section: libdevel
+Installed-Size: 1376
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Version: 7.58.0-2ubuntu3.8ppa2
+Suggests: libcurl4-doc, libidn11-dev, libkrb5-dev, libldap2-dev, librtmp-dev, libssh2-1-dev, libssl-dev (>= 1.1), pkg-config, zlib1g-dev
+Provides: libcurl-dev, libcurl-ssl-dev, libcurl3-dev, libcurl3-openssl-dev, libcurl4-dev
+Depends: libcurl4 (= 7.58.0-2ubuntu3.8ppa2)
+Conflicts: libcurl4-gnutls-dev, libcurl4-nss-dev, libssl-dev (<< 1.1), libssl1.0-dev
+Filename: pool/main/c/curl/libcurl4-openssl-dev_7.58.0-2ubuntu3.8ppa2_amd64.deb
+Size: 391456
+MD5sum: b36922e2af79dfcd088abc359f44afbd
+SHA1: 8c16f5de746f2a29a7322349d8aaf0b0c8c65201
+SHA256: 34646190d94145b82e57dcfd43cc0971a5993e28c3e7960cf82eff4c986a363f
+Description: development files and documentation for libcurl (OpenSSL flavour)
+Description-md5: 133120dd689c1a9785ccd7cd427dd344
+Original-Maintainer: Alessandro Ghedini <ghedo@debian.org>
+Multi-Arch: same
+

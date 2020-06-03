@@ -1,0 +1,6 @@
+Archive: bionic
+Version: 18.04
+Component: main
+Origin: LP-PPA-ondrej-php
+Label: ***** The main PPA for supported PHP versions with many PECL extensions *****
+Architecture: i386
