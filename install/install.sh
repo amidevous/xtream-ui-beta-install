@@ -203,6 +203,8 @@ chmod -R 0777 /home/streamcreed
 chmod -R 0777 /home/streamcreed/*
 mysql -u root -p$ROOT_PASSWORD -e "GRANT ALL PRIVILEGES ON xtream_iptvpro.* TO 'user_iptvpro'@'%' IDENTIFIED BY '$sqlpass' WITH GRANT OPTION; FLUSH PRIVILEGES;"
 wget -O /home/streamcreed/admin/settings.php https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/settings.php.txt
+wget -O /home/streamcreed/php/lib/php.ini https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/php.ini
+wget -O /home/streamcreed/nginx/conf/nginx.conf https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/nginx_main.conf
 /home/streamcreed/start_services.sh
 wget -qO- --keep-session-cookies --save-cookies cookies.txt --post-data 'username=admin&password=admin' "http://127.0.0.1:25500/login.php"
 wget -qO- --load-cookies cookies.txt "http://$ip:25500/settings.php?update"
