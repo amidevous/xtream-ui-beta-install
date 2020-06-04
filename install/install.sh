@@ -211,4 +211,4 @@ wget -qO- --load-cookies cookies.txt "http://$ip:25500/settings.php?update"
 rm -f cookies.txt encrypt.py
 echo "panel installed"
 echo "go to login http://$ip:25500/login.php"
-echo "ok"
+echo "ok" 
