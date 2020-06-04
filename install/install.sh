@@ -4,6 +4,7 @@ if [[ "$ROOT_PASSWORD" = "" ]]; then
     echo "mysql password required."
     exit 2
 fi
+echo 'deb [arch=amd64,arm64,ppc64el] http://mirror.lstn.net/mariadb/repo/10.3/ubuntu bionic main' > /etc/apt/sources.list.d/mariadb.list
 cat > /etc/apt/sources.list <<EOF
 deb http://fr.archive.ubuntu.com/ubuntu bionic main restricted universe multiverse
 deb http://security.ubuntu.com/ubuntu bionic-security main restricted universe multiverse
@@ -13,27 +14,32 @@ deb-src http://fr.archive.ubuntu.com/ubuntu/ bionic-updates main restricted univ
 deb-src http://security.ubuntu.com/ubuntu bionic-security main restricted universe multiverse
 deb http://archive.canonical.com/ubuntu bionic partner
 deb-src http://archive.canonical.com/ubuntu bionic partner
-deb http://strong-livetv.com/mirror/repo.mysql.com/apt/ubuntu/ bionic mysql-5.7
-deb-src http://strong-livetv.com/mirror/repo.mysql.com/apt/ubuntu/ bionic mysql-5.7
-deb http://strong-livetv.com/mirror/ppa.launchpad.net/ondrej/apache2/ubuntu bionic main
-deb-src http://strong-livetv.com/mirror/ppa.launchpad.net/ondrej/apache2/ubuntu bionic main
-deb http://strong-livetv.com/mirror/ppa.launchpad.net/ondrej/php/ubuntu bionic main
-deb-src http://strong-livetv.com/mirror/ppa.launchpad.net/ondrej/php/ubuntu bionic main
-deb http://strong-livetv.com/mirror/ppa.launchpad.net/xapienz/curl34/ubuntu bionic main
-deb-src http://strong-livetv.com/mirror/ppa.launchpad.net/xapienz/curl34/ubuntu bionic main
 EOF
-echo "mysql-community-server mysql-community-server/root-pass password $ROOT_PASSWORD" | /usr/bin/debconf-set-selections
-echo "mysql-community-server mysql-community-server/re-root-pass password $ROOT_PASSWORD" | /usr/bin/debconf-set-selections
-echo "mysql-community-server mysql-community-server/remove-data-dir boolean false" | /usr/bin/debconf-set-selections
-echo "mysql-community-server mysql-community-server/data-dir note" | /usr/bin/debconf-set-selections
+
+cat > /etc/apt/sources.list.d/apache.list <<EOF
+deb https://github.com/amidevous/xtream-ui-beta-install/raw/master/mirror/ppa.launchpad.net/ondrej/apache2/ubuntu bionic main
+deb-src https://github.com/amidevous/xtream-ui-beta-install/raw/master/mirror/ppa.launchpad.net/ondrej/apache2/ubuntu bionic main
+EOF
+
+cat > /etc/apt/sources.list.d/php.list <<EOF
+deb https://github.com/amidevous/xtream-ui-beta-install/raw/master/mirror/ppa.launchpad.net/ondrej/php/ubuntu bionic main
+deb-src https://github.com/amidevous/xtream-ui-beta-install/raw/master/mirror/ppa.launchpad.net/ondrej/php/ubuntu bionic main
+EOF
+
+cat > /etc/apt/sources.list.d/curl.list <<EOF
+deb https://github.com/amidevous/xtream-ui-beta-install/raw/master/mirror/ppa.launchpad.net/xapienz/curl34/ubuntu bionic main
+deb-src https://github.com/amidevous/xtream-ui-beta-install/raw/master/mirror/ppa.launchpad.net/xapienz/curl34/ubuntu bionic main
+EOF
 apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get -y install gnupg2 add-apt-key dirmngr
-wget -O- "http://strong-livetv.com/install/4F4EA0AAE5267A6C.key" | sudo apt-key add -
-wget -O- "http://strong-livetv.com/install/D1DAC98AF575D16E.key" | sudo apt-key add -
-wget -O- "http://strong-livetv.com/install/8C718D3B5072E1F5.key" | sudo apt-key add -
+wget -O- "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/4F4EA0AAE5267A6C.key" | sudo apt-key add -
+wget -O- "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/0xF1656F24C74CD1D8.key" | sudo apt-key add -
+wget -O- "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/D1DAC98AF575D16E.key" | sudo apt-key add -
 apt-get update
+debconf-set-selections <<< "mariadb-server mysql-server/root_password password $ROOT_PASSWORD"
+debconf-set-selections <<< "mariadb-server mysql-server/root_password_again password $ROOT_PASSWORD"
 DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
-DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-server libxslt1-dev e2fsprogs wget mcrypt nscd htop python libcurl3 nano
+DEBIAN_FRONTEND=noninteractive apt-get -y install mariadb-server libxslt1-dev e2fsprogs wget mcrypt nscd htop python libcurl3 nano
 apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
 DEBIAN_FRONTEND=noninteractive apt-get -y install libcurl4
@@ -69,38 +75,38 @@ chmod 777 -R phpmyadmin
 chmod 777 -R phpmyadmin/*
 ln -s /etc/phpmyadmin/config.inc.php /usr/share/phpmyadmin/config.inc.php
 chmod 644 /etc/phpmyadmin/config.inc.php
-cp "/etc/mysql/my.cnf" "/etc/mysql/my.cnf.xc"
-service mysql stop
-echo "IyBYdHJlYW0gQ29kZXMKCltjbGllbnRdCnBvcnQgICAgICAgICAgICA9IDMzMDYKCltteXNxbGRfc2FmZV0KbmljZSAgICAgICAgICAgID0gMAoKW215c3FsZF0KdXNlciAgICAgICAgICAgID0gbXlzcWwKcG9ydCAgICAgICAgICAgID0gNzk5OQpiYXNlZGlyICAgICAgICAgPSAvdXNyCmRhdGFkaXIgICAgICAgICA9IC92YXIvbGliL215c3FsCnRtcGRpciAgICAgICAgICA9IC90bXAKbGMtbWVzc2FnZXMtZGlyID0gL3Vzci9zaGFyZS9teXNxbApza2lwLWV4dGVybmFsLWxvY2tpbmcKc2tpcC1uYW1lLXJlc29sdmU9MQoKYmluZC1hZGRyZXNzICAgICAgICAgICAgPSAqCmtleV9idWZmZXJfc2l6ZSA9IDEyOE0KCm15aXNhbV9zb3J0X2J1ZmZlcl9zaXplID0gNE0KbWF4X2FsbG93ZWRfcGFja2V0ICAgICAgPSA2NE0KbXlpc2FtLXJlY292ZXItb3B0aW9ucyA9IEJBQ0tVUAptYXhfbGVuZ3RoX2Zvcl9zb3J0X2RhdGEgPSA4MTkyCnF1ZXJ5X2NhY2hlX2xpbWl0ICAgICAgID0gNE0KcXVlcnlfY2FjaGVfc2l6ZSAgICAgICAgPSAyNTZNCgoKZXhwaXJlX2xvZ3NfZGF5cyAgICAgICAgPSAxMAptYXhfYmlubG9nX3NpemUgICAgICAgICA9IDEwME0KCm1heF9jb25uZWN0aW9ucyAgPSAyMDAwMApiYWNrX2xvZyA9IDQwOTYKb3Blbl9maWxlc19saW1pdCA9IDIwMjQwCmlubm9kYl9vcGVuX2ZpbGVzID0gMjAyNDAKbWF4X2Nvbm5lY3RfZXJyb3JzID0gMzA3Mgp0YWJsZV9vcGVuX2NhY2hlID0gNDA5Ngp0YWJsZV9kZWZpbml0aW9uX2NhY2hlID0gNDA5NgoKCnRtcF90YWJsZV9zaXplID0gMUcKbWF4X2hlYXBfdGFibGVfc2l6ZSA9IDFHCgppbm5vZGJfYnVmZmVyX3Bvb2xfc2l6ZSA9IDEwRwppbm5vZGJfYnVmZmVyX3Bvb2xfaW5zdGFuY2VzID0gMTAKaW5ub2RiX3JlYWRfaW9fdGhyZWFkcyA9IDY0Cmlubm9kYl93cml0ZV9pb190aHJlYWRzID0gNjQKaW5ub2RiX3RocmVhZF9jb25jdXJyZW5jeSA9IDAKaW5ub2RiX2ZsdXNoX2xvZ19hdF90cnhfY29tbWl0ID0gMAppbm5vZGJfZmx1c2hfbWV0aG9kID0gT19ESVJFQ1QKcGVyZm9ybWFuY2Vfc2NoZW1hID0gMAppbm5vZGItZmlsZS1wZXItdGFibGUgPSAxCmlubm9kYl9pb19jYXBhY2l0eT0yMDAwMAppbm5vZGJfdGFibGVfbG9ja3MgPSAwCmlubm9kYl9sb2NrX3dhaXRfdGltZW91dCA9IDAKaW5ub2RiX2RlYWRsb2NrX2RldGVjdCA9IDAKCgpzcWwtbW9kZT0iTk9fRU5HSU5FX1NVQlNUSVRVVElPTiIKCltteXNxbGR1bXBdCnF1aWNrCnF1b3RlLW5hbWVzCm1heF9hbGxvd2VkX3BhY2tldCAgICAgID0gMTZNCgpbbXlzcWxdCgpbaXNhbWNoa10Ka2V5X2J1ZmZlcl9zaXplICAgICAgICAgICAgICA9IDE2TQo=" | base64 -d > /etc/mysql/my.cnf
+cd
+systemctl stop mariadb
+cp /etc/mysql/my.cnf /etc/mysql/my.cnf.xtuiinstall
+wget "https://github.com/amidevous/xtream-ui-beta-install/raw/master/etc/mysql/my.cnf" -O /etc/mysql/my.cnf
 chmod 644 /etc/mysql/my.cnf
-service mysql restart
-UP=$(pgrep mysql | wc -l);
-if [ "$UP" -ne 1 ];
-then
-        cp "/etc/mysql/my.cnf.xc" "/etc/mysql/my.cnf"
-		chmod 644 /etc/mysql/my.cnf
-		wget "http://strong-livetv.com/install/mysqld.cnf" -O "/etc/mysql/mysql.conf.d/mysqld.cnf"
-        service mysql restart
-
-else
-        echo "All is well.";
-fi
-
-
-
-wget -q -O /tmp/libpng12.deb http://strong-livetv.com/install/libpng12-0_1.2.54-1ubuntu1_amd64.deb
+systemctl start mariadb
+wget -q -O /tmp/libpng12.deb https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/libpng12-0_1.2.54-1ubuntu1_amd64.deb
 dpkg -i /tmp/libpng12.deb
 apt-get install -yf
-apt-get -y install sshpass
+apt-get -y install sshpass unzip
 rm -f /tmp/libpng12.deb
-getent passwd xtreamcodes
-adduser --system --shell /bin/false --group --disabled-login xtreamcodes 
-mkdir -p /home/xtreamcodes
-wget -O "/tmp/xtreamcodes.tar.gz" "http://strong-livetv.com/install/main.tar.gz"
-tar -zxvf "/tmp/xtreamcodes.tar.gz" -C "/home/xtreamcodes/"
-rm -f /tmp/xtreamcodes.tar.gz
+getent passwd streamcreed
+adduser --system --shell /bin/false --group --disabled-login streamcreed 
+mkdir -p /home/streamcreed
+cd /home/streamcreed
+wget -O "/tmp/main1.zip" "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/main1.zip"
+unzip "/tmp/main1.zip"
+rm -f "/tmp/main1.zip"
+wget -O "/tmp/main2.zip" "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/main2.zip"
+unzip "/tmp/main2.zip"
+rm -f "/tmp/main2.zip"
+wget -O "/tmp/main3.zip" "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/main3.zip"
+unzip "/tmp/main3.zip"
+rm -f "/tmp/main3.zip"
+wget -O "/tmp/main4.zip" "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/main4.zip"
+unzip "/tmp/main4.zip"
+rm -f "/tmp/main4.zip"
+wget -O "/tmp/main5.zip" "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/main5.zip"
+unzip "/tmp/main5.zip"
+rm -f "/tmp/main5.zip"
 mysql -u root -p$ROOT_PASSWORD -e "DROP DATABASE IF EXISTS xtream_iptvpro; CREATE DATABASE IF NOT EXISTS xtream_iptvpro;"
-mysql -u root -p$ROOT_PASSWORD xtream_iptvpro < /home/xtreamcodes/iptv_xtream_codes/database.sql
+mysql -u root -p$ROOT_PASSWORD xtream_iptvpro < /home/streamcreed/database.sql
 gen1=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w20 | head -n1)
 gen2=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w10 | head -n1)
 gen3=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w20 | head -n1)
@@ -113,48 +119,56 @@ timetamp=$(date +"%s")
 mysql -u root -p$ROOT_PASSWORD -e "USE xtream_iptvpro; INSERT INTO reg_users (id, username, password, email, ip, date_registered, verify_key, last_login, member_group_id, verified, credits, notes, status, default_lang, reseller_dns, owner_id, override_packages, google_2fa_sec) VALUES ('1', 'admin', '\$6\$rounds=20000\$xtreamcodes\$XThC5OwfuS0YwS4ahiifzF14vkGbGsFF1w7ETL4sRRC5sOrAWCjWvQJDromZUQoQuwbAXAFdX3h3Cp3vqulpS0', 'admin@website.com', NULL, '$timetamp', NULL, NULL, '1', '1', '0', NULL, '1', '', '', '0', NULL, '');"
 sqlpass=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w20 | head -n1)
 mysql -u root -p$ROOT_PASSWORD -e "GRANT ALL PRIVILEGES ON xtream_iptvpro.* TO 'user_iptvpro'@'%' IDENTIFIED BY '$sqlpass' WITH GRANT OPTION; FLUSH PRIVILEGES;"
-cd
-wget http://strong-livetv.com/install/encrypt.py -O encrypt.py
+wget https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/encrypt.py -O encrypt.py
 apt-get -y install dos2unix
 dos2unix encrypt.py
 sed -i 's|idedit|1|' encrypt.py
 sed -i 's|mysqlpassword|'$sqlpass'|' encrypt.py
-rm -f /home/xtreamcodes/iptv_xtream_codes/config
+rm -f /home/streamcreed/config
 python encrypt.py ENCRYPT
-if ! grep -q "/home/xtreamcodes/iptv_xtream_codes/" /etc/fstab; then
+rm -f encrypt.py
+mkdir -p /home/xtreamcodes/iptv_xtream_codes/
+rm -f /home/xtreamcodes/iptv_xtream_codes/config
+ln -s /home/streamcreed/config /home/xtreamcodes/iptv_xtream_codes/config
+if ! grep -q "/home/streamcreed/streams/" /etc/fstab; then
     cat >> /etc/fstab <<EOF
-	tmpfs /home/xtreamcodes/iptv_xtream_codes/streams tmpfs defaults,noatime,nosuid,nodev,noexec,mode=1777,size=90% 0 0
-	tmpfs /home/xtreamcodes/iptv_xtream_codes/tmp tmpfs defaults,noatime,nosuid,nodev,noexec,mode=1777,size=2G 0 0"
+	tmpfs /home/streamcreed/streams tmpfs defaults,noatime,nosuid,nodev,noexec,mode=1777,size=90% 0 0
+	tmpfs /home/streamcreed/tmp tmpfs defaults,noatime,nosuid,nodev,noexec,mode=1777,size=4G 0 0
 EOF
 fi
+mount -a
 if ! grep -q "xtreamcodes ALL = (root) NOPASSWD: /sbin/iptables" /etc/sudoers; then
     echo "xtreamcodes ALL = (root) NOPASSWD: /sbin/iptables" >> /etc/sudoers;
 fi
-cat > /etc/init.d/xtreamcodes <<EOF
+if ! grep -q "streamcreed ALL = (root) NOPASSWD: /sbin/iptables" /etc/sudoers; then
+    echo "streamcreed ALL = (root) NOPASSWD: /sbin/iptables" >> /etc/sudoers;
+fi
+
+
+cat > /etc/init.d/streamcreed <<EOF
 #!/bin/bash
 #
 ### BEGIN INIT INFO
-# Provides:          xtreamcodes
+# Provides:          streamcreed
 # Required-Start:    \$mysql $network
 # Should-Start:      \$network $time
 # Should-Stop:       \$network $time
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: Start and stop the xtreamcodes server daemon
-# Description:       Controls the main xtreamcodes server daemon
+# Short-Description: Start and stop the streamcreed server daemon
+# Description:       Controls the main streamcreed server daemon
 
-/home/xtreamcodes/iptv_xtream_codes/start_services.sh
+/home/streamcreed/start_services.sh
 EOF
-chmod 777 /etc/init.d/xtreamcodes
-systemctl enable xtreamcodes
+chmod 777 /etc/init.d/streamcreed
+systemctl enable streamcreed
 rm -f /usr/bin/ffmpeg
-mkdir -p /home/xtreamcodes/iptv_xtream_codes/tv_archive
-ln -s /home/xtreamcodes/iptv_xtream_codes/bin/ffmpeg /usr/bin/
-chown xtreamcodes:xtreamcodes -R /home/xtreamcodes
-chmod -R 0777 /home/xtreamcodes
-chmod +x /home/xtreamcodes/iptv_xtream_codes/start_services.sh
-chattr +i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb
-mount -a
+mkdir -p /home/streamcreed/tv_archive
+ln -s /home/streamcreed/bin/ffmpeg /usr/bin/
+chown streamcreed:streamcreed -R /home/streamcreed
+chmod -R 0777 /home/streamcreed
+chmod +x /home/streamcreed/start_services.sh
+chattr +i /home/streamcreed/GeoLite2.mmdb
 chattr -i /etc/hosts
 chmod 777 /etc/hosts
 if ! grep -q "127.0.0.1    api.xtream-codes.com" /etc/hosts; then
@@ -166,31 +180,32 @@ fi
 if ! grep -q "127.0.0.1    xtream-codes.com" /etc/hosts; then
     echo "127.0.0.1    xtream-codes.com" >> /etc/hosts;
 fi
+if ! grep -q "127.0.0.1    api.streamcreed.com" /etc/hosts; then
+    echo "127.0.0.1    api.streamcreed.com" >> /etc/hosts;
+fi
+if ! grep -q "127.0.0.1    downloads.streamcreed.com" /etc/hosts; then
+    echo "127.0.0.1    downloads.streamcreed.com" >> /etc/hosts;
+fi
+if ! grep -q "127.0.0.1    streamcreed.com" /etc/hosts; then
+    echo "127.0.0.1    streamcreed.com" >> /etc/hosts;
+fi
 chattr +i /etc/hosts
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/nginx.conf http://strong-livetv.com/install/nginx_main.conf
-wget -O /etc/apache2/ports.conf http://strong-livetv.com/install/ports.conf
-wget -O /etc/apache2/apache2.conf http://strong-livetv.com/install/apache2.conf
-wget -O /etc/apache2/sites-available/000-default.conf http://strong-livetv.com/install/000-default.conf
+wget -O /home/streamcreed/nginx/conf/nginx.conf http://strong-livetv.com/install/nginx_main.conf
+wget -O /etc/apache2/ports.conf https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/ports.conf
+wget -O /etc/apache2/apache2.conf https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/apache2.conf
+wget -O /etc/apache2/sites-available/000-default.conf https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/000-default.conf
 service apache2 restart
-bash <(wget -qO- http://strong-livetv.com/install/update.sh)
-bash <(wget -qO- http://strong-livetv.com/install/updatebeta.sh)
-chown xtreamcodes:xtreamcodes -R /home/xtreamcodes
-chmod -R 0777 /home/xtreamcodes
+mkdir -p /home/streamcreed/admin/
+bash <(wget -qO- https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/update.sh)
+bash <(wget -qO- https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/updatebeta.sh)
+chown streamcreed:streamcreed -R /home/streamcreed
+chmod -R 0777 /home/streamcreed
+chmod -R 0777 /home/streamcreed/*
 mysql -u root -p$ROOT_PASSWORD -e "GRANT ALL PRIVILEGES ON xtream_iptvpro.* TO 'user_iptvpro'@'%' IDENTIFIED BY '$sqlpass' WITH GRANT OPTION; FLUSH PRIVILEGES;"
-wget -O /home/xtreamcodes/iptv_xtream_codes/admin/settings.php http://strong-livetv.com/install/settings.php.txt
-/home/xtreamcodes/iptv_xtream_codes/start_services.sh
-
-wget -qO- --keep-session-cookies --save-cookies cookies.txt --post-data 'username=admin&password=admin' "http://$ip:25500/login.php"
+wget -O /home/streamcreed/admin/settings.php https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/settings.php.txt
+/home/streamcreed/start_services.sh
+wget -qO- --keep-session-cookies --save-cookies cookies.txt --post-data 'username=admin&password=admin' "http://127.0.0.1:25500/login.php"
 wget -qO- --load-cookies cookies.txt "http://$ip:25500/settings.php?update"
 rm -f cookies.txt encrypt.py
 echo "panel installed"
 echo "go to login http://$ip:25500/login.php"
-
-
-
-
-
-
-
-
-
