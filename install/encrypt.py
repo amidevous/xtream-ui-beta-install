@@ -1,7 +1,7 @@
 import sys, json
 from itertools import cycle, izip
 
-rConfigPath = "/home/streamcreed/config"
+rConfigPath = "/home/streamcreed/config2"
 
 def doDecrypt():
     rDecrypt = decrypt()
@@ -36,7 +36,7 @@ if __name__ == "__main__":
             rEnc["db_port"] = "7999"
             rEnc["db_user"] = "user_iptvpro"
             rEnc["db_pass"] = "mysqlpassword"
-            rEnc["db_name"] = "xtream_iptvpro"
+            rEnc["db_name"] = "streamcreed_db"
             print " "
         except:
             print "Invalid entries!"
