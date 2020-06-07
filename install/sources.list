@@ -1,0 +1,8 @@
+deb http://fr.archive.ubuntu.com/ubuntu bionic main restricted universe multiverse
+deb http://security.ubuntu.com/ubuntu bionic-security main restricted universe multiverse
+deb http://fr.archive.ubuntu.com/ubuntu bionic-updates main restricted universe multiverse
+deb-src http://fr.archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse 
+deb-src http://fr.archive.ubuntu.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb-src http://security.ubuntu.com/ubuntu bionic-security main restricted universe multiverse
+deb http://archive.canonical.com/ubuntu bionic partner
+deb-src http://archive.canonical.com/ubuntu bionic partner
