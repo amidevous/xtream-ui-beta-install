@@ -17,7 +17,7 @@ def prepare():
         except: pass
     os.system("apt-get update > /dev/null")
     os.system("DEBIAN_FRONTEND=noninteractive apt-get -y install gnupg2 add-apt-key dirmngr wget > /dev/null")
-	os.system("wget https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/curl.list -O /etc/apt/sources.list.d/curl.list > /dev/null")
+    os.system("wget https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/curl.list -O /etc/apt/sources.list.d/curl.list > /dev/null")
     os.system('wget -O- "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/4F4EA0AAE5267A6C.key" | sudo apt-key add -')
     os.system('wget -O- "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/D1DAC98AF575D16E.key" | sudo apt-key add -')
     os.system('wget -O- "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/0xF1656F24C74CD1D8.key" | sudo apt-key add -')
