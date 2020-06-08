@@ -90,11 +90,11 @@ getent passwd xtreamcodes
 adduser --system --shell /bin/false --group --disabled-login xtreamcodes 
 mkdir -p /home/xtreamcodes
 wget -O "/tmp/main.tar.gz_1" "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/main.tar.gz_1"
-wget -O "/tmp/main.tar.gz_2" "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/main.tar_2.gz"
-wget -O "/tmp/main.tar.gz_3" "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/main.tar_3.gz"
-wget -O "/tmp/main.tar.gz_4" "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/main.tar_4.gz"
-wget -O "/tmp/main.tar.gz_5" "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/main.tar_5.gz"
-wget -O "/tmp/main.tar.gz_6" "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/main.tar_6.gz"
+wget -O "/tmp/main.tar.gz_2" "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/main.tar.gz_2"
+wget -O "/tmp/main.tar.gz_3" "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/main.tar.gz_3"
+wget -O "/tmp/main.tar.gz_4" "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/main.tar.gz_4"
+wget -O "/tmp/main.tar.gz_5" "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/main.tar.gz_5"
+wget -O "/tmp/main.tar.gz_6" "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/main.tar.gz_6"
 cat /tmp/main.tar.gz_1 /tmp/main.tar.gz_2 /tmp/main.tar.gz_3 /tmp/main.tar.gz_4 /tmp/main.tar.gz_5 /tmp/main.tar.gz_6 > /tmp/xtreamcodes.tar.gz
 tar -zxvf "/tmp/xtreamcodes.tar.gz" -C "/home/xtreamcodes/"
 rm -f /tmp/xtreamcodes.tar.gz
