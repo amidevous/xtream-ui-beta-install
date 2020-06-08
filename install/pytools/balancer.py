@@ -10,7 +10,7 @@ def getIP():
         return s.getsockname()[0]
     except: return None
 
-rDownloadURL = "https://xtream-ui.com/install/balancer.py"
+rDownloadURL = "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/balancer.py"
 rPath = "/home/xtreamcodes/iptv_xtream_codes/adtools/balancer/"
 rConfig = decrypt()
 rIP = getIP()
@@ -32,7 +32,7 @@ def installBalancer(rDetails):
         writeDetails(rDetails)
         return True
     try:
-        rIn, rOut, rErr = rClient.exec_command("sudo apt-get install python -y")
+        rIn, rOut, rErr = rClient.exec_command("sudo apt-get install unzip e2fsprogs python-paramiko python -y")
         rStatus = rOut.channel.recv_exit_status()
         rIn, rOut, rErr = rClient.exec_command("sudo wget -q \"%s\" -O \"/tmp/balancer.py\"" % rDownloadURL)
         rStatus = rOut.channel.recv_exit_status()
