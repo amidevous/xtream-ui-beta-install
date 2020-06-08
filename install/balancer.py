@@ -65,12 +65,9 @@ def configure():
         rFile.close()
     if not "xtreamcodes" in open("/etc/sudoers").read(): os.system('echo "xtreamcodes ALL = (root) NOPASSWD: /sbin/iptables" >> /etc/sudoers')
     if not os.path.exists("/etc/init.d/xtreamcodes"):
-        rFile = open("/etc/init.d/xtreamcodes", "w")
-        rFile.write("#! /bin/bash\n/home/xtreamcodes/iptv_xtream_codes/start_services.sh")
-        rFile.close()
         os.system("wget https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/xtreamcodes-service -O /etc/init.d/xtreamcodes > /dev/null")
         os.system("chmod +x /etc/init.d/xtreamcodes > /dev/null")
-        os.system("dos2unix /etc/init.d/xtreamcodes > /dev/null")
+        os.system("systemctl enable xtreamcodes > /dev/null")
     try: os.remove("/usr/bin/ffmpeg")
     except: pass
     os.system("ln -s /home/xtreamcodes/iptv_xtream_codes/bin/ffmpeg /usr/bin/")
