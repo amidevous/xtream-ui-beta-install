@@ -4,7 +4,20 @@ if [[ "$ROOT_PASSWORD" = "" ]]; then
     echo "mysql password required."
     exit 2
 fi
-apt-get -y purge mysql-client-* mysql-client-core-* mysql-common mysql-server mysql-server-* mysql-server-core-*
+DEBIAN_FRONTEND=noninteractive apt-get -y purge mariadb-client-*
+DEBIAN_FRONTEND=noninteractive apt-get -y purge mariadb-client-core-*
+DEBIAN_FRONTEND=noninteractive apt-get -y purge mariadb-common
+DEBIAN_FRONTEND=noninteractive apt-get -y purge mariadb-server
+DEBIAN_FRONTEND=noninteractive apt-get -y purge mariadb-server-*
+DEBIAN_FRONTEND=noninteractive apt-get -y purge mariadb-server-core-*
+DEBIAN_FRONTEND=noninteractive apt-get -y purge mysql-client-*
+DEBIAN_FRONTEND=noninteractive apt-get -y purge mysql-client-core-*
+DEBIAN_FRONTEND=noninteractive apt-get -y purge mysql-server-*
+DEBIAN_FRONTEND=noninteractive apt-get -y purge mysql-server-core-*
+DEBIAN_FRONTEND=noninteractive apt-get -y purge mysql-apt-config
+DEBIAN_FRONTEND=noninteractive apt-get -y purge mysql-client
+DEBIAN_FRONTEND=noninteractive apt-get -y purge mysql-community-client
+DEBIAN_FRONTEND=noninteractive apt-get -y purge mysql-community-server
 rm -rf /var/lib/mysql/
 rm -rf /var/lib/mysql-*
 rm -rf /etc/mysql
