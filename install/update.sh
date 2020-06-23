@@ -6,8 +6,8 @@ rm -rf /home/xtreamcodes/iptv_xtream_codes/pytools
 rm -rf /home/xtreamcodes/iptv_xtream_codes/adtools
 wget "https://github.com/amidevous/xtream-ui/archive/r18.zip" -O /tmp/update.zip
 unzip /tmp/update.zip -d /tmp/update/
-cp -rf /tmp/update/XtreamUI-master/* /home/xtreamcodes/iptv_xtream_codes/
-rm -rf /tmp/update/XtreamUI-master
+cp -rf /tmp/update/xtream-ui-r18/* /home/xtreamcodes/iptv_xtream_codes/
+rm -rf /tmp/update/xtream-ui-r18
 rm /tmp/update.zip
 rm -rf /tmp/update
 chattr +i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb
