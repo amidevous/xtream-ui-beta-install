@@ -24,7 +24,7 @@ echo "Detected : $OS  $VER  $ARCH"
 if [[ "$OS" = "Ubuntu" && "$VER" = "18.04" ]] ; then
     echo "Ok."
 else
-    echo "Sorry, this OS is not supported by Sentora."
+    echo "Sorry, this OS is not supported by xtream-ui."
     exit 1
 fi
 read -e -p "Enter your root mysql password: " -i "$ROOT_PASSWORD" ROOT_PASSWORD
