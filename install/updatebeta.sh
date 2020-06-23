@@ -4,7 +4,7 @@ chattr -i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb
 rm -rf /home/xtreamcodes/iptv_xtream_codes/admin
 rm -rf /home/xtreamcodes/iptv_xtream_codes/pytools
 rm -rf /home/xtreamcodes/iptv_xtream_codes/adtools
-wget "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/release_21_official.zip" -O /tmp/update.zip
+wget "https://github.com/amidevous/xtream-ui-beta-install/releases/download/1.0/release_21_official.zip" -O /tmp/update.zip
 unzip /tmp/update.zip -d /tmp/update/
 cp -rf /tmp/update/XtreamUI-master/* /home/xtreamcodes/iptv_xtream_codes/
 rm -rf /tmp/update/XtreamUI-master
@@ -16,7 +16,7 @@ killall nginx_rtmp
 killall php-fpm
 cd /home/xtreamcodes/iptv_xtream_codes/crons
 rm -f pid_monitor.php
-wget "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/pid_monitor.zip" -O pid_monitor.zip
+wget "https://github.com/amidevous/xtream-ui-beta-install/releases/download/1.0/pid_monitor.zip" -O pid_monitor.zip
 unzip pid_monitor.zip
 rm -f pid_monitor.zip
 sed -i 's|true|false|' /home/xtreamcodes/iptv_xtream_codes/admin/header_sidebar.php
