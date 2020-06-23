@@ -147,6 +147,8 @@ timetamp=$(date +"%s")
 mysql -u root -p$ROOT_PASSWORD -e "USE xtream_iptvpro; INSERT INTO reg_users (id, username, password, email, ip, date_registered, verify_key, last_login, member_group_id, verified, credits, notes, status, default_lang, reseller_dns, owner_id, override_packages, google_2fa_sec) VALUES ('1', 'admin', '\$6\$rounds=20000\$xtreamcodes\$XThC5OwfuS0YwS4ahiifzF14vkGbGsFF1w7ETL4sRRC5sOrAWCjWvQJDromZUQoQuwbAXAFdX3h3Cp3vqulpS0', 'admin@website.com', NULL, '$timetamp', NULL, NULL, '1', '1', '0', NULL, '1', '', '', '0', NULL, '');"
 sqlpass=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w20 | head -n1)
 mysql -u root -p$ROOT_PASSWORD -e "GRANT ALL PRIVILEGES ON xtream_iptvpro.* TO 'user_iptvpro'@'%' IDENTIFIED BY '$sqlpass' WITH GRANT OPTION; FLUSH PRIVILEGES;"
+wget https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/update-21.sql -O /home/xtreamcodes/iptv_xtream_codes/update-21.sql
+mysql -u root -p$ROOT_PASSWORD xtream_iptvpro < /home/xtreamcodes/iptv_xtream_codes/update-21.sql
 cd
 wget https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/encrypt.py -O encrypt.py
 apt-get -y install dos2unix
@@ -206,7 +208,7 @@ wget -O /etc/apache2/ports.conf https://github.com/amidevous/xtream-ui-beta-inst
 wget -O /etc/apache2/apache2.conf https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/apache2.conf
 wget -O /etc/apache2/sites-available/000-default.conf https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/000-default.conf
 service apache2 restart
-bash <(wget -qO- https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/update.sh)
+#bash <(wget -qO- https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/update.sh)
 bash <(wget -qO- https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/updatebeta.sh)
 chown xtreamcodes:xtreamcodes -R /home/xtreamcodes
 chmod -R 0777 /home/xtreamcodes
@@ -214,9 +216,7 @@ mysql -u root -p$ROOT_PASSWORD -e "GRANT ALL PRIVILEGES ON xtream_iptvpro.* TO '
 wget -O /home/xtreamcodes/iptv_xtream_codes/admin/settings.php https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/settings.php.txt
 wget -O /home/xtreamcodes/iptv_xtream_codes/pytools/balancer.py https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/pytools/balancer.py
 /home/xtreamcodes/iptv_xtream_codes/start_services.sh
-
-wget -qO- --keep-session-cookies --save-cookies cookies.txt --post-data 'username=admin&password=admin' "http://127.0.0.1:25500/login.php"
-wget -qO- --load-cookies cookies.txt "http://$ip:25500/settings.php?update"
+rm -f /home/xtreamcodes/iptv_xtream_codes/admin/.update
 rm -f cookies.txt encrypt.py
 echo "panel installed"
 echo "go to login http://$ip:25500/login.php"
