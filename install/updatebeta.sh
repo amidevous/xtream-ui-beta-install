@@ -4,7 +4,7 @@ chattr -i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb
 rm -rf /home/xtreamcodes/iptv_xtream_codes/admin
 rm -rf /home/xtreamcodes/iptv_xtream_codes/pytools
 rm -rf /home/xtreamcodes/iptv_xtream_codes/adtools
-wget "https://github.com/amidevous/xtream-ui-beta-install/releases/download/1.0/release_21_official.zip" -O /tmp/update.zip
+wget "https://github.com/amidevous/xtream-ui/archive/r21.zip" -O /tmp/update.zip
 unzip /tmp/update.zip -d /tmp/update/
 cp -rf /tmp/update/XtreamUI-master/* /home/xtreamcodes/iptv_xtream_codes/
 rm -rf /tmp/update/XtreamUI-master
