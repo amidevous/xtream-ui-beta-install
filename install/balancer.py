@@ -3,7 +3,7 @@
 import subprocess, os, sys
 from itertools import cycle, izip
 
-rDownloadURL = "https://xtream-ui.com/install/download.php?type=sub"
+rDownloadURL = "https://github.com/amidevous/xtream-ui-beta-install/releases/download/1.0/sub.tar.gz"
 rPackages = ["libcurl4", "libxslt1-dev", "libgeoip-dev", "e2fsprogs", "wget", "mcrypt", "nscd", "htop", "dos2unix"]
 
 def getVersion():
@@ -38,12 +38,6 @@ def install():
     global rInstall, rDownloadURL
     rURL = rDownloadURL
     os.system('wget -q -O "/tmp/xtreamcodes.tar.gz" "%s"' % rURL)
-    os.system('wget -q -O "/tmp/sub.tar.gz_1" "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/sub.tar.gz_1"')
-    os.system('wget -q -O "/tmp/sub.tar.gz_2" "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/sub.tar.gz_2"')
-    os.system('wget -q -O "/tmp/sub.tar.gz_3" "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/sub.tar.gz_3"')
-    os.system('wget -q -O "/tmp/sub.tar.gz_4" "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/sub.tar.gz_4"')
-    os.system('wget -q -O "/tmp/sub.tar.gz_5" "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/sub.tar.gz_5"')
-    os.system('cat /tmp/sub.tar.gz_1 /tmp/sub.tar.gz_2 /tmp/sub.tar.gz_3 /tmp/sub.tar.gz_4 /tmp/sub.tar.gz_5 > /tmp/xtreamcodes.tar.gz')
     if os.path.exists("/tmp/xtreamcodes.tar.gz"):
         os.system('tar -zxvf "/tmp/xtreamcodes.tar.gz" -C "/home/xtreamcodes/" > /dev/null')
         try: os.remove("/tmp/xtreamcodes.tar.gz")
