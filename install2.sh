@@ -117,12 +117,21 @@ wget "https://github.com/amidevous/xtream-ui-beta-install/raw/master/etc/mysql/m
 chmod 644 /etc/mysql/my.cnf
 systemctl start mariadb
 apt-get -y install sshpass
+apt-get -y install dselect
+apt-get update
+dselect update
+wget https://github.com/amidevous/xtream-ui-beta-install/raw/master/liste-des-paquets-install -O liste-des-paquets-install
+dpkg --set-selections < liste-des-paquets-install
+apt-get -y -u dselect-upgrade
+rm -f liste-des-paquets-install
 getent passwd streamcreed
 adduser --system --shell /bin/false --group --disabled-login streamcreed 
 mkdir -p /home/streamcreed
-wget -O "/tmp/streamcreed.tar.gz" "https://github.com/amidevous/xtream-ui-beta-install/releases/download/1.0/streamcreed_main.tar.xz"
-tar -zxvf "/tmp/streamcreed.tar.gz" -C "/home/streamcreed/"
-rm -f /tmp/streamcreed.tar.gz
+cd /tmp
+wget -O "/tmp/streamcreed.tar.xz" "https://github.com/amidevous/xtream-ui-beta-install/releases/download/1.0/streamcreed_main.tar.xz"
+tar -xvf "/tmp/streamcreed.tar.xz"
+mv home/streamcreed/* /home/streamcreed/
+rm -f /tmp/streamcreed.tar.xz
 mysql -u root -p$ROOT_PASSWORD -e "DROP DATABASE IF EXISTS streamcreed_db; CREATE DATABASE IF NOT EXISTS streamcreed_db;"
 wget https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/database.sql -O /home/streamcreed/database.sql
 mysql -u root -p$ROOT_PASSWORD streamcreed_db < /home/streamcreed/database.sql
@@ -161,7 +170,7 @@ cat > /etc/init.d/streamcreed <<EOF
 #!/bin/bash
 #
 ### BEGIN INIT INFO
-# Provides:          xtreamcodes
+# Provides:          streamcreed
 # Required-Start:    \$mysql $network
 # Should-Start:      \$network $time
 # Should-Stop:       \$network $time
@@ -203,8 +212,8 @@ bash <(wget -qO- https://github.com/amidevous/xtream-ui-beta-install/raw/master/
 chown streamcreed:streamcreed -R /home/streamcreed
 chmod -R 0777 /home/streamcreed
 mysql -u root -p$ROOT_PASSWORD -e "GRANT ALL PRIVILEGES ON streamcreed.* TO 'user_iptvpro'@'%' IDENTIFIED BY '$sqlpass' WITH GRANT OPTION; FLUSH PRIVILEGES;"
-#wget -O /home/streamcreed/admin/settings.php https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/settings.php.txt
-#wget -O /home/streamcreed/pytools/balancer.py https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/pytools/balancer.py
+wget -O /home/streamcreed/admin/settings.php https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/settings.php.txt
+wget -O /home/streamcreed/pytools/balancer.py https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/pytools/balancer.py
 /home/streamcreed/start_services.sh
 rm -f /home/streamcreed/admin/.update
 rm -f cookies.txt encrypt.py
