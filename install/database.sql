@@ -22,7 +22,8 @@ CREATE TABLE `blocked_ips` (
   `id` int(11) NOT NULL,
   `ip` varchar(39) COLLATE utf8_unicode_ci NOT NULL,
   `notes` mediumtext COLLATE utf8_unicode_ci NOT NULL,
-  `date` int(11) NOT NULL
+  `date` int(11) NOT NULL,
+  `attempts_blocked` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 DROP TABLE IF EXISTS `blocked_user_agents`;
