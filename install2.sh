@@ -68,11 +68,6 @@ cat > /etc/apt/sources.list.d/php.list <<EOF
 deb https://github.com/amidevous/xtream-ui-beta-install/raw/master/mirror/ppa.launchpad.net/ondrej/php/ubuntu bionic main
 deb-src https://github.com/amidevous/xtream-ui-beta-install/raw/master/mirror/ppa.launchpad.net/ondrej/php/ubuntu bionic main
 EOF
-cat > /etc/apt/sources.list.d/curl.list <<EOF
-deb https://github.com/amidevous/xtream-ui-beta-install/raw/master/mirror/ppa.launchpad.net/xapienz/curl34/ubuntu bionic main
-deb-src https://github.com/amidevous/xtream-ui-beta-install/raw/master/mirror/ppa.launchpad.net/xapienz/curl34/ubuntu bionic main
-EOF
-
 echo "mariadb-server mysql-server/root_password password $ROOT_PASSWORD" | /usr/bin/debconf-set-selections
 echo "mariadb-server mysql-server/root_password_again password $ROOT_PASSWORD" | /usr/bin/debconf-set-selections
 apt-get update
@@ -82,10 +77,9 @@ wget -O- "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install
 wget -O- "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/0xF1656F24C74CD1D8.key" | sudo apt-key add -
 apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
-DEBIAN_FRONTEND=noninteractive apt-get -y install mariadb-server libxslt1-dev e2fsprogs wget mcrypt nscd htop python libcurl3 nano
+DEBIAN_FRONTEND=noninteractive apt-get -y install mariadb-server libxslt1-dev e2fsprogs wget mcrypt nscd htop python libcurl4 nano
 apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
-DEBIAN_FRONTEND=noninteractive apt-get -y install libcurl4
 apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get -y install libapache2-mod-php5.6 php5.6-common php5.6-cli php5.6-mysql php5.6-gd php5.6-mcrypt php5.6-curl php-pear php5.6-imap php5.6-xmlrpc php5.6-xsl php5.6-intl php php-dev php5.6-dev
 echo "phpmyadmin phpmyadmin/dbconfig-install boolean true" | debconf-set-selections
@@ -122,51 +116,48 @@ systemctl stop mariadb
 wget "https://github.com/amidevous/xtream-ui-beta-install/raw/master/etc/mysql/my.cnf" -O /etc/mysql/my.cnf
 chmod 644 /etc/mysql/my.cnf
 systemctl start mariadb
-wget -q -O /tmp/libpng12.deb https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/libpng12-0_1.2.54-1ubuntu1_amd64.deb
-dpkg -i /tmp/libpng12.deb
-apt-get install -yf
 apt-get -y install sshpass
-rm -f /tmp/libpng12.deb
-getent passwd xtreamcodes
-adduser --system --shell /bin/false --group --disabled-login xtreamcodes 
-mkdir -p /home/xtreamcodes
-wget -O "/tmp/xtreamcodes.tar.gz" "https://github.com/amidevous/xtream-ui-beta-install/releases/download/1.0/main.tar.gz"
-tar -zxvf "/tmp/xtreamcodes.tar.gz" -C "/home/xtreamcodes/"
-rm -f /tmp/xtreamcodes.tar.gz
-mysql -u root -p$ROOT_PASSWORD -e "DROP DATABASE IF EXISTS xtream_iptvpro; CREATE DATABASE IF NOT EXISTS xtream_iptvpro;"
-mysql -u root -p$ROOT_PASSWORD xtream_iptvpro < /home/xtreamcodes/iptv_xtream_codes/database.sql
+getent passwd streamcreed
+adduser --system --shell /bin/false --group --disabled-login streamcreed 
+mkdir -p /home/streamcreed
+wget -O "/tmp/streamcreed.tar.gz" "https://github.com/amidevous/xtream-ui-beta-install/releases/download/1.0/streamcreed_main.tar.xz"
+tar -zxvf "/tmp/streamcreed.tar.gz" -C "/home/streamcreed/"
+rm -f /tmp/streamcreed.tar.gz
+mysql -u root -p$ROOT_PASSWORD -e "DROP DATABASE IF EXISTS streamcreed_db; CREATE DATABASE IF NOT EXISTS streamcreed_db;"
+wget https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/database.sql -O /home/streamcreed/database.sql
+mysql -u root -p$ROOT_PASSWORD streamcreed_db < /home/streamcreed/database.sql
 gen1=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w20 | head -n1)
 gen2=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w10 | head -n1)
 gen3=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w20 | head -n1)
-mysql -u root -p$ROOT_PASSWORD -e "USE xtream_iptvpro; UPDATE settings SET live_streaming_pass = '$gen1', unique_id = '$gen2', crypt_load_balancing = '$gen3';"
+mysql -u root -p$ROOT_PASSWORD -e "USE streamcreed_db; UPDATE settings SET live_streaming_pass = '$gen1', unique_id = '$gen2', crypt_load_balancing = '$gen3';"
 ip=$(wget -qO- http://andy.kimpe.free.fr/ip.php)
 net=$(route | grep default | awk '{print $8}')
 version=$(lsb_release -ds)
-mysql -u root -p$ROOT_PASSWORD -e "USE xtream_iptvpro; REPLACE INTO streaming_servers (id, server_name, domain_name, server_ip, vpn_ip, ssh_password, ssh_port, diff_time_main, http_broadcast_port, total_clients, system_os, network_interface, latency, status, enable_geoip, geoip_countries, last_check_ago, can_delete, server_hardware, total_services, persistent_connections, rtmp_port, geoip_type, isp_names, isp_type, enable_isp, boost_fpm, http_ports_add, network_guaranteed_speed, https_broadcast_port, https_ports_add, whitelist_ips, watchdog_data, timeshift_only) VALUES (1, 'Main Server', '$ip', '$ip', '', NULL, NULL, 0, 80, 1000, '$version', '$net', 0, 1, 0, '', 0, 0, '{}', 3, 0, 25462, 'low_priority', '', 'low_priority', 0, 1, '', 1000, 25463, '', '[\"127.0.0.1\",\"\"]', '{}', 0);"
+mysql -u root -p$ROOT_PASSWORD -e "USE streamcreed_db; REPLACE INTO streaming_servers (id, server_name, domain_name, server_ip, vpn_ip, ssh_password, ssh_port, diff_time_main, http_broadcast_port, total_clients, system_os, network_interface, latency, status, enable_geoip, geoip_countries, last_check_ago, can_delete, server_hardware, total_services, persistent_connections, rtmp_port, geoip_type, isp_names, isp_type, enable_isp, boost_fpm, http_ports_add, network_guaranteed_speed, https_broadcast_port, https_ports_add, whitelist_ips, watchdog_data, timeshift_only) VALUES (1, 'Main Server', '$ip', '$ip', '', NULL, NULL, 0, 80, 1000, '$version', '$net', 0, 1, 0, '', 0, 0, '{}', 3, 0, 25462, 'low_priority', '', 'low_priority', 0, 1, '', 1000, 25463, '', '[\"127.0.0.1\",\"\"]', '{}', 0);"
 timetamp=$(date +"%s")
-mysql -u root -p$ROOT_PASSWORD -e "USE xtream_iptvpro; INSERT INTO reg_users (id, username, password, email, ip, date_registered, verify_key, last_login, member_group_id, verified, credits, notes, status, default_lang, reseller_dns, owner_id, override_packages, google_2fa_sec) VALUES ('1', 'admin', '\$6\$rounds=20000\$xtreamcodes\$XThC5OwfuS0YwS4ahiifzF14vkGbGsFF1w7ETL4sRRC5sOrAWCjWvQJDromZUQoQuwbAXAFdX3h3Cp3vqulpS0', 'admin@website.com', NULL, '$timetamp', NULL, NULL, '1', '1', '0', NULL, '1', '', '', '0', NULL, '');"
+mysql -u root -p$ROOT_PASSWORD -e "USE streamcreed_db; INSERT INTO reg_users (id, username, password, email, ip, date_registered, verify_key, last_login, member_group_id, verified, credits, notes, status, default_lang, reseller_dns, owner_id, override_packages, google_2fa_sec) VALUES ('1', 'admin', '\$6\$rounds=20000\$xtreamcodes\$XThC5OwfuS0YwS4ahiifzF14vkGbGsFF1w7ETL4sRRC5sOrAWCjWvQJDromZUQoQuwbAXAFdX3h3Cp3vqulpS0', 'admin@website.com', NULL, '$timetamp', NULL, NULL, '1', '1', '0', NULL, '1', '', '', '0', NULL, '');"
 sqlpass=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w20 | head -n1)
-mysql -u root -p$ROOT_PASSWORD -e "GRANT ALL PRIVILEGES ON xtream_iptvpro.* TO 'user_iptvpro'@'%' IDENTIFIED BY '$sqlpass' WITH GRANT OPTION; FLUSH PRIVILEGES;"
-wget https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/update-21.sql -O /home/xtreamcodes/iptv_xtream_codes/update-21.sql
-mysql -u root -p$ROOT_PASSWORD xtream_iptvpro < /home/xtreamcodes/iptv_xtream_codes/update-21.sql
+mysql -u root -p$ROOT_PASSWORD -e "GRANT ALL PRIVILEGES ON streamcreed_db.* TO 'user_iptvpro'@'%' IDENTIFIED BY '$sqlpass' WITH GRANT OPTION; FLUSH PRIVILEGES;"
+wget https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/update-21.sql -O /home/streamcreed/update-21.sql
+mysql -u root -p$ROOT_PASSWORD streamcreed_db < /home/streamcreed/update-21.sql
 cd
-wget https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/encrypt.py -O encrypt.py
+wget https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/encrypt_streamcreed.py -O encrypt.py
 apt-get -y install dos2unix
 dos2unix encrypt.py
 sed -i 's|idedit|1|' encrypt.py
 sed -i 's|mysqlpassword|'$sqlpass'|' encrypt.py
-rm -f /home/xtreamcodes/iptv_xtream_codes/config
+mkdir -p /home/xtreamcodes/iptv_xtream_codes/
 python encrypt.py ENCRYPT
-if ! grep -q "/home/xtreamcodes/iptv_xtream_codes/" /etc/fstab; then
+if ! grep -q "/home/streamcreed/" /etc/fstab; then
     cat >> /etc/fstab <<EOF
-	tmpfs /home/xtreamcodes/iptv_xtream_codes/streams tmpfs defaults,noatime,nosuid,nodev,noexec,mode=1777,size=90% 0 0
-	tmpfs /home/xtreamcodes/iptv_xtream_codes/tmp tmpfs defaults,noatime,nosuid,nodev,noexec,mode=1777,size=2G 0 0"
+	tmpfs /home/streamcreed/streams tmpfs defaults,noatime,nosuid,nodev,noexec,mode=1777,size=90% 0 0
+	tmpfs /home/streamcreed/tmp tmpfs defaults,noatime,nosuid,nodev,noexec,mode=1777,size=2G 0 0"
 EOF
 fi
-if ! grep -q "xtreamcodes ALL = (root) NOPASSWD: /sbin/iptables" /etc/sudoers; then
-    echo "xtreamcodes ALL = (root) NOPASSWD: /sbin/iptables" >> /etc/sudoers;
+if ! grep -q "streamcreed ALL = (root) NOPASSWD: /sbin/iptables" /etc/sudoers; then
+    echo "streamcreed ALL = (root) NOPASSWD: /sbin/iptables" >> /etc/sudoers;
 fi
-cat > /etc/init.d/xtreamcodes <<EOF
+cat > /etc/init.d/streamcreed <<EOF
 #!/bin/bash
 #
 ### BEGIN INIT INFO
@@ -179,44 +170,43 @@ cat > /etc/init.d/xtreamcodes <<EOF
 # Short-Description: Start and stop the xtreamcodes server daemon
 # Description:       Controls the main xtreamcodes server daemon
 
-/home/xtreamcodes/iptv_xtream_codes/start_services.sh
+/home/streamcreed/start_services.sh
 EOF
-chmod 777 /etc/init.d/xtreamcodes
-systemctl enable xtreamcodes
+chmod 777 /etc/init.d/streamcreed
+systemctl enable streamcreed
 rm -f /usr/bin/ffmpeg
-mkdir -p /home/xtreamcodes/iptv_xtream_codes/tv_archive
-ln -s /home/xtreamcodes/iptv_xtream_codes/bin/ffmpeg /usr/bin/
-chown xtreamcodes:xtreamcodes -R /home/xtreamcodes
-chmod -R 0777 /home/xtreamcodes
-chmod +x /home/xtreamcodes/iptv_xtream_codes/start_services.sh
-chattr +i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb
+mkdir -p /home/streamcreed/tv_archive
+ln -s /home/streamcreed/bin/ffmpeg /usr/bin/
+chown streamcreed:streamcreed -R /home/streamcreed
+chmod -R 0777 /home/streamcreed
+chmod +x /home/streamcreed/start_services.sh
+chattr +i /home/streamcreed/GeoLite2.mmdb
 mount -a
 chattr -i /etc/hosts
 chmod 777 /etc/hosts
-if ! grep -q "127.0.0.1    api.xtream-codes.com" /etc/hosts; then
-    echo "127.0.0.1    api.xtream-codes.com" >> /etc/hosts;
+if ! grep -q "127.0.0.1    api.streamcreed.com" /etc/hosts; then
+    echo "127.0.0.1    api.streamcreed.com" >> /etc/hosts;
 fi
-if ! grep -q "127.0.0.1    downloads.xtream-codes.com" /etc/hosts; then
-    echo "127.0.0.1    downloads.xtream-codes.com" >> /etc/hosts;
+if ! grep -q "127.0.0.1    downloads.streamcreed.com" /etc/hosts; then
+    echo "127.0.0.1    downloads.streamcreed.com" >> /etc/hosts;
 fi
-if ! grep -q "127.0.0.1    xtream-codes.com" /etc/hosts; then
-    echo "127.0.0.1    xtream-codes.com" >> /etc/hosts;
+if ! grep -q "127.0.0.1    streamcreed.com" /etc/hosts; then
+    echo "127.0.0.1    streamcreed.com" >> /etc/hosts;
 fi
 chattr +i /etc/hosts
-wget -O /home/xtreamcodes/iptv_xtream_codes/nginx/conf/nginx.conf https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/nginx_main.conf
+wget -O /home/streamcreed/nginx/conf/nginx.conf https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/nginx_streamcreed.conf
 wget -O /etc/apache2/ports.conf https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/ports.conf
 wget -O /etc/apache2/apache2.conf https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/apache2.conf
 wget -O /etc/apache2/sites-available/000-default.conf https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/000-default.conf
 service apache2 restart
-#bash <(wget -qO- https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/update.sh)
-bash <(wget -qO- https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/updatebeta.sh)
-chown xtreamcodes:xtreamcodes -R /home/xtreamcodes
-chmod -R 0777 /home/xtreamcodes
-mysql -u root -p$ROOT_PASSWORD -e "GRANT ALL PRIVILEGES ON xtream_iptvpro.* TO 'user_iptvpro'@'%' IDENTIFIED BY '$sqlpass' WITH GRANT OPTION; FLUSH PRIVILEGES;"
-wget -O /home/xtreamcodes/iptv_xtream_codes/admin/settings.php https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/settings.php.txt
-wget -O /home/xtreamcodes/iptv_xtream_codes/pytools/balancer.py https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/pytools/balancer.py
-/home/xtreamcodes/iptv_xtream_codes/start_services.sh
-rm -f /home/xtreamcodes/iptv_xtream_codes/admin/.update
+bash <(wget -qO- https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/update.sh)
+chown streamcreed:streamcreed -R /home/streamcreed
+chmod -R 0777 /home/streamcreed
+mysql -u root -p$ROOT_PASSWORD -e "GRANT ALL PRIVILEGES ON streamcreed.* TO 'user_iptvpro'@'%' IDENTIFIED BY '$sqlpass' WITH GRANT OPTION; FLUSH PRIVILEGES;"
+#wget -O /home/streamcreed/admin/settings.php https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/settings.php.txt
+#wget -O /home/streamcreed/pytools/balancer.py https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/pytools/balancer.py
+/home/streamcreed/start_services.sh
+rm -f /home/streamcreed/admin/.update
 rm -f cookies.txt encrypt.py
 echo "panel installed"
 echo "go to login http://$ip:25500/login.php"
