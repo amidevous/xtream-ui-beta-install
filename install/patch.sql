@@ -5,17 +5,11 @@ CREATE TABLE `access_output` (
   `output_ext` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-CREATE TABLE `admin_settings` (
-  `type` varchar(128) NOT NULL DEFAULT '',
-  `value` varchar(4096) NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 CREATE TABLE `blocked_ips` (
   `id` int(11) NOT NULL,
   `ip` varchar(39) COLLATE utf8_unicode_ci NOT NULL,
   `notes` mediumtext COLLATE utf8_unicode_ci NOT NULL,
-  `date` int(11) NOT NULL,
-  `attempts_blocked` int(11) NOT NULL
+  `date` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `blocked_user_agents` (
@@ -27,9 +21,9 @@ CREATE TABLE `blocked_user_agents` (
 
 CREATE TABLE `bouquets` (
   `id` int(11) NOT NULL,
-  `bouquet_name` mediumtext COLLATE utf8_unicode_ci NOT NULL,
-  `bouquet_channels` mediumtext COLLATE utf8_unicode_ci NOT NULL,
-  `bouquet_series` mediumtext COLLATE utf8_unicode_ci NOT NULL
+  `bouquet_name` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `bouquet_channels` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `bouquet_series` longtext COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `client_logs` (
@@ -44,51 +38,6 @@ CREATE TABLE `client_logs` (
   `date` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-CREATE TABLE `created` (
-  `id` tinyint(4) NOT NULL,
-  `type` tinyint(4) NOT NULL,
-  `category_id` tinyint(4) NOT NULL,
-  `stream_display_name` tinyint(4) NOT NULL,
-  `stream_source` tinyint(4) NOT NULL,
-  `stream_icon` tinyint(4) NOT NULL,
-  `notes` tinyint(4) NOT NULL,
-  `created_channel_location` tinyint(4) NOT NULL,
-  `enable_transcode` tinyint(4) NOT NULL,
-  `transcode_attributes` tinyint(4) NOT NULL,
-  `custom_ffmpeg` tinyint(4) NOT NULL,
-  `movie_propeties` tinyint(4) NOT NULL,
-  `movie_subtitles` tinyint(4) NOT NULL,
-  `read_native` tinyint(4) NOT NULL,
-  `target_container` tinyint(4) NOT NULL,
-  `stream_all` tinyint(4) NOT NULL,
-  `remove_subtitles` tinyint(4) NOT NULL,
-  `custom_sid` tinyint(4) NOT NULL,
-  `epg_id` tinyint(4) NOT NULL,
-  `channel_id` tinyint(4) NOT NULL,
-  `epg_lang` tinyint(4) NOT NULL,
-  `order` tinyint(4) NOT NULL,
-  `auto_restart` tinyint(4) NOT NULL,
-  `transcode_profile_id` tinyint(4) NOT NULL,
-  `pids_create_channel` tinyint(4) NOT NULL,
-  `cchannel_rsources` tinyint(4) NOT NULL,
-  `gen_timestamps` tinyint(4) NOT NULL,
-  `added` tinyint(4) NOT NULL,
-  `series_no` tinyint(4) NOT NULL,
-  `direct_source` tinyint(4) NOT NULL,
-  `tv_archive_duration` tinyint(4) NOT NULL,
-  `tv_archive_server_id` tinyint(4) NOT NULL,
-  `tv_archive_pid` tinyint(4) NOT NULL,
-  `movie_symlink` tinyint(4) NOT NULL,
-  `redirect_stream` tinyint(4) NOT NULL,
-  `rtmp_output` tinyint(4) NOT NULL,
-  `number` tinyint(4) NOT NULL,
-  `allow_record` tinyint(4) NOT NULL,
-  `probesize_ondemand` tinyint(4) NOT NULL,
-  `custom_map` tinyint(4) NOT NULL,
-  `external_push` tinyint(4) NOT NULL,
-  `delay_minutes` tinyint(4) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
 CREATE TABLE `credits_log` (
   `id` int(11) NOT NULL,
   `target_id` int(11) NOT NULL,
@@ -97,17 +46,6 @@ CREATE TABLE `credits_log` (
   `date` int(11) NOT NULL,
   `reason` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-CREATE TABLE `cronjobs` (
-  `id` int(11) NOT NULL,
-  `description` mediumtext COLLATE utf8_unicode_ci NOT NULL,
-  `filename` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `run_per_mins` int(11) NOT NULL DEFAULT 1,
-  `run_per_hours` int(11) NOT NULL DEFAULT 0,
-  `enabled` int(11) NOT NULL DEFAULT 0,
-  `pid` int(11) NOT NULL DEFAULT 0,
-  `timestamp` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `devices` (
   `device_id` int(11) NOT NULL,
@@ -188,29 +126,6 @@ CREATE TABLE `isp_addon` (
   `blocked` tinyint(4) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `licence` (
-  `id` int(11) NOT NULL,
-  `licence_key` varchar(29) COLLATE utf8_unicode_ci NOT NULL,
-  `show_message` tinyint(4) NOT NULL,
-  `update_available` int(11) NOT NULL DEFAULT 0,
-  `reshare_deny_addon` tinyint(4) DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-CREATE TABLE `login_flood` (
-  `id` int(11) NOT NULL,
-  `username` varchar(128) NOT NULL DEFAULT '',
-  `ip` varchar(64) NOT NULL DEFAULT '',
-  `dateadded` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-CREATE TABLE `login_logs` (
-  `id` int(11) NOT NULL,
-  `user_id` int(11) DEFAULT NULL,
-  `data` mediumtext COLLATE utf8_unicode_ci NOT NULL,
-  `login_ip` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `date` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
 CREATE TABLE `mag_claims` (
   `id` int(11) NOT NULL,
   `mag_id` int(11) NOT NULL,
@@ -232,7 +147,6 @@ CREATE TABLE `mag_devices` (
   `playback_buffer_size` int(50) NOT NULL DEFAULT 0,
   `audio_out` int(5) NOT NULL DEFAULT 1,
   `mac` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `ip` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `ls` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `ver` varchar(300) COLLATE utf8_unicode_ci DEFAULT NULL,
   `lang` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -279,12 +193,13 @@ CREATE TABLE `mag_devices` (
   `device_id` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `device_id2` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `hw_version` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `hw_version_2` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `parent_password` varchar(20) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0000',
   `spdif_mode` int(11) NOT NULL DEFAULT 1,
   `show_after_loading` varchar(60) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'main_menu',
   `play_in_preview_by_ok` int(11) NOT NULL DEFAULT 1,
   `hdmi_event_reaction` int(11) NOT NULL DEFAULT 1,
-  `mag_player` varchar(20) COLLATE utf8_unicode_ci DEFAULT 'ffmpeg',
+  `mag_player` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `play_in_preview_only_by_ok` varchar(10) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'true',
   `watchdog_timeout` int(11) NOT NULL,
   `fav_channels` mediumtext COLLATE utf8_unicode_ci NOT NULL,
@@ -342,16 +257,12 @@ CREATE TABLE `member_groups` (
   `reseller_trial_credit_allow` int(11) NOT NULL DEFAULT 0,
   `edit_mac` tinyint(4) NOT NULL DEFAULT 0,
   `edit_isplock` tinyint(4) NOT NULL DEFAULT 0,
+  `lock_device` tinyint(4) NOT NULL DEFAULT 0,
   `reset_stb_data` tinyint(4) NOT NULL DEFAULT 0,
   `reseller_bonus_package_inc` tinyint(4) NOT NULL DEFAULT 0,
   `allow_download` tinyint(4) NOT NULL DEFAULT 1,
-  `minimum_trial_credits` int(16) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-CREATE TABLE `movie_containers` (
-  `container_id` int(11) NOT NULL,
-  `container_extension` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `container_header` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `full_admin` tinyint(4) NOT NULL DEFAULT 0,
+  `allow_custom_dns` tinyint(4) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `packages` (
@@ -376,13 +287,13 @@ CREATE TABLE `packages` (
   `force_server_id` int(11) NOT NULL DEFAULT 0,
   `can_gen_e2` tinyint(4) NOT NULL DEFAULT 0,
   `only_e2` tinyint(4) NOT NULL DEFAULT 0,
-  `forced_country` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  `forced_country` varchar(3) COLLATE utf8_unicode_ci NOT NULL,
   `lock_device` tinyint(4) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `panel_logs` (
   `id` int(11) NOT NULL,
-  `log_message` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `log_message` mediumtext COLLATE utf8_unicode_ci NOT NULL,
   `date` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -414,8 +325,8 @@ CREATE TABLE `reg_users` (
   `owner_id` int(11) NOT NULL DEFAULT 0,
   `override_packages` text COLLATE utf8_unicode_ci DEFAULT NULL,
   `google_2fa_sec` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `dark_mode` int(1) NOT NULL DEFAULT 0,
-  `sidebar` int(1) NOT NULL DEFAULT 0
+  `otp` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `cookie_value` varchar(32) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `reseller_imex` (
@@ -426,6 +337,13 @@ CREATE TABLE `reseller_imex` (
   `accepted` tinyint(4) NOT NULL DEFAULT 0,
   `finished` tinyint(4) NOT NULL DEFAULT 0,
   `bouquet_ids` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `restreamers_finder` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `reason` enum('BAD_UA','HIGH_FREQ_STREAM','MANY_COUNTRIES','DIFF_IPS') NOT NULL,
+  `date` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `rtmp_ips` (
@@ -449,7 +367,7 @@ CREATE TABLE `series` (
   `last_modified` int(11) NOT NULL,
   `tmdb_id` int(11) NOT NULL,
   `seasons` mediumtext NOT NULL,
-  `episode_run_time` int(11) NOT NULL DEFAULT 0,
+  `episode_run_time` int(11) NOT NULL,
   `backdrop_path` text NOT NULL,
   `youtube_trailer` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -462,16 +380,13 @@ CREATE TABLE `series_episodes` (
   `sort` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `server_activity` (
+CREATE TABLE `server_network` (
   `id` int(11) NOT NULL,
-  `source_server_id` int(11) NOT NULL,
-  `dest_server_id` int(11) NOT NULL,
-  `stream_id` int(11) NOT NULL,
-  `pid` int(11) DEFAULT NULL,
-  `bandwidth` int(11) NOT NULL DEFAULT 0,
-  `date_start` int(11) NOT NULL,
-  `date_end` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `server_id` int(11) NOT NULL,
+  `sent` bigint(20) NOT NULL,
+  `received` int(11) NOT NULL,
+  `date` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `settings` (
   `id` int(11) NOT NULL,
@@ -503,7 +418,7 @@ CREATE TABLE `settings` (
   `copyrights_text` mediumtext COLLATE utf8_unicode_ci NOT NULL,
   `default_timezone` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'Europe/Athens',
   `default_locale` varchar(20) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'en_GB.utf8',
-  `allowed_stb_types` text COLLATE utf8_unicode_ci NOT NULL,
+  `allowed_stb_types` text COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `client_prebuffer` int(11) NOT NULL,
   `split_clients` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `stream_max_analyze` int(11) NOT NULL DEFAULT 30,
@@ -530,14 +445,7 @@ CREATE TABLE `settings` (
   `reshare_deny_addon` tinyint(4) NOT NULL DEFAULT 0,
   `restart_http` tinyint(4) NOT NULL DEFAULT 0,
   `css_layout` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `flood_seconds` int(11) NOT NULL DEFAULT 5,
-  `flood_max_attempts` int(11) NOT NULL DEFAULT 1,
-  `flood_apply_clients` int(11) NOT NULL DEFAULT 1,
-  `flood_apply_restreamers` int(11) NOT NULL DEFAULT 0,
   `backup_source_all` int(11) NOT NULL DEFAULT 0,
-  `flood_get_block` int(11) NOT NULL DEFAULT 0,
-  `portal_block` int(11) NOT NULL DEFAULT 0,
-  `streaming_block` int(11) NOT NULL DEFAULT 0,
   `stream_start_delay` int(11) NOT NULL DEFAULT 20000,
   `hash_lb` tinyint(4) NOT NULL DEFAULT 1,
   `vod_bitrate_plus` int(11) NOT NULL DEFAULT 60,
@@ -549,7 +457,6 @@ CREATE TABLE `settings` (
   `enable_connection_problem_indication` tinyint(4) NOT NULL DEFAULT 1,
   `enable_pseudo_hls` tinyint(4) NOT NULL DEFAULT 1,
   `vod_limit_at` int(11) NOT NULL DEFAULT 0,
-  `client_area_plugin` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'flow',
   `persistent_connections` tinyint(4) NOT NULL DEFAULT 0,
   `record_max_length` int(11) NOT NULL DEFAULT 180,
   `total_records_length` int(11) NOT NULL DEFAULT 600,
@@ -572,12 +479,6 @@ CREATE TABLE `settings` (
   `online_capacity_interval` smallint(6) NOT NULL DEFAULT 10,
   `always_enabled_subtitles` tinyint(4) NOT NULL DEFAULT 1,
   `test_download_url` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `xc_support_allow` tinyint(4) NOT NULL DEFAULT 1,
-  `e2_arm7a` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `e2_mipsel` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `e2_mips32el` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `e2_sh4` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `e2_arm` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `api_pass` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `message_of_day` text COLLATE utf8_unicode_ci NOT NULL,
   `double_auth` tinyint(4) NOT NULL DEFAULT 0,
@@ -591,53 +492,48 @@ CREATE TABLE `settings` (
   `case_sensitive_line` tinyint(4) NOT NULL DEFAULT 1,
   `county_override_1st` tinyint(4) NOT NULL DEFAULT 0,
   `disallow_2nd_ip_con` tinyint(4) NOT NULL DEFAULT 0,
+  `xc_support_allow` tinyint(2) NOT NULL DEFAULT 0,
   `firewall` tinyint(4) NOT NULL DEFAULT 0,
   `new_sorting_bouquet` tinyint(4) NOT NULL DEFAULT 1,
   `split_by` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'con',
   `use_mdomain_in_lists` tinyint(4) NOT NULL DEFAULT 0,
-  `use_https` text COLLATE utf8_unicode_ci NOT NULL,
+  `use_https` mediumtext COLLATE utf8_unicode_ci NOT NULL,
   `priority_backup` tinyint(4) NOT NULL DEFAULT 0,
-  `use_buffer_table` tinyint(4) NOT NULL DEFAULT 0,
-  `tmdb_api_key` text COLLATE utf8_unicode_ci NOT NULL,
-  `toggle_menu` tinyint(4) NOT NULL DEFAULT 0,
-  `mobile_apps` tinyint(4) NOT NULL DEFAULT 0,
+  `tmdb_api_key` mediumtext COLLATE utf8_unicode_ci NOT NULL,
   `stalker_container_priority` text COLLATE utf8_unicode_ci NOT NULL,
   `gen_container_priority` text COLLATE utf8_unicode_ci NOT NULL,
   `tmdb_default` varchar(3) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'en',
   `series_custom_name` tinyint(4) NOT NULL DEFAULT 0,
-  `mag_security` tinyint(4) NOT NULL DEFAULT 0
+  `mobile_apps` tinyint(4) NOT NULL DEFAULT 0,
+  `mag_security` tinyint(4) NOT NULL DEFAULT 0,
+  `rbackup_enable` tinyint(4) DEFAULT 0,
+  `drop_key` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lbackup_enable` tinyint(4) DEFAULT 0,
+  `lbackup_dir` text COLLATE utf8_unicode_ci DEFAULT '/home/streamcreed/backups',
+  `adult_password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `lb_ip_check` tinyint(4) NOT NULL DEFAULT 0,
+  `cs_block_types` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-CREATE TABLE `signals` (
-  `signal_id` int(11) NOT NULL,
-  `pid` int(11) NOT NULL,
-  `server_id` int(11) NOT NULL,
-  `rtmp` tinyint(4) NOT NULL DEFAULT 0,
-  `time` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `streaming_servers` (
   `id` int(11) NOT NULL,
   `server_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `domain_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `server_isp` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `broadcast` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `broadcast_internal` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `server_ip` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `vpn_ip` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `ssh_password` mediumtext COLLATE utf8_unicode_ci DEFAULT NULL,
   `ssh_port` int(11) DEFAULT NULL,
   `diff_time_main` int(11) NOT NULL DEFAULT 0,
   `http_broadcast_port` int(11) NOT NULL,
   `total_clients` int(11) NOT NULL DEFAULT 0,
-  `system_os` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `network_interface` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `latency` float NOT NULL DEFAULT 0,
   `status` tinyint(4) NOT NULL DEFAULT -1,
   `enable_geoip` int(11) NOT NULL DEFAULT 0,
   `geoip_countries` mediumtext COLLATE utf8_unicode_ci NOT NULL,
   `last_check_ago` int(11) NOT NULL DEFAULT 0,
-  `can_delete` tinyint(4) NOT NULL DEFAULT 1,
-  `server_hardware` text COLLATE utf8_unicode_ci NOT NULL,
   `total_services` int(11) NOT NULL DEFAULT 3,
-  `persistent_connections` tinyint(4) NOT NULL DEFAULT 0,
   `rtmp_port` int(11) NOT NULL DEFAULT 8001,
   `geoip_type` varchar(13) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'low_priority',
   `isp_names` mediumtext COLLATE utf8_unicode_ci NOT NULL,
@@ -648,9 +544,14 @@ CREATE TABLE `streaming_servers` (
   `network_guaranteed_speed` int(11) NOT NULL DEFAULT 0,
   `https_broadcast_port` int(11) NOT NULL DEFAULT 25463,
   `https_ports_add` text COLLATE utf8_unicode_ci NOT NULL,
-  `whitelist_ips` text COLLATE utf8_unicode_ci NOT NULL,
   `watchdog_data` mediumtext COLLATE utf8_unicode_ci NOT NULL,
-  `timeshift_only` tinyint(4) NOT NULL DEFAULT 0
+  `whitelist_ips` mediumtext COLLATE utf8_unicode_ci NOT NULL,
+  `timeshift_only` tinyint(4) NOT NULL DEFAULT 0,
+  `nginx_config` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `full_duplex` tinyint(4) NOT NULL DEFAULT 1,
+  `extra_ips` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `vod_output_folder` text COLLATE utf8_unicode_ci NOT NULL,
+  `redis_port` int(11) NOT NULL DEFAULT 25460
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `streams` (
@@ -695,7 +596,9 @@ CREATE TABLE `streams` (
   `probesize_ondemand` int(11) NOT NULL DEFAULT 128000,
   `custom_map` text COLLATE utf8_unicode_ci NOT NULL,
   `external_push` mediumtext COLLATE utf8_unicode_ci NOT NULL,
-  `delay_minutes` int(11) NOT NULL DEFAULT 0
+  `delay_minutes` int(11) NOT NULL DEFAULT 0,
+  `is_adult` tinyint(4) NOT NULL DEFAULT 0,
+  `is_website` tinyint(4) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `streams_arguments` (
@@ -717,12 +620,6 @@ CREATE TABLE `streams_options` (
   `value` text COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-CREATE TABLE `streams_seasons` (
-  `season_id` int(11) NOT NULL,
-  `season_name` varchar(255) NOT NULL,
-  `stream_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 CREATE TABLE `streams_sys` (
   `server_stream_id` int(11) NOT NULL,
   `stream_id` int(11) NOT NULL,
@@ -739,7 +636,8 @@ CREATE TABLE `streams_sys` (
   `progress_info` text COLLATE utf8_unicode_ci NOT NULL,
   `on_demand` tinyint(4) NOT NULL DEFAULT 0,
   `delay_pid` int(11) DEFAULT NULL,
-  `delay_available_at` int(11) DEFAULT NULL
+  `delay_available_at` int(11) DEFAULT NULL,
+  `vod_folder` text COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `streams_types` (
@@ -763,28 +661,7 @@ CREATE TABLE `stream_logs` (
   `stream_id` int(11) NOT NULL,
   `server_id` int(11) NOT NULL,
   `date` int(11) NOT NULL,
-  `error` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-CREATE TABLE `stream_subcategories` (
-  `sub_id` int(11) NOT NULL,
-  `parent_id` int(11) NOT NULL,
-  `subcategory_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-CREATE TABLE `subreseller_setup` (
-  `id` int(11) NOT NULL,
-  `reseller` int(8) NOT NULL DEFAULT 0,
-  `subreseller` int(8) NOT NULL DEFAULT 0,
-  `status` int(1) NOT NULL DEFAULT 1,
-  `dateadded` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-CREATE TABLE `suspicious_logs` (
-  `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `data` mediumtext NOT NULL,
-  `last_updated` datetime NOT NULL
+  `error` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `tickets` (
@@ -803,14 +680,6 @@ CREATE TABLE `tickets_replies` (
   `message` mediumtext COLLATE utf8_unicode_ci NOT NULL,
   `date` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-CREATE TABLE `tmdb_async` (
-  `id` int(11) NOT NULL,
-  `type` int(1) NOT NULL DEFAULT 0,
-  `stream_id` int(16) NOT NULL DEFAULT 0,
-  `status` int(8) NOT NULL DEFAULT 0,
-  `dateadded` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `transcoding_profiles` (
   `profile_id` int(11) NOT NULL,
@@ -846,7 +715,7 @@ CREATE TABLE `users` (
   `forced_country` varchar(3) COLLATE utf8_unicode_ci NOT NULL,
   `is_stalker` tinyint(4) NOT NULL DEFAULT 0,
   `bypass_ua` tinyint(4) NOT NULL DEFAULT 0,
-  `play_token` text COLLATE utf8_unicode_ci NOT NULL
+  `play_token` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `user_activity` (
@@ -861,27 +730,25 @@ CREATE TABLE `user_activity` (
   `date_end` int(11) DEFAULT NULL,
   `geoip_country_code` varchar(22) COLLATE utf8_unicode_ci NOT NULL,
   `isp` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `external_device` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `city` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `divergence` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `user_activity_now` (
   `activity_id` int(11) NOT NULL,
+  `token` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   `user_id` int(11) NOT NULL,
   `stream_id` int(11) NOT NULL,
   `server_id` int(11) NOT NULL,
   `user_agent` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `user_ip` varchar(39) COLLATE utf8_unicode_ci NOT NULL,
   `container` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `pid` int(11) DEFAULT NULL,
+  `pid` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
   `date_start` int(11) NOT NULL,
-  `date_end` int(11) DEFAULT NULL,
   `geoip_country_code` varchar(22) COLLATE utf8_unicode_ci NOT NULL,
   `isp` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `external_device` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `divergence` int(11) DEFAULT NULL,
-  `hls_last_read` int(11) DEFAULT NULL,
-  `hls_end` tinyint(4) NOT NULL DEFAULT 0
+  `city` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `divergence` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `user_output` (
@@ -890,66 +757,11 @@ CREATE TABLE `user_output` (
   `access_output_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-CREATE TABLE `watch_categories` (
-  `id` int(11) NOT NULL,
-  `type` int(1) NOT NULL DEFAULT 0,
-  `genre_id` int(8) NOT NULL DEFAULT 0,
-  `genre` varchar(64) NOT NULL DEFAULT '',
-  `category_id` int(8) NOT NULL DEFAULT 0,
-  `bouquets` varchar(4096) NOT NULL DEFAULT '[]'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-CREATE TABLE `watch_folders` (
-  `id` int(11) NOT NULL,
-  `type` varchar(32) NOT NULL DEFAULT '',
-  `directory` varchar(2048) NOT NULL DEFAULT '',
-  `server_id` int(8) NOT NULL DEFAULT 0,
-  `category_id` int(8) NOT NULL DEFAULT 0,
-  `bouquets` varchar(4096) NOT NULL DEFAULT '[]',
-  `last_run` int(32) NOT NULL DEFAULT 0,
-  `active` int(1) NOT NULL DEFAULT 1,
-  `disable_tmdb` int(1) NOT NULL DEFAULT 0,
-  `ignore_no_match` int(1) NOT NULL DEFAULT 0,
-  `auto_subtitles` int(1) NOT NULL DEFAULT 0,
-  `fb_bouquets` varchar(4096) NOT NULL DEFAULT '[]',
-  `fb_category_id` int(8) NOT NULL DEFAULT 0,
-  `allowed_extensions` varchar(4096) NOT NULL DEFAULT '[]'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-CREATE TABLE `watch_output` (
-  `id` int(11) NOT NULL,
-  `type` int(1) NOT NULL DEFAULT 0,
-  `server_id` int(8) NOT NULL DEFAULT 0,
-  `filename` varchar(4096) NOT NULL DEFAULT '',
-  `status` int(1) NOT NULL DEFAULT 0,
-  `stream_id` int(8) NOT NULL DEFAULT 0,
-  `dateadded` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-CREATE TABLE `watch_settings` (
-  `read_native` int(1) NOT NULL DEFAULT 1,
-  `movie_symlink` int(1) NOT NULL DEFAULT 1,
-  `auto_encode` int(1) NOT NULL DEFAULT 0,
-  `transcode_profile_id` int(8) NOT NULL DEFAULT 0,
-  `scan_seconds` int(8) NOT NULL DEFAULT 3600,
-  `percentage_match` int(3) NOT NULL DEFAULT 80,
-  `ffprobe_input` int(1) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-CREATE TABLE `xtream_main` (
-  `id` int(11) NOT NULL,
-  `update_available` int(11) NOT NULL DEFAULT 0,
-  `root_ip` mediumtext COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
 
 ALTER TABLE `access_output`
   ADD PRIMARY KEY (`access_output_id`),
   ADD KEY `output_key` (`output_key`),
   ADD KEY `output_ext` (`output_ext`);
-
-ALTER TABLE `admin_settings`
-  ADD PRIMARY KEY (`type`);
 
 ALTER TABLE `blocked_ips`
   ADD PRIMARY KEY (`id`),
@@ -976,11 +788,6 @@ ALTER TABLE `credits_log`
   ADD KEY `target_id` (`target_id`),
   ADD KEY `admin_id` (`admin_id`);
 
-ALTER TABLE `cronjobs`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `enabled` (`enabled`),
-  ADD KEY `filename` (`filename`);
-
 ALTER TABLE `devices`
   ADD PRIMARY KEY (`device_id`),
   ADD KEY `device_key` (`device_key`),
@@ -995,8 +802,7 @@ ALTER TABLE `enigma2_devices`
   ADD KEY `user_id` (`user_id`);
 
 ALTER TABLE `enigma2_failed`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `original_mac` (`original_mac`);
+  ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `epg`
   ADD PRIMARY KEY (`id`);
@@ -1011,16 +817,6 @@ ALTER TABLE `epg_data`
 
 ALTER TABLE `isp_addon`
   ADD PRIMARY KEY (`id`);
-
-ALTER TABLE `licence`
-  ADD PRIMARY KEY (`id`);
-
-ALTER TABLE `login_flood`
-  ADD PRIMARY KEY (`id`);
-
-ALTER TABLE `login_logs`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`);
 
 ALTER TABLE `mag_claims`
   ADD PRIMARY KEY (`id`),
@@ -1051,10 +847,6 @@ ALTER TABLE `member_groups`
   ADD KEY `is_reseller` (`is_reseller`),
   ADD KEY `can_delete` (`can_delete`);
 
-ALTER TABLE `movie_containers`
-  ADD PRIMARY KEY (`container_id`),
-  ADD KEY `container_extension` (`container_extension`);
-
 ALTER TABLE `packages`
   ADD PRIMARY KEY (`id`),
   ADD KEY `is_trial` (`is_trial`),
@@ -1072,13 +864,17 @@ ALTER TABLE `reg_userlog`
 
 ALTER TABLE `reg_users`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `member_group_id` (`member_group_id`),
-  ADD KEY `username` (`username`),
-  ADD KEY `password` (`password`);
+  ADD KEY `member_group_id` (`member_group_id`);
 
 ALTER TABLE `reseller_imex`
   ADD PRIMARY KEY (`id`),
   ADD KEY `reg_id` (`reg_id`);
+
+ALTER TABLE `restreamers_finder`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `user_id_reason` (`user_id`,`reason`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `reason` (`reason`);
 
 ALTER TABLE `rtmp_ips`
   ADD PRIMARY KEY (`id`),
@@ -1086,8 +882,7 @@ ALTER TABLE `rtmp_ips`
 
 ALTER TABLE `series`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `last_modified` (`last_modified`),
-  ADD KEY `tmdb_id` (`tmdb_id`);
+  ADD KEY `last_modified` (`last_modified`);
 
 ALTER TABLE `series_episodes`
   ADD PRIMARY KEY (`id`),
@@ -1096,18 +891,12 @@ ALTER TABLE `series_episodes`
   ADD KEY `stream_id` (`stream_id`),
   ADD KEY `sort` (`sort`);
 
-ALTER TABLE `server_activity`
+ALTER TABLE `server_network`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `source_server_id` (`source_server_id`),
-  ADD KEY `dest_server_id` (`dest_server_id`),
-  ADD KEY `stream_id` (`stream_id`),
-  ADD KEY `pid` (`pid`),
-  ADD KEY `date_end` (`date_end`);
-
-ALTER TABLE `signals`
-  ADD PRIMARY KEY (`signal_id`),
   ADD KEY `server_id` (`server_id`),
-  ADD KEY `time` (`time`);
+  ADD KEY `sent` (`sent`),
+  ADD KEY `received` (`received`),
+  ADD KEY `date` (`date`);
 
 ALTER TABLE `streaming_servers`
   ADD PRIMARY KEY (`id`),
@@ -1124,10 +913,7 @@ ALTER TABLE `streams`
   ADD KEY `read_native` (`read_native`),
   ADD KEY `epg_id` (`epg_id`),
   ADD KEY `channel_id` (`channel_id`),
-  ADD KEY `transcode_profile_id` (`transcode_profile_id`),
-  ADD KEY `order` (`order`),
-  ADD KEY `direct_source` (`direct_source`),
-  ADD KEY `rtmp_output` (`rtmp_output`);
+  ADD KEY `transcode_profile_id` (`transcode_profile_id`);
 
 ALTER TABLE `streams_arguments`
   ADD PRIMARY KEY (`id`);
@@ -1136,9 +922,6 @@ ALTER TABLE `streams_options`
   ADD PRIMARY KEY (`id`),
   ADD KEY `stream_id` (`stream_id`),
   ADD KEY `argument_id` (`argument_id`);
-
-ALTER TABLE `streams_seasons`
-  ADD PRIMARY KEY (`season_id`);
 
 ALTER TABLE `streams_sys`
   ADD PRIMARY KEY (`server_stream_id`),
@@ -1160,24 +943,12 @@ ALTER TABLE `streams_types`
 ALTER TABLE `stream_categories`
   ADD PRIMARY KEY (`id`),
   ADD KEY `category_type` (`category_type`),
-  ADD KEY `cat_order` (`cat_order`),
-  ADD KEY `parent_id` (`parent_id`);
+  ADD KEY `cat_order` (`cat_order`);
 
 ALTER TABLE `stream_logs`
   ADD PRIMARY KEY (`id`),
   ADD KEY `stream_id` (`stream_id`),
   ADD KEY `server_id` (`server_id`);
-
-ALTER TABLE `stream_subcategories`
-  ADD PRIMARY KEY (`sub_id`),
-  ADD KEY `parent_id` (`parent_id`);
-
-ALTER TABLE `subreseller_setup`
-  ADD PRIMARY KEY (`id`);
-
-ALTER TABLE `suspicious_logs`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`);
 
 ALTER TABLE `tickets`
   ADD PRIMARY KEY (`id`),
@@ -1189,9 +960,6 @@ ALTER TABLE `tickets`
 ALTER TABLE `tickets_replies`
   ADD PRIMARY KEY (`id`),
   ADD KEY `ticket_id` (`ticket_id`);
-
-ALTER TABLE `tmdb_async`
-  ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `transcoding_profiles`
   ADD PRIMARY KEY (`profile_id`);
@@ -1221,14 +989,13 @@ ALTER TABLE `user_activity`
   ADD KEY `container` (`container`),
   ADD KEY `geoip_country_code` (`geoip_country_code`),
   ADD KEY `date_start` (`date_start`),
-  ADD KEY `date_start_2` (`date_start`,`date_end`),
   ADD KEY `user_ip` (`user_ip`),
-  ADD KEY `user_agent` (`user_agent`),
-  ADD KEY `isp` (`isp`);
+  ADD KEY `user_agent` (`user_agent`);
 
 ALTER TABLE `user_activity_now`
   ADD PRIMARY KEY (`activity_id`),
   ADD KEY `user_agent` (`user_agent`),
+  ADD KEY `token` (`token`),
   ADD KEY `user_ip` (`user_ip`),
   ADD KEY `container` (`container`),
   ADD KEY `pid` (`pid`),
@@ -1236,196 +1003,97 @@ ALTER TABLE `user_activity_now`
   ADD KEY `user_id` (`user_id`),
   ADD KEY `stream_id` (`stream_id`),
   ADD KEY `server_id` (`server_id`),
-  ADD KEY `date_start` (`date_start`),
-  ADD KEY `date_end` (`date_end`),
-  ADD KEY `hls_end` (`hls_end`);
+  ADD KEY `date_start` (`date_start`);
 
 ALTER TABLE `user_output`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`),
   ADD KEY `access_output_id` (`access_output_id`);
 
-ALTER TABLE `watch_categories`
-  ADD PRIMARY KEY (`id`);
-
-ALTER TABLE `watch_folders`
-  ADD PRIMARY KEY (`id`);
-
-ALTER TABLE `watch_output`
-  ADD PRIMARY KEY (`id`);
-
-ALTER TABLE `xtream_main`
-  ADD PRIMARY KEY (`id`);
-
 
 ALTER TABLE `access_output`
-  MODIFY `access_output_id` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `access_output_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 ALTER TABLE `blocked_ips`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `blocked_user_agents`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `bouquets`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `client_logs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `credits_log`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
-ALTER TABLE `cronjobs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `devices`
-  MODIFY `device_id` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `device_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 ALTER TABLE `enigma2_actions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `enigma2_devices`
   MODIFY `device_id` int(12) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `enigma2_failed`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `epg`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `epg_data`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `isp_addon`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
-ALTER TABLE `licence`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
-ALTER TABLE `login_flood`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
-ALTER TABLE `login_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `mag_claims`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `mag_devices`
   MODIFY `mag_id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `mag_events`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `mag_logs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `member_groups`
-  MODIFY `group_id` int(11) NOT NULL AUTO_INCREMENT;
-
-ALTER TABLE `movie_containers`
-  MODIFY `container_id` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 ALTER TABLE `packages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `panel_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24938;
 ALTER TABLE `reg_userlog`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `reg_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 ALTER TABLE `reseller_imex`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+ALTER TABLE `restreamers_finder`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `rtmp_ips`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `series`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `series_episodes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
-ALTER TABLE `server_activity`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
-ALTER TABLE `signals`
-  MODIFY `signal_id` int(11) NOT NULL AUTO_INCREMENT;
-
+ALTER TABLE `server_network`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76074;
 ALTER TABLE `streaming_servers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 ALTER TABLE `streams`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `streams_arguments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 ALTER TABLE `streams_options`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
-ALTER TABLE `streams_seasons`
-  MODIFY `season_id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `streams_sys`
   MODIFY `server_stream_id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `streams_types`
-  MODIFY `type_id` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 ALTER TABLE `stream_categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 ALTER TABLE `stream_logs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
-ALTER TABLE `stream_subcategories`
-  MODIFY `sub_id` int(11) NOT NULL AUTO_INCREMENT;
-
-ALTER TABLE `subreseller_setup`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
-ALTER TABLE `suspicious_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `tickets`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `tickets_replies`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
-ALTER TABLE `tmdb_async`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `transcoding_profiles`
   MODIFY `profile_id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `user_activity`
   MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `user_activity_now`
   MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT;
-
 ALTER TABLE `user_output`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
-ALTER TABLE `watch_categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
-ALTER TABLE `watch_folders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
-ALTER TABLE `watch_output`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
-ALTER TABLE `xtream_main`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
