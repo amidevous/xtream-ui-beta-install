@@ -5,6 +5,11 @@ CREATE TABLE `access_output` (
   `output_ext` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+CREATE TABLE `admin_settings` (
+  `type` varchar(128) NOT NULL DEFAULT '',
+  `value` varchar(4096) NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 CREATE TABLE `blocked_ips` (
   `id` int(11) NOT NULL,
   `ip` varchar(39) COLLATE utf8_unicode_ci NOT NULL,
@@ -191,6 +196,13 @@ CREATE TABLE `licence` (
   `reshare_deny_addon` tinyint(4) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+CREATE TABLE `login_flood` (
+  `id` int(11) NOT NULL,
+  `username` varchar(128) NOT NULL DEFAULT '',
+  `ip` varchar(64) NOT NULL DEFAULT '',
+  `dateadded` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 CREATE TABLE `login_logs` (
   `id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
@@ -332,7 +344,8 @@ CREATE TABLE `member_groups` (
   `edit_isplock` tinyint(4) NOT NULL DEFAULT 0,
   `reset_stb_data` tinyint(4) NOT NULL DEFAULT 0,
   `reseller_bonus_package_inc` tinyint(4) NOT NULL DEFAULT 0,
-  `allow_download` tinyint(4) NOT NULL DEFAULT 1
+  `allow_download` tinyint(4) NOT NULL DEFAULT 1,
+  `minimum_trial_credits` int(16) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `movie_containers` (
@@ -400,7 +413,9 @@ CREATE TABLE `reg_users` (
   `reseller_dns` text COLLATE utf8_unicode_ci NOT NULL,
   `owner_id` int(11) NOT NULL DEFAULT 0,
   `override_packages` text COLLATE utf8_unicode_ci DEFAULT NULL,
-  `google_2fa_sec` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+  `google_2fa_sec` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `dark_mode` int(1) NOT NULL DEFAULT 0,
+  `sidebar` int(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `reseller_imex` (
@@ -757,6 +772,14 @@ CREATE TABLE `stream_subcategories` (
   `subcategory_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+CREATE TABLE `subreseller_setup` (
+  `id` int(11) NOT NULL,
+  `reseller` int(8) NOT NULL DEFAULT 0,
+  `subreseller` int(8) NOT NULL DEFAULT 0,
+  `status` int(1) NOT NULL DEFAULT 1,
+  `dateadded` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 CREATE TABLE `suspicious_logs` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
@@ -780,6 +803,14 @@ CREATE TABLE `tickets_replies` (
   `message` mediumtext COLLATE utf8_unicode_ci NOT NULL,
   `date` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `tmdb_async` (
+  `id` int(11) NOT NULL,
+  `type` int(1) NOT NULL DEFAULT 0,
+  `stream_id` int(16) NOT NULL DEFAULT 0,
+  `status` int(8) NOT NULL DEFAULT 0,
+  `dateadded` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `transcoding_profiles` (
   `profile_id` int(11) NOT NULL,
@@ -859,6 +890,52 @@ CREATE TABLE `user_output` (
   `access_output_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+CREATE TABLE `watch_categories` (
+  `id` int(11) NOT NULL,
+  `type` int(1) NOT NULL DEFAULT 0,
+  `genre_id` int(8) NOT NULL DEFAULT 0,
+  `genre` varchar(64) NOT NULL DEFAULT '',
+  `category_id` int(8) NOT NULL DEFAULT 0,
+  `bouquets` varchar(4096) NOT NULL DEFAULT '[]'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `watch_folders` (
+  `id` int(11) NOT NULL,
+  `type` varchar(32) NOT NULL DEFAULT '',
+  `directory` varchar(2048) NOT NULL DEFAULT '',
+  `server_id` int(8) NOT NULL DEFAULT 0,
+  `category_id` int(8) NOT NULL DEFAULT 0,
+  `bouquets` varchar(4096) NOT NULL DEFAULT '[]',
+  `last_run` int(32) NOT NULL DEFAULT 0,
+  `active` int(1) NOT NULL DEFAULT 1,
+  `disable_tmdb` int(1) NOT NULL DEFAULT 0,
+  `ignore_no_match` int(1) NOT NULL DEFAULT 0,
+  `auto_subtitles` int(1) NOT NULL DEFAULT 0,
+  `fb_bouquets` varchar(4096) NOT NULL DEFAULT '[]',
+  `fb_category_id` int(8) NOT NULL DEFAULT 0,
+  `allowed_extensions` varchar(4096) NOT NULL DEFAULT '[]'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `watch_output` (
+  `id` int(11) NOT NULL,
+  `type` int(1) NOT NULL DEFAULT 0,
+  `server_id` int(8) NOT NULL DEFAULT 0,
+  `filename` varchar(4096) NOT NULL DEFAULT '',
+  `status` int(1) NOT NULL DEFAULT 0,
+  `stream_id` int(8) NOT NULL DEFAULT 0,
+  `dateadded` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `watch_settings` (
+  `read_native` int(1) NOT NULL DEFAULT 1,
+  `movie_symlink` int(1) NOT NULL DEFAULT 1,
+  `auto_encode` int(1) NOT NULL DEFAULT 0,
+  `transcode_profile_id` int(8) NOT NULL DEFAULT 0,
+  `scan_seconds` int(8) NOT NULL DEFAULT 3600,
+  `percentage_match` int(3) NOT NULL DEFAULT 80,
+  `ffprobe_input` int(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 CREATE TABLE `xtream_main` (
   `id` int(11) NOT NULL,
   `update_available` int(11) NOT NULL DEFAULT 0,
@@ -870,6 +947,9 @@ ALTER TABLE `access_output`
   ADD PRIMARY KEY (`access_output_id`),
   ADD KEY `output_key` (`output_key`),
   ADD KEY `output_ext` (`output_ext`);
+
+ALTER TABLE `admin_settings`
+  ADD PRIMARY KEY (`type`);
 
 ALTER TABLE `blocked_ips`
   ADD PRIMARY KEY (`id`),
@@ -933,6 +1013,9 @@ ALTER TABLE `isp_addon`
   ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `licence`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `login_flood`
   ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `login_logs`
@@ -1089,6 +1172,9 @@ ALTER TABLE `stream_subcategories`
   ADD PRIMARY KEY (`sub_id`),
   ADD KEY `parent_id` (`parent_id`);
 
+ALTER TABLE `subreseller_setup`
+  ADD PRIMARY KEY (`id`);
+
 ALTER TABLE `suspicious_logs`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`);
@@ -1103,6 +1189,9 @@ ALTER TABLE `tickets`
 ALTER TABLE `tickets_replies`
   ADD PRIMARY KEY (`id`),
   ADD KEY `ticket_id` (`ticket_id`);
+
+ALTER TABLE `tmdb_async`
+  ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `transcoding_profiles`
   ADD PRIMARY KEY (`profile_id`);
@@ -1156,6 +1245,15 @@ ALTER TABLE `user_output`
   ADD KEY `user_id` (`user_id`),
   ADD KEY `access_output_id` (`access_output_id`);
 
+ALTER TABLE `watch_categories`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `watch_folders`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `watch_output`
+  ADD PRIMARY KEY (`id`);
+
 ALTER TABLE `xtream_main`
   ADD PRIMARY KEY (`id`);
 
@@ -1203,6 +1301,9 @@ ALTER TABLE `isp_addon`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `licence`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `login_flood`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `login_logs`
@@ -1286,6 +1387,9 @@ ALTER TABLE `stream_logs`
 ALTER TABLE `stream_subcategories`
   MODIFY `sub_id` int(11) NOT NULL AUTO_INCREMENT;
 
+ALTER TABLE `subreseller_setup`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 ALTER TABLE `suspicious_logs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
@@ -1293,6 +1397,9 @@ ALTER TABLE `tickets`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `tickets_replies`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `tmdb_async`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `transcoding_profiles`
@@ -1308,6 +1415,15 @@ ALTER TABLE `user_activity_now`
   MODIFY `activity_id` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `user_output`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `watch_categories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `watch_folders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `watch_output`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `xtream_main`
