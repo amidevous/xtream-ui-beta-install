@@ -25,6 +25,7 @@ sed -i 's|} else { echo "checked "; }|}|' /home/xtreamcodes/iptv_xtream_codes/ad
 sed -i 's|$rSessionTimeout = 60;|$rSessionTimeout = 6000;|' /home/xtreamcodes/iptv_xtream_codes/admin/session.php
 sed -i 's|$rSessionTimeout*60|$rSessionTimeout*6000|' /home/xtreamcodes/iptv_xtream_codes/admin/session.php
 sudo chown -R xtreamcodes:xtreamcodes /home/xtreamcodes/
+chattr +i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb
 chmod +x /home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/sbin/nginx_rtmp
 chmod +x /home/xtreamcodes/iptv_xtream_codes/nginx/sbin/nginx
 /home/xtreamcodes/iptv_xtream_codes/start_services.sh
