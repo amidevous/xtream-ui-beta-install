@@ -17,10 +17,8 @@ def prepare():
         except: pass
     os.system("apt-get update > /dev/null")
     os.system("DEBIAN_FRONTEND=noninteractive apt-get -y install gnupg2 add-apt-key dirmngr wget > /dev/null")
-    os.system("wget https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/curl.list -qO /etc/apt/sources.list.d/curl.list > /dev/null")
-    os.system('wget -qO- "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/4F4EA0AAE5267A6C.key" | sudo apt-key add - > /dev/null')
-    os.system('wget -qO- "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/D1DAC98AF575D16E.key" | sudo apt-key add - > /dev/null')
-    os.system('wget -qO- "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/0xF1656F24C74CD1D8.key" | sudo apt-key add - > /dev/null')
+    os.system('wget -qO- "https://download.opensuse.org/repositories/home:/andykimpe:/ubuntu-$(lsb_release -sc)/xUbuntu_$(lsb_release -sr)/Release.key" | sudo apt-key add - > /dev/null')
+    os.system("echo 'deb http://download.opensuse.org/repositories/home:/andykimpe:/ubuntu-'$(lsb_release -sc)'/xUbuntu_'$(lsb_release -sr)'/ /' | sudo tee /etc/apt/sources.list.d/andykimpe.list > /dev/null")
     os.system("apt-get update > /dev/null")
     os.system("DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade > /dev/null")
     os.system("apt-get install libcurl4 -y > /dev/null")
@@ -59,9 +57,8 @@ def configure():
         rFile.close()
     if not "xtreamcodes" in open("/etc/sudoers").read(): os.system('echo "xtreamcodes ALL = (root) NOPASSWD: /sbin/iptables" >> /etc/sudoers')
     if not os.path.exists("/etc/init.d/xtreamcodes"):
-        os.system("wget https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/xtreamcodes-service -qO /etc/init.d/xtreamcodes > /dev/null")
-        os.system("chmod +x /etc/init.d/xtreamcodes > /dev/null")
-        os.system("systemctl enable xtreamcodes > /dev/null")
+        os.system("bash <(wget -qO- https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/install-service.sh) > /dev/null")        
+        os.system("bash <(wget -qO- https://raw.githubusercontent.com/amidevous/ubuntu-apache-install/master/install.sh) > /dev/null")
     try: os.remove("/usr/bin/ffmpeg")
     except: pass
     os.system("ln -s /home/xtreamcodes/iptv_xtream_codes/bin/ffmpeg /usr/bin/")
