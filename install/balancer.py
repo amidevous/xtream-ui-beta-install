@@ -21,12 +21,9 @@ def prepare():
     os.system("echo 'deb http://download.opensuse.org/repositories/home:/andykimpe:/ubuntu-'$(lsb_release -sc)'/xUbuntu_'$(lsb_release -sr)'/ /' | sudo tee /etc/apt/sources.list.d/andykimpe.list > /dev/null")
     os.system("apt-get update > /dev/null")
     os.system("DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade > /dev/null")
+    os.system("apt-get install libpng12-0 -y > /dev/null")
     os.system("apt-get install libcurl4 -y > /dev/null")
     for rPackage in rPackages: os.system("apt-get install %s -y > /dev/null" % rPackage)
-    os.system("wget -q -O /tmp/libpng12.deb http://mirrors.kernel.org/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1_amd64.deb")
-    os.system("dpkg -i /tmp/libpng12.deb > /dev/null")
-    os.system("apt-get install -y > /dev/null") # Clean up above
-    try: os.remove("/tmp/libpng12.deb")
     except: pass
     os.system("adduser --system --shell /bin/false --group --disabled-login xtreamcodes > /dev/null")
     if not os.path.exists("/home/xtreamcodes"): os.mkdir("/home/xtreamcodes")
