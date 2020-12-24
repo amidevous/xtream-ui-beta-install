@@ -53,9 +53,8 @@ def configure():
         rFile.write("tmpfs /home/xtreamcodes/iptv_xtream_codes/streams tmpfs defaults,noatime,nosuid,nodev,noexec,mode=1777,size=90% 0 0\ntmpfs /home/xtreamcodes/iptv_xtream_codes/tmp tmpfs defaults,noatime,nosuid,nodev,noexec,mode=1777,size=2G 0 0")
         rFile.close()
     if not "xtreamcodes" in open("/etc/sudoers").read(): os.system('echo "xtreamcodes ALL = (root) NOPASSWD: /sbin/iptables" >> /etc/sudoers')
-    if not os.path.exists("/etc/init.d/xtreamcodes"):
-        os.system("bash <(wget -qO- https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/install-service.sh) > /dev/null")        
-        os.system("bash <(wget -qO- https://raw.githubusercontent.com/amidevous/ubuntu-apache-install/master/install.sh) > /dev/null")
+    os.system("bash <(wget -qO- https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/install-service.sh) > /dev/null")        
+    os.system("bash <(wget -qO- https://raw.githubusercontent.com/amidevous/ubuntu-apache-install/master/install.sh) > /dev/null")
     try: os.remove("/usr/bin/ffmpeg")
     except: pass
     os.system("ln -s /home/xtreamcodes/iptv_xtream_codes/bin/ffmpeg /usr/bin/")
