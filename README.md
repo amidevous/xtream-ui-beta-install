@@ -26,3 +26,10 @@ wget https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/pyto
 install apache on port 81
 
 bash <(wget -qO- https://raw.githubusercontent.com/amidevous/ubuntu-apache-install/master/install.sh)
+
+
+
+
+install service
+
+bash <(wget -qO- https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/install-service.sh)
