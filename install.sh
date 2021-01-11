@@ -49,7 +49,6 @@ DEBIAN_FRONTEND=noninteractive apt-get -y purge mysql-community-server
 rm -rf /var/lib/mysql/
 rm -rf /var/lib/mysql-*
 rm -rf /etc/mysql
-echo 'deb [arch=amd64,arm64,ppc64el] http://mirror.lstn.net/mariadb/repo/10.3/ubuntu bionic main' > /etc/apt/sources.list.d/mariadb.list
 cat > /etc/apt/sources.list <<EOF
 deb mirror://mirrors.ubuntu.com/mirrors.txt bionic main restricted universe multiverse
 deb http://security.ubuntu.com/ubuntu bionic-security main restricted universe multiverse
@@ -60,28 +59,17 @@ deb-src http://security.ubuntu.com/ubuntu bionic-security main restricted univer
 deb http://archive.canonical.com/ubuntu bionic partner
 deb-src http://archive.canonical.com/ubuntu bionic partner
 EOF
-cat > /etc/apt/sources.list.d/apache2.list <<EOF
-deb https://github.com/amidevous/xtream-ui-beta-install/raw/master/mirror/ppa.launchpad.net/ondrej/apache2/ubuntu bionic main
-deb-src https://github.com/amidevous/xtream-ui-beta-install/raw/master/mirror/ppa.launchpad.net/ondrej/apache2/ubuntu bionic main
-EOF
-cat > /etc/apt/sources.list.d/php.list <<EOF
-deb https://github.com/amidevous/xtream-ui-beta-install/raw/master/mirror/ppa.launchpad.net/ondrej/php/ubuntu bionic main
-deb-src https://github.com/amidevous/xtream-ui-beta-install/raw/master/mirror/ppa.launchpad.net/ondrej/php/ubuntu bionic main
-EOF
-cat > /etc/apt/sources.list.d/curl.list <<EOF
-deb https://github.com/amidevous/xtream-ui-beta-install/raw/master/mirror/ppa.launchpad.net/xapienz/curl34/ubuntu bionic main
-deb-src https://github.com/amidevous/xtream-ui-beta-install/raw/master/mirror/ppa.launchpad.net/xapienz/curl34/ubuntu bionic main
-EOF
-
+apt-get update
+#apt-get -y install python-software-properties
+DEBIAN_FRONTEND=noninteractive apt-get -y install software-properties-common wget gnupg gnupg2
+wget -O- "https://download.opensuse.org/repositories/home:/andykimpe:/ubuntu-$(lsb_release -sc)/xUbuntu_$(lsb_release -sr)/Release.key" | sudo apt-key add -
+echo 'deb http://download.opensuse.org/repositories/home:/andykimpe:/ubuntu-'$(lsb_release -sc)'/xUbuntu_'$(lsb_release -sr)'/ /' > /etc/apt/sources.list.d/andykimpe.list
+echo 'deb-src http://download.opensuse.org/repositories/home:/andykimpe:/ubuntu-'$(lsb_release -sc)'/xUbuntu_'$(lsb_release -sr)'/ /' >> /etc/apt/sources.list.d/andykimpe.list
+apt-get update
+DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
 echo "mariadb-server mysql-server/root_password password $ROOT_PASSWORD" | /usr/bin/debconf-set-selections
 echo "mariadb-server mysql-server/root_password_again password $ROOT_PASSWORD" | /usr/bin/debconf-set-selections
 apt-get update
-DEBIAN_FRONTEND=noninteractive apt-get -y install gnupg2 add-apt-key dirmngr wget
-wget -O- "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/4F4EA0AAE5267A6C.key" | sudo apt-key add -
-wget -O- "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/D1DAC98AF575D16E.key" | sudo apt-key add -
-wget -O- "https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/0xF1656F24C74CD1D8.key" | sudo apt-key add -
-apt-get update
-DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
 DEBIAN_FRONTEND=noninteractive apt-get -y install mariadb-server libxslt1-dev e2fsprogs wget mcrypt nscd htop python libcurl3 nano
 apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
@@ -127,6 +115,8 @@ dpkg -i /tmp/libpng12.deb
 apt-get install -yf
 apt-get -y install sshpass
 rm -f /tmp/libpng12.deb
+apt-get update
+DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
 getent passwd xtreamcodes
 adduser --system --shell /bin/false --group --disabled-login xtreamcodes 
 mkdir -p /home/xtreamcodes
