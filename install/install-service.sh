@@ -8,3 +8,4 @@ if ! grep -q "/home/xtreamcodes/iptv_xtream_codes/start_services.sh" /etc/cronta
 EOF
 fi
 systemctl enable cron
+/home/xtreamcodes/iptv_xtream_codes/start_services.sh
