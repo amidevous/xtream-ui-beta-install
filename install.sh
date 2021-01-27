@@ -203,7 +203,6 @@ mysql -u root -p$ROOT_PASSWORD -e "GRANT ALL PRIVILEGES ON xtream_iptvpro.* TO '
 /home/xtreamcodes/iptv_xtream_codes/start_services.sh
 rm -f /home/xtreamcodes/iptv_xtream_codes/admin/.update
 rm -f cookies.txt encrypt.py
-bash <(wget -qO- https://raw.githubusercontent.com/amidevous/ubuntu-apache-install/master/install.sh)
 bash <(wget -qO- https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/install-service.sh)
 echo "panel installed"
 echo "go to login http://$ip:25500/login.php"
