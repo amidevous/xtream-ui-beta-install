@@ -200,9 +200,60 @@ chmod -R 0777 /home/xtreamcodes
 mysql -u root -p$ROOT_PASSWORD -e "GRANT ALL PRIVILEGES ON xtream_iptvpro.* TO 'user_iptvpro'@'%' IDENTIFIED BY '$sqlpass' WITH GRANT OPTION; FLUSH PRIVILEGES;"
 #wget -O /home/xtreamcodes/iptv_xtream_codes/admin/settings.php https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/settings.php.txt
 #wget -O /home/xtreamcodes/iptv_xtream_codes/pytools/balancer.py https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/pytools/balancer.py
+proc=$(cat /proc/cpuinfo | grep -i "^processor" | wc -l)
+apt-get -y install build-essential libzip4
+apt-get -y build-dep php5.6
+apt-get -y build-dep php7.3
+wget https://www.php.net/distributions/php-7.3.26.tar.xz
+tar -xvf php-7.3.26.tar.xz
+cd php-7.3.26
+if [[ "$OS" = "Ubuntu" && "$VER" = "20.04" ]] ; then
+	wget -O /usr/bin/freetype-config https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/freetype-config
+	chmod +x /usr/bin/freetype-config
+fi
+./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/php --with-zlib-dir --with-freetype-dir --enable-mbstring --enable-calendar --with-curl --with-mcrypt --with-gd --disable-rpath --enable-inline-optimization --with-bz2 --with-zlib --enable-sockets --enable-sysvsem --enable-sysvshm --enable-pcntl --enable-mbregex --enable-exif --enable-bcmath --with-mhash --enable-zip --with-pcre-regex --with-mysql=mysqlnd --with-pdo-mysql=mysqlnd --with-mysqli=mysqlnd --enable-gd-native-ttf --with-openssl --with-fpm-user=xtreamcodes --with-fpm-group=xtreamcodes --with-libdir=/lib/x86_64-linux-gnu --with-gettext --with-xmlrpc --with-xsl --enable-opcache --enable-fpm --enable-libxml --enable-static --disable-shared
+make -j$proc
+make install
+cd ..
+rm -rf php-7.3.26 php-7.3.26.tar.xz
+rm -f /home/xtreamcodes/iptv_xtream_codes/php/lib/php/extensions/no-debug-non-zts-20180731/geoip.so
+wget https://pecl.php.net/get/geoip-1.1.1.tgz
+tar -xvf geoip-1.1.1.tgz
+cd geoip-1.1.1
+/home/xtreamcodes/iptv_xtream_codes/php/bin/phpize
+apt-get -y install libgeoip-dev
+./configure --with-php-config=/home/xtreamcodes/iptv_xtream_codes/php/bin/php-config
+make -j$proc
+make install
+cd ..
+rm -rf geoip-1.1.1 geoip-1.1.1.tgz
+rm -f /home/xtreamcodes/iptv_xtream_codes/php/lib/php/extensions/no-debug-non-zts-20180731/mcrypt.so
+apt-get -y install libmcrypt-dev
+wget https://pecl.php.net/get/mcrypt-1.0.4.tgz
+tar -xvf mcrypt-1.0.4.tgz
+cd mcrypt-1.0.4
+/home/xtreamcodes/iptv_xtream_codes/php/bin/phpize
+./configure --with-php-config=/home/xtreamcodes/iptv_xtream_codes/php/bin/php-config
+make -j$proc
+make install
+cd ..
+rm -rf mcrypt-1.0.4.tgz mcrypt-1.0.4
+rm -f /home/xtreamcodes/iptv_xtream_codes/php/lib/php/extensions/no-debug-non-zts-20180731/igbinary.so
+wget https://pecl.php.net/get/igbinary-3.2.1.tgz
+tar -xvf igbinary-3.2.1.tgz
+cd igbinary-3.2.1
+/home/xtreamcodes/iptv_xtream_codes/php/bin/phpize
+./configure --with-php-config=/home/xtreamcodes/iptv_xtream_codes/php/bin/php-config
+make -j$proc
+make install
+cd ..
+rm -rf igbinary-3.2.1.tgz igbinary-3.2.1
+bash <(wget -qO- https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/updatev3.sh)
+chown xtreamcodes:xtreamcodes -R /home/xtreamcodes
+chmod -R 0777 /home/xtreamcodes
+chattr +i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb
 /home/xtreamcodes/iptv_xtream_codes/start_services.sh
-rm -f /home/xtreamcodes/iptv_xtream_codes/admin/.update
-rm -f cookies.txt encrypt.py
+rm -f cookies.txt encrypt.py /home/xtreamcodes/iptv_xtream_codes/admin/.update
 bash <(wget -qO- https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/install-service.sh)
 echo "panel installed"
 echo "go to login http://$ip:25500/login.php"
