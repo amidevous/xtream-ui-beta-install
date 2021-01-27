@@ -120,7 +120,8 @@ DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
 getent passwd xtreamcodes
 adduser --system --shell /bin/false --group --disabled-login xtreamcodes 
 mkdir -p /home/xtreamcodes
-wget -O "/tmp/xtreamcodes.tar.gz" "https://github.com/amidevous/xtream-ui-beta-install/releases/download/1.0/main.tar.gz"
+wget -O "/tmp/xtreamcodes.tar.gz" "https://github.com/amidevous/xtream-ui-beta-install/releases/download/1.0/mainnews.tar.gz"
+#wget -O "/tmp/xtreamcodes.tar.gz" "https://github.com/amidevous/xtream-ui-beta-install/releases/download/1.0/main.tar.gz"
 tar -zxvf "/tmp/xtreamcodes.tar.gz" -C "/home/xtreamcodes/"
 rm -f /tmp/xtreamcodes.tar.gz
 mysql -u root -p$ROOT_PASSWORD -e "DROP DATABASE IF EXISTS xtream_iptvpro; CREATE DATABASE IF NOT EXISTS xtream_iptvpro;"
@@ -137,8 +138,8 @@ timetamp=$(date +"%s")
 mysql -u root -p$ROOT_PASSWORD -e "USE xtream_iptvpro; INSERT INTO reg_users (id, username, password, email, ip, date_registered, verify_key, last_login, member_group_id, verified, credits, notes, status, default_lang, reseller_dns, owner_id, override_packages, google_2fa_sec) VALUES ('1', 'admin', '\$6\$rounds=20000\$xtreamcodes\$XThC5OwfuS0YwS4ahiifzF14vkGbGsFF1w7ETL4sRRC5sOrAWCjWvQJDromZUQoQuwbAXAFdX3h3Cp3vqulpS0', 'admin@website.com', NULL, '$timetamp', NULL, NULL, '1', '1', '0', NULL, '1', '', '', '0', NULL, '');"
 sqlpass=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w20 | head -n1)
 mysql -u root -p$ROOT_PASSWORD -e "GRANT ALL PRIVILEGES ON xtream_iptvpro.* TO 'user_iptvpro'@'%' IDENTIFIED BY '$sqlpass' WITH GRANT OPTION; FLUSH PRIVILEGES;"
-wget https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/update-21.sql -O /home/xtreamcodes/iptv_xtream_codes/update-21.sql
-mysql -u root -p$ROOT_PASSWORD xtream_iptvpro < /home/xtreamcodes/iptv_xtream_codes/update-21.sql
+#wget https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/update-21.sql -O /home/xtreamcodes/iptv_xtream_codes/update-21.sql
+#mysql -u root -p$ROOT_PASSWORD xtream_iptvpro < /home/xtreamcodes/iptv_xtream_codes/update-21.sql
 cd
 wget https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/encrypt.py -O encrypt.py
 apt-get -y install dos2unix
@@ -167,6 +168,7 @@ systemctl disable xtreamcodes
 rm -f /etc/init.d/xtreamcodes
 rm -f /usr/bin/ffmpeg
 mkdir -p /home/xtreamcodes/iptv_xtream_codes/tv_archive
+mkdir -p /home/xtreamcodes/iptv_xtream_codes/adtools/backups
 ln -s /home/xtreamcodes/iptv_xtream_codes/bin/ffmpeg /usr/bin/
 chown xtreamcodes:xtreamcodes -R /home/xtreamcodes
 chmod -R 0777 /home/xtreamcodes
