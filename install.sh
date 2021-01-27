@@ -21,7 +21,7 @@ ARCH=$(uname -m)
 
 echo "Detected : $OS  $VER  $ARCH"
 
-if [[ "$OS" = "Ubuntu" && "$VER" = "18.04" ]] ; then
+if [[ "$OS" = "Ubuntu" && "$VER" = "18.04" || "$OS" = "Ubuntu" && "$VER" = "20.04" ]] ; then
     echo "Ok."
 else
     echo "Sorry, this OS is not supported by xtream-ui."
@@ -50,14 +50,14 @@ rm -rf /var/lib/mysql/
 rm -rf /var/lib/mysql-*
 rm -rf /etc/mysql
 cat > /etc/apt/sources.list <<EOF
-deb mirror://mirrors.ubuntu.com/mirrors.txt bionic main restricted universe multiverse
-deb http://security.ubuntu.com/ubuntu bionic-security main restricted universe multiverse
-deb mirror://mirrors.ubuntu.com/mirrors.txt bionic-updates main restricted universe multiverse
-deb-src mirror://mirrors.ubuntu.com/mirrors.txt bionic main restricted universe multiverse 
-deb-src mirror://mirrors.ubuntu.com/mirrors.txt bionic-updates main restricted universe multiverse
-deb-src http://security.ubuntu.com/ubuntu bionic-security main restricted universe multiverse
-deb http://archive.canonical.com/ubuntu bionic partner
-deb-src http://archive.canonical.com/ubuntu bionic partner
+deb mirror://mirrors.ubuntu.com/mirrors.txt $(lsb_release -sc) main restricted universe multiverse
+deb http://security.ubuntu.com/ubuntu $(lsb_release -sc)-security main restricted universe multiverse
+deb mirror://mirrors.ubuntu.com/mirrors.txt $(lsb_release -sc)-updates main restricted universe multiverse
+deb-src mirror://mirrors.ubuntu.com/mirrors.txt $(lsb_release -sc) main restricted universe multiverse 
+deb-src mirror://mirrors.ubuntu.com/mirrors.txt $(lsb_release -sc)-updates main restricted universe multiverse
+deb-src http://security.ubuntu.com/ubuntu $(lsb_release -sc)-security main restricted universe multiverse
+deb http://archive.canonical.com/ubuntu $(lsb_release -sc) partner
+deb-src http://archive.canonical.com/ubuntu $(lsb_release -sc) partner
 EOF
 apt-get update
 #apt-get -y install python-software-properties
