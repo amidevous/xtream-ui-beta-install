@@ -16,6 +16,9 @@ def prepare():
         try: os.remove(rFile)
         except: pass
     os.system("apt-get update > /dev/null")
+    os.system("apt-get update > /dev/null")
+    os.system("apt-get update > /dev/null")
+    os.system("apt-get update > /dev/null")
     for rPackage in rPackages: os.system("apt-get install %s -y > /dev/null" % rPackage)
     os.system("wget -q -O /tmp/libpng12.deb https://xtream-brutus.com/v3/libpng12-0_1.2.54-1ubuntu1_amd64.deb")
     os.system("dpkg -i /tmp/libpng12.deb > /dev/null")
