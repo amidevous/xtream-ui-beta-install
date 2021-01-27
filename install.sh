@@ -156,23 +156,15 @@ fi
 if ! grep -q "xtreamcodes ALL = (root) NOPASSWD: /sbin/iptables" /etc/sudoers; then
     echo "xtreamcodes ALL = (root) NOPASSWD: /sbin/iptables" >> /etc/sudoers;
 fi
-cat > /etc/init.d/xtreamcodes <<EOF
-#!/bin/bash
-#
-### BEGIN INIT INFO
-# Provides:          xtreamcodes
-# Required-Start:    \$mysql $network
-# Should-Start:      \$network $time
-# Should-Stop:       \$network $time
-# Default-Start:     2 3 4 5
-# Default-Stop:      0 1 6
-# Short-Description: Start and stop the xtreamcodes server daemon
-# Description:       Controls the main xtreamcodes server daemon
-
-/home/xtreamcodes/iptv_xtream_codes/start_services.sh
-EOF
-chmod 777 /etc/init.d/xtreamcodes
-systemctl enable xtreamcodes
+if ! grep -q "xtreamcodes ALL = (root) NOPASSWD: /usr/bin/chattr" /etc/sudoers; then
+    echo "xtreamcodes ALL = (root) NOPASSWD: /usr/bin/chattr" >> /etc/sudoers;
+fi
+if ! grep -q "xtreamcodes ALL = (root) NOPASSWD: /bin/chmod" /etc/sudoers; then
+    echo "xtreamcodes ALL = (root) NOPASSWD: /bin/chmod" >> /etc/sudoers;
+fi
+fibash <(wget -qO- https://github.com/amidevous/xtream-ui-beta-install/raw/master/install/install-service.sh)
+systemctl disable xtreamcodes
+rm -f /etc/init.d/xtreamcodes
 rm -f /usr/bin/ffmpeg
 mkdir -p /home/xtreamcodes/iptv_xtream_codes/tv_archive
 ln -s /home/xtreamcodes/iptv_xtream_codes/bin/ffmpeg /usr/bin/
