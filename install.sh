@@ -70,7 +70,7 @@ DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
 echo "mariadb-server mysql-server/root_password password $ROOT_PASSWORD" | /usr/bin/debconf-set-selections
 echo "mariadb-server mysql-server/root_password_again password $ROOT_PASSWORD" | /usr/bin/debconf-set-selections
 apt-get update
-DEBIAN_FRONTEND=noninteractive apt-get -y install mariadb-server libxslt1-dev e2fsprogs wget mcrypt nscd htop python libcurl3 nano
+DEBIAN_FRONTEND=noninteractive apt-get -y install mariadb-server libxslt1-dev e2fsprogs wget mcrypt nscd htop python libcurl3 nano unzip
 apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
 DEBIAN_FRONTEND=noninteractive apt-get -y install libcurl4
